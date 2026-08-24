@@ -1,0 +1,301 @@
+              <----------------------------------------------->
+ ------------>         DAY-01: HTML FUNDAMENTALS               <-------------
+              <----------------------------------------------->
+
+
+1. WHAT IS HTML?
+HTML stands for HyperText Markup Language. HTML is the standard markup language used to structure content on web pages.
+It tells the browser what different pieces of content represent, such as
+headings, paragraphs, links, images, lists, forms, and other elements.
+Think of HTML as the structure or skeleton of a webpage.
+ -> Key points:
+- HTML is NOT a programming language because it does not perform programming
+  logic such as calculations, loops, or conditional processing by itself.
+- HTML is a markup language. It uses elements and tags to describe the
+  structure and meaning of content.
+- "HyperText" refers to text that can contain links to other documents
+  or resources.
+
+
+2. WHAT IS HTML5?
+HTML5 is the modern version of the HTML standard.
+It introduced and standardized many important features for building modern
+websites, including semantic elements and native multimedia support.
+ -> Key points:
+- Provides native multimedia elements such as <audio> and <video>.
+- Introduced many semantic elements such as <header>, <nav>, <main>,
+  <section>, <article>, and <footer>.
+- Provides features that make it easier to build modern, accessible,
+  and responsive websites when combined with CSS.
+Note:
+HTML continues to evolve as a web standard, so "HTML5" is commonly used
+to refer to the modern HTML standard and its features.
+
+
+3. WHAT DOES <!DOCTYPE html> DO?
+<!DOCTYPE html> is a document type declaration.
+It is placed at the beginning of an HTML document before the <html>
+element.
+-> Key points:
+- It is NOT an HTML element or tag.
+- It tells the browser to interpret the document using modern HTML
+  standards.
+- It helps the browser use standards mode instead of legacy quirks mode.
+Example:
+<!DOCTYPE html>
+
+
+4. WHAT IS THE <html> ELEMENT?
+The <html> element is the root element of an HTML document.
+All of the document's HTML content is contained inside the <html>
+element, except for the <!DOCTYPE html> declaration.
+Example:
+<html lang="en">
+   ...
+</html>
+-> Key points:
+- It contains the <head> and <body> elements.
+- The "lang" attribute specifies the primary language of the document.
+Example:
+<html lang="en">
+
+
+5. WHAT IS THE <head> ELEMENT?
+The <head> element contains metadata and other information about the
+HTML document.
+Most of its content is not displayed directly on the webpage.
+It can contain things such as:
+- <title>
+- <meta>
+- Links to CSS files
+- Other metadata
+- Resources and information used by the browser
+Example:
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Web Page</title>
+</head>
+
+
+6. WHAT IS THE <meta> ELEMENT?
+The <meta> element provides metadata about the HTML document.
+It does not normally display visible content on the webpage.
+Important examples:
+CHARACTER ENCODING:
+<meta charset="UTF-8">
+This tells the browser which character encoding to use.
+UTF-8 supports a very large range of characters, including characters
+from many languages, symbols, and emojis.
+VIEWPORT:
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+This tells the browser to use the device's viewport width and sets the
+initial zoom level to 1.
+The viewport setting is an important part of responsive web development,
+but CSS is still required to make a layout responsive.
+
+
+7. WHAT IS THE <title> ELEMENT?
+The <title> element defines the title of the HTML document.
+It is placed inside the <head>.
+Example:
+<title>My First Web Page</title>
+-> Key points:
+- The title usually appears in the browser tab.
+- It can also be used by browsers and other systems when identifying
+  the page.
+- A meaningful title is important for usability and can contribute
+  to SEO.
+Note:
+Search engines may sometimes choose a different title for search results,
+so the <title> text is not guaranteed to appear exactly as written.
+
+
+8. WHAT IS THE <body> ELEMENT?
+The <body> element contains the main content of the webpage that is
+intended to be displayed in the browser.
+Examples of content that can appear inside <body> include:
+- Headings
+- Paragraphs
+- Links
+- Images
+- Lists
+- Tables
+- Forms
+- Audio and video
+Example:
+<body>
+    <h1>My Personal Introduction</h1>
+    <p>Hello, I'm Abubaker.</p>
+</body>
+An HTML document normally contains one <body> element.
+
+
+9. WHAT IS AN HTML TAG?
+An HTML tag is markup syntax written using angle brackets (< >) that
+is used to create or represent an HTML element.
+Example:
+<p>Hello World</p>
+Here:
+- <p> is the opening tag.
+- </p> is the closing tag.
+Many HTML elements have both an opening and closing tag.
+Some elements are void elements and do not have a closing tag.
+Examples:
+<meta>
+<img>
+<br>
+<hr>
+Note:
+"Self-closing tag" is commonly used informally, but "void element" is
+the more accurate HTML terminology.
+
+
+10. WHAT IS AN HTML ELEMENT?
+An HTML element is the complete structure created by HTML markup.
+For example:
+<p>Hello World</p>
+The complete structure is the paragraph element.
+For an element with content:
+Opening Tag + Content + Closing Tag = Element
+Example:
+<p>Hello World</p>
+Here:
+- Opening tag = <p>
+- Content     = Hello World
+- Closing tag = </p>
+- Complete    = <p>Hello World</p>
+
+
+11. WHAT IS AN ATTRIBUTE?
+Attributes provide additional information or configuration for an
+HTML element.
+Attributes are normally written inside the opening tag.
+They generally use a name="value" format.
+Example:
+<html lang="en">
+Here:
+- lang = attribute name
+- "en" = attribute value
+Another example:
+<meta charset="UTF-8">
+Here:
+- charset = attribute name
+- "UTF-8" = attribute value
+
+
+12. HEADING ELEMENTS (<h1> TO <h6>)
+HTML provides six heading levels:
+<h1>
+<h2>
+<h3>
+<h4>
+<h5>
+<h6>
+They are used to create a hierarchy and structure for page content.
+Key points:
+- <h1> represents the main or highest-level heading.
+- <h2> represents a major section under the main heading.
+- <h3> can represent a subsection under an <h2>, and so on.
+- <h6> is the lowest heading level.
+Headings should be used according to the structure and meaning of the
+content, not simply to make text look bigger or smaller.
+For a simple webpage, having one clear main <h1> is a good practice.
+
+
+13. PARAGRAPH ELEMENT (<p>)
+The <p> element is used to represent a paragraph of text.
+Example:
+<p>This is a paragraph.</p>
+It is commonly used for:
+- Sentences
+- Descriptions
+- Articles
+- Explanations
+- General blocks of text
+Browsers normally apply default CSS margins around paragraphs, but these
+styles can be changed using CSS.
+
+
+14. HTML COMMENTS
+HTML comments are notes written in the HTML source code for developers.
+Syntax:
+<!-- Comment content -->
+Comments are not normally displayed as visible content on the webpage.
+They can be useful for:
+- Explaining code
+- Organizing sections
+- Leaving notes for yourself
+- Communicating with other developers
+Example:
+<!-- Main page heading -->
+<h1>My Personal Introduction</h1>
+
+
+15. PROPER INDENTATION AND NESTING
+Proper indentation and nesting make HTML easier to read, understand,
+maintain, and debug.
+Nesting means placing one element inside another element.
+Example:
+<body>
+    <h1>My Page</h1>
+    <p>Hello World.</p>
+</body>
+The <h1> and <p> elements are nested inside the <body> element.
+Elements should be properly nested and closed.
+CORRECT:
+<p><strong>Hello</strong></p>
+INCORRECT:
+<p><strong>Hello</p></strong>
+The inner <strong> element must be closed before the outer <p> element.
+Indentation does not normally change how the webpage looks.
+It is mainly used to make the source code easier for developers to read
+and understand.
+
+
+16. WHAT DID I PRACTICE TODAY?
+- Created a complete HTML5 document from scratch.
+- Practiced the basic HTML document structure.
+- Used <!DOCTYPE html>, <html>, <head>, <meta>, <title>, and <body>.
+- Practiced heading elements from <h1> to <h6>.
+- Practiced paragraph elements using <p>.
+- Practiced HTML comments.
+- Practiced attributes such as lang, charset, name, and content.
+- Practiced proper indentation and nesting.
+- Built a personal introduction webpage using HTML only.
+
+
+17. WHAT DID I UNDERSTAND?
+- I understood the basic structure of an HTML document.
+- I understood the purpose of <!DOCTYPE html>.
+- I understood the difference between the <head> and <body> sections.
+- I understood the difference between tags, elements, and attributes.
+- I understood how attributes provide additional information about
+  elements.
+- I understood how heading elements create a content hierarchy.
+- I understood how paragraphs are used for normal text.
+- I understood how HTML comments work.
+- I understood why proper indentation and nesting are important.
+
+
+18. MISTAKES I IDENTIFIED
+During practice, I made a small mistake while writing the HTML comment
+syntax in my initial outline.
+INCORRECT:
+<!- ... ->
+CORRECT:
+<!-- ... -->
+I learned that HTML comments require two hyphens after the opening
+exclamation mark and before the closing angle bracket.
+Correct comment syntax:
+<!-- Comment content -->
+
+
+DAY - 01 OUTCOME
+----------------------------------------------------------------------
+By the end of Day 01, I can create a basic HTML document from scratch
+and understand its main structure.
+I can use headings, paragraphs, attributes, and comments while keeping
+my HTML properly nested and organized.
+I also understand the basic role of HTML in web development and how
+HTML provides the structure of a webpage.
