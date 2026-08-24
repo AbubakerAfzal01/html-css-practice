@@ -1,0 +1,175 @@
+              <----------------------------------------------->
+ ------------>         DAY-02: TEXT FORMATTING & LISTS         <-------------
+              <----------------------------------------------->
+
+
+1. WHAT IS THE <strong> TAG?
+   This tag gives text structural and semantic importance, meaning the enclosed text is highly important or urgent.
+   Key points:
+     * <strong> vs <b>: <strong> is a semantic tag that tells browsers and search engines the text is *important*. <b> is a purely visual tag that makes text *bold* without adding any extra meaning.
+     * Accessibility: Screen readers read <strong> text with a different tone or emphasis, helping visually impaired users identify critical information.
+   Example:
+     <p>Please verify your account first, <strong>this step is compulsory</strong>.</p>
+
+
+2. WHAT IS THE <em> TAG?
+   This tag places stress or emphasis on a word or phrase, which alters the reading tone of the sentence.
+   Key points:
+     * <em> vs <i>: <em> is a semantic tag that changes the meaning and stress of the text. <i> is a visual tag that styles text in *italics* without altering its semantic meaning.
+     * When to use: Use it when you want the reader to pronounce or read a specific word with more force.
+   Example:
+     <p>I will <em>definitely</em> submit the project tomorrow.</p>
+
+
+3. WHAT IS AN UNORDERED LIST (<ul>)?
+   Its purpose is to create a list of items where the sequence or numbering does not matter at all.
+   Key points:
+     * When to use: Use it when rearranging the items does not ruin the context or goal, like grocery lists or tech skills.
+   - Example:
+     <ul>
+         <li>HTML</li>
+         <li>CSS</li>
+         <li>Git</li>
+     </ul>
+
+
+4. WHAT IS AN ORDERED LIST (<ol>)?
+   Its purpose is to create a list where each item follows a specific number, sequence, or step.
+   Key points:
+     * When to use: Use it when the exact order of steps is crucial, like a cooking recipe or code deployment steps.
+     * Choice Rule: Use <ol> if changing the sequence breaks the process; use <ul> if the sequence doesn't matter.
+   Example:
+     <ol>
+         <li>Write code</li>
+         <li>Run tests</li>
+         <li>Commit changes</li>
+     </ol>
+
+
+5. WHAT IS THE <li> ELEMENT?
+   It stands for "List Item". This element must always be nested inside a <ul> or <ol> parent and represents a single entry in that list.
+   Example:
+     <ul>
+         <li>This is a single list item</li>
+     </ul>
+
+
+6. WHAT ARE NESTED LISTS?
+   A nested list is simply a list placed inside another list item.
+   Key points:
+     * Structure: Always remember that the child list (<ul>/<ol>) must be placed *inside* the parent <li> tags, not outside them.
+     * Real-world Use Case: Multi-level website navigation dropdown menus or a book index.
+   Example:
+     <ul>
+         <li>Frontend
+             <ul>
+                 <li>HTML</li>
+                 <li>CSS</li>
+             </ul>
+         </li>
+     </ul>
+
+
+7. WHAT IS THE <dl>/<dt>/<dd> (DESCRIPTION LIST)?
+   This list structures terms and their corresponding explanations as pairs, making it perfect for glossaries or metadata.
+   Key points:
+     * <dt> (Description Term) holds the word or name being defined.
+     * <dd> (Description Details) holds the explanation, value, or definition of that term.
+   Example:
+     <dl>
+         <dt>CSS</dt>
+         <dd>The style sheet language used to design and layout web pages.</dd>
+     </dl>
+
+
+8. WHAT ARE <del> AND <ins>?
+   The <del> tag represents text that has been deleted, while the <ins> tag represents newly inserted or updated text.
+   Key points:
+     * Real-world Use Case: Displaying a discount on an e-commerce pricing page by crossing out the old price and showing the new one.
+   Example:
+     <p>Course Price: <del>$50</del> <ins>$25</ins>!</p>
+
+
+9. WHAT ARE <sub> AND <sup>?
+   <sub> (Subscript) renders text slightly below the normal line with a smaller font. <sup> (Superscript) renders text slightly above the line with a smaller font.
+   Key points:
+     * Real Examples: Subscript is used for chemical formulas (like water), and superscript is used for mathematical exponents or date suffixes (like 1st, 2nd).
+   Example:
+     <p>Water is written as H<sub>2</sub>O and 5<sup>2</sup> equals 25.</p>
+
+
+10. WHAT IS THE <blockquote> TAG?
+    It is used to present a long quote or section of text borrowed from another source or speaker.
+    Key points:
+      * Block-level element: It starts on a fresh line and takes up the full width available, automatically adding left and right margins (indentation).
+      * cite attribute: It points to the source URL of the quote, helping search engines track references (this is not visible on the screen).
+    Example:
+      <blockquote cite="https://example.com">
+          "Consistency is the key to mastering code."
+      </blockquote>
+
+
+11. WHAT IS THE <q> TAG?
+    It is used for short, inline quotes that fit directly inside a running paragraph.
+    Key points:
+      * Difference: <blockquote> creates a separated indented block for long text, whereas <q> stays inline and automatically wraps the text in quotation marks (" ").
+    Example:
+      <p>My mentor told me, <q>Practice every single day.</q></p>
+
+
+12. WHAT IS THE <abbr> TAG?
+    It is used to define abbreviations or acronyms.
+    Key points:
+      * title attribute: This is critical for accessibility. When a user hovers over the abbreviation, the text inside the title attribute appears as a tooltip, explaining the full form.
+    Example:
+      <p>I am currently learning <abbr title="HyperText Markup Language">HTML</abbr>.</p>
+
+
+13. WHAT IS THE <code> TAG?
+    It displays fragments of computer code on a web page by rendering the text in a monospace (fixed-width) font.
+    Key points:
+      * Character Entities (&lt;/&gt;): If you type raw symbols like <p> inside code tags, the browser mistakes it for an actual HTML tag and hides it. You must use code entities like &lt; (less than) and &gt; (greater than) to make them visible.
+    Example:
+      <p>To create a paragraph, use the <code>&lt;p&gt;</code> element.</p>
+
+
+14. WHAT DID I PRACTICE TODAY?
+    Semantic Text Formatting (<strong>, <em>, <mark>)
+    Lists Creation (<ul>, <ol>, <li>)
+    Advanced Lists (Nested Lists structure)
+    Dictionary Structure (<dl>, <dt>, <dd>)
+    Technical & Editorial Tags (<del>, <ins>, <sub>, <sup>)
+    Citations & References (<blockquote> with cite, <q>)
+    Developer Semantics (<abbr>, <code>)
+
+
+15. WHAT DID I UNDERSTAND?
+    <strong>: Adds both visual boldness and structural importance to critical text.
+    <em>: Shifts the speaking tone by emphasizing specific words in a sentence.
+    <mark>: Highlights relevant text with a bright yellow background for search visibility.
+    <ul>: Generates bulleted lists where item order carries no specific meaning.
+    <ol>: Generates numbered lists, ideal for step-by-step instructions or rankings.
+    <li>: Represents an individual item housed within any list type.
+    Nested Lists: Structuring a list inside another <li> before closing the parent tag.
+    <dl>: Groups pairs of names/terms and their corresponding descriptions cleanly.
+    <del>: Marks text as removed by rendering a strikethrough line over it.
+    <ins>: Marks text as added by rendering an underline beneath it.
+    <sub>: Lowers text below the baseline, perfect for chemistry notations.
+    <sup>: Raises text above the baseline, perfect for math exponents.
+    <blockquote>: Indents large blocks of quoted text away from the main content.
+    <q>: Generates double quotation marks around short, inline quotes automatically.
+    <abbr>: Creates a hoverable tooltip displaying the full form of an acronym.
+    <code>: Standardizes code snippets into a distinct monospace developer font.
+
+
+16. MISTAKES I IDENTIFIED
+    The <mark> Mistake: In my early draft, I used <mark> to highlight "professional developer". This was wrong because <mark> is meant for showing search term relevancy or highlighting temporary keyword matches. To represent actual structural value or high importance, the correct tag is <strong>.
+    Missing cite Attribute: My <blockquote> initially lacked a cite attribute. I added it so search engines and web crawlers can properly attribute the source website where the research quote came from.
+    <del> and <ins> Spacing: On the pricing layout, I forgot to leave a space between the <del> and <ins> elements. This caused the old and new prices to clump together blindly. Adding proper whitespace makes the text clean and readable.
+
+
+-----------------------------------------------------------------------
+DAY - 02 OUTCOME
+        
+By the end of Day 02, I can structure complex text layouts, e-commerce pricing tags, multi-level dropdowns, scientific formulas, and code references using accurate semantic HTML markup, all without needing any CSS styling.
+
