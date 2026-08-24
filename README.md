@@ -18,7 +18,7 @@ This course is being built day by day - more days will be added as the course pr
 | Day | Topic | Status |
 |---|---|---|
 | 01 | HTML Fundamentals | Completed |
-| 02 | Text Formatting & Lists | Pending |
+| 02 | Text Formatting & Lists | Completed |
 | 03 | Links, Paths & Navigation | Pending |
 | 04 | Images & Media | Pending |
 | 05 | HTML Tables | Pending |
@@ -26,7 +26,7 @@ This course is being built day by day - more days will be added as the course pr
 | 07 | Semantic HTML & Accessibility | Pending |
 | 08 | HTML Mini Project + Revision | Pending |
 
-Current Progress: 1 / 8 days completed (more days to be added)
+Current Progress: 2 / 8 days completed (more days to be added)
 
 ## Daily Time Structure
 
@@ -46,10 +46,13 @@ html-css-practice/
 |
 |-- HTML/
 |   |-- Day-01/
-|        |--index.html
-|        |--notes.txt
-|        |--README.md
+|   |       |--index.html
+|   |       |--notes.txt
+|   |       |--README.md
 |   |-- Day-02/
+|   |       |--index.html
+|   |       |--notes.txt
+|   |       |--README.md
 |   |-- Day-03/
 |   |-- Day-04/
 |   |-- Day-05/
