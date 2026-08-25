@@ -1,0 +1,236 @@
+              <----------------------------------------------->
+ ------------>        DAY-03: LINKS & NAVIGATION               <-------------
+              <----------------------------------------------->
+
+
+1. WHAT IS THE <a> TAG?
+   The <a> tag is used to create hyperlinks in HTML. It allows users to
+   move from one page, website, section, email address, or phone number
+   to another destination.
+Key points:
+     * The href attribute defines where the link should go.
+     * Without href, the <a> element does not work as a normal navigation link.
+     * Unlike normal text, an <a> element can be clicked to perform navigation.
+Example:
+     <a href="about.html">About</a>
+
+
+2. WHAT IS A RELATIVE PATH?
+   A relative path points to a file based on the location of the current
+   HTML file. It does not contain the complete website URL.
+Key points:
+     * It is mainly used for internal navigation.
+     * It is useful when pages are part of the same website or project.
+     * The path depends on the current file and folder structure.
+     * It makes projects easier to move between computers or servers.
+Example:
+     <a href="about.html">About</a>
+
+
+3. WHAT IS AN ABSOLUTE PATH?
+   An absolute path contains the complete URL of a website or resource.
+   It normally includes the protocol and domain name.
+Key points:
+     * It contains the full web address.
+     * It is mainly used for external websites.
+     * It does not depend on the location of the current HTML file.
+Example:
+     <a href="https://www.google.com">Google</a>
+
+
+4. WHAT IS THE DIFFERENCE BETWEEN INTERNAL AND EXTERNAL LINKS?
+   An internal link connects pages or sections within the same website or
+   project. An external link takes the user to a different website or domain.
+Internal Link Example:
+     <a href="about.html">About</a>
+External Link Example:
+     <a href="https://www.google.com">Google</a>
+Basic Difference:
+     * Internal Link  = Same website or project
+     * External Link  = Different website or domain
+
+
+5. WHAT IS A FRAGMENT LINK?
+   A fragment link is used to jump directly to a specific section of the
+   same webpage. It uses the # symbol followed by an element's id.
+Key points:
+     * The href contains the target id with #.
+     * The target element must have the matching id.
+     * Both values must match exactly.
+     * If the id does not exist, the browser cannot jump to that target.
+Example:
+     <a href="#contact">Jump to Contact</a>
+     <h2 id="contact">Contact Us</h2>
+   Here, #contact connects the link with the element whose id is "contact".
+
+
+6. WHAT IS THE mailto: LINK?
+   The mailto: scheme is used to create a link for sending an email.
+   When the user clicks the link, the browser asks the operating system
+   to open the default email application.
+Real-world use cases:
+     * Portfolio contact sections
+     * Business websites
+     * Support pages
+     * Personal websites
+Example:
+     <a href="mailto:abubakerafzal01@gmail.com">Send Email</a>
+
+
+7. WHAT IS THE tel: LINK?
+   The tel: scheme is used to make a phone number clickable. It is
+   especially useful on mobile devices where the user can tap the link
+   to start a phone call.
+Key points:
+     * The phone number is placed after tel:.
+     * Using the international country code makes the number easier to
+       identify correctly.
+     * +92 is the country code for Pakistan.
+Example:
+     <a href="tel:+923081254209">Call Us</a>
+
+
+8. WHAT IS target="_blank"?
+   The target="_blank" attribute tells the browser to open the linked
+   page in a new browsing context, usually a new browser tab.
+Key points:
+     * It is commonly useful for external links.
+     * It allows the user to visit another website without immediately
+       leaving the current page.
+     * It is not necessary for every internal link.
+Example:
+     <a href="https://www.google.com" target="_blank">Google</a>
+
+
+9. WHAT IS rel="noopener noreferrer"?
+   The rel attribute provides information about the relationship between
+   the current page and the linked page.
+   When target="_blank" is used, adding noopener noreferrer is a good
+   security and privacy practice.
+Key points:
+     * noopener prevents the newly opened page from accessing the original
+       page through window.opener.
+     * noreferrer can prevent the browser from sending the original page's
+       URL as referrer information.
+     * It is commonly used with external links opened using target="_blank".
+Example:
+     <a href="https://www.google.com"
+        target="_blank"
+        rel="noopener noreferrer">
+        Google
+     </a>
+
+
+10. WHAT IS THE <nav> TAG?
+    The <nav> tag is a semantic HTML element used to identify a section
+    that contains navigation links.
+Key points:
+      * It gives the navigation section a clear semantic meaning.
+      * It helps screen readers identify navigation areas.
+      * It improves accessibility.
+      * It makes the HTML structure easier for developers to understand.
+      * It is more meaningful than using a generic <div> for navigation.
+Example:
+      <nav>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+          </ul>
+      </nav>
+
+
+11. WHY ARE <ul> AND <li> USED INSIDE NAVIGATION?
+    Navigation links are commonly placed inside an unordered list because
+    they represent a group of related navigation items.
+Key points:
+      * <ul> creates the unordered list.
+      * <li> represents each individual navigation item.
+      * <a> makes each item clickable.
+      * This structure keeps the navigation organized and semantic.
+Example:
+      <nav>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+          </ul>
+      </nav>
+
+
+12. WHAT DID I PRACTICE TODAY?
+    Links & Navigation:
+      * <a> tag and href attribute
+      * Relative paths
+      * Absolute paths
+      * Internal links
+      * External links
+      * Fragment links using #id
+      * Email links using mailto:
+      * Phone links using tel:
+      * target="_blank"
+      * rel="noopener noreferrer"
+      * Semantic navigation using <nav>
+      * Navigation lists using <ul> and <li>
+      * Connecting multiple HTML pages together
+
+
+13. WHAT DID I UNDERSTAND?
+   <a>: Creates a clickable hyperlink that can take the user to another destination.
+   href: Defines the destination of an <a> element.
+   Relative Path: Points to a resource based on the current file's location.
+   Absolute Path: Contains the complete URL of a resource or website.
+   Internal Link: Connects pages or sections within the same website or project.
+   External Link: Connects the current website to another website or domain.
+   Fragment Link: Uses #id to jump to a specific element on the same page.
+   mailto:: Creates a link that can open the user's default email application.
+   tel:: Creates a clickable phone number that can be used to start a call.
+   target="_blank": Usually opens the linked page in a new browser tab.
+   rel="noopener noreferrer": Provides additional security and privacy
+   protection for links opened with target="_blank".
+   <nav>: Gives a navigation section semantic meaning.
+   <ul>: Creates an unordered list for organizing navigation items.
+   <li>: Represents an individual item inside a list.
+
+
+14. MISTAKES I IDENTIFIED
+     Missing rel Attribute:
+      In my early version, I used target="_blank" without rel="noopener noreferrer".
+      I learned that adding these values is a good security and privacy practice
+      for links that open external pages in a new tab.
+
+    Fragment ID Matching:
+      I learned that the value in href="#contact" must exactly match the
+      id="contact" of the target element. If they do not match, the browser
+      cannot jump to the intended section.
+
+    Comment Placement:
+      I learned that comments should be placed close to the code they explain.
+      This keeps the HTML easier to read and understand.
+
+    Internal vs External Links:
+      I initially needed to clearly separate the concept of internal links
+      from external links. Now I understand that internal links usually
+      point to files or sections within my own project, while external links
+      point to other websites.
+
+    Navigation Structure:
+      I learned that using <nav> with <ul>, <li>, and <a> creates a more
+      meaningful and organized navigation structure than using only a <div>.
+
+    Git-Github pushing:
+      Empty File Commit: I committed files before saving them in VS Code, 
+      so the content wasn't actually pushed. I learned to always save 
+      (Ctrl+S) before running git add/commit.  
+
+
+-----------------------------------------------------------------------
+DAY - 03 OUTCOME
+
+By the end of Day 03, I can connect multiple HTML pages using relative links,
+create external links using absolute URLs, and navigate to specific sections
+using fragment links.
+
+I can also create email and phone links and build a proper semantic navigation
+menu using <nav>, <ul>, <li>, and <a>. These concepts give me a basic
+understanding of how navigation works on real websites.
