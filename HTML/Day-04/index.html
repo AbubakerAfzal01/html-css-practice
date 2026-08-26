@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-04 - Images & Media</title>
+</head>
+
+<body>
+    <!-- Day-04: Images & Media -->
+     <h1>Images & Media</h1>
+     <p>
+        HTML provides different elements for displaying images,
+        audio, video, embedded content, and interactive media.
+    </p>
+    
+    <!-- IMAGE TAGS-->
+     <h2>Image</h2>
+     <p>Basic use of the image element:</p>
+     <img src="images/Screenshot 2026-08-26 045034.png" alt="Screenshot of a webpage"
+        width="600"
+        height="400" >
+
+
+    <!-- FIGURE TAGS -->
+    <h2>Figure & Figcaption</h2>
+    <figure>
+        <img  src="images/Screenshot 2026-08-26 050857.png" alt="Screenshot of a GitHub repository"
+            width="300"
+            height="200" >
+            <figcaption> Figure 1: Screenshot of a GitHub repository </figcaption>
+        </figure>
+        
+        <!-- Figure with Code -->
+         <figure>
+            <pre><code>function greet() {
+                console.log("Hello, World!");
+            }</code></pre>
+            <figcaption> A simple JavaScript function example </figcaption>
+        </figure>
+
+
+    <!--  AUDIO TAG -->
+      <h2>Audio</h2>
+      <p>Use of the audio element:</p>
+      <audio controls>
+      <source src="audio/song.mp3" type="audio/mpeg">
+       Your browser does not support the audio element.
+      </audio>
+
+    <!-- VIDEO TAG -->
+     <h2>Video</h2>
+     <p>Use of the video element:</p>
+     <video width="320" height="240" controls>
+    <source src="video/movie.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+
+    <!-- VIDEO WITH TRACK -->
+     <h2>Video with Captions</h2>
+     <video
+        width="320"
+        height="240"
+        controls >
+        <source src="video/sample-video.mp4" type="video/mp4" >
+        <track src="video/captions.vtt" 
+               kind="subtitles"
+               srclang="en"
+               label="English"
+                > Your browser does not support the video element. </video>
+
+
+    <!-- IFRAME TAG -->
+     <h2>Iframe</h2>
+     <p>
+        The iframe element is used to embed another HTML page
+        or external content inside the current webpage.
+    </p>
+    <iframe src="https://example.com" width="600" height="400" title="Embedded content"></iframe>
+
+    <!-- LAZY LOADING -->
+    <h2>Lazy Loading</h2>
+    <p>Images and iframes can be loaded lazily for better performance:</p>
+    <img src="images/lazy-image.jpg" alt="Lazy loaded image" loading="lazy" width="600" height="400">
+
+</body>
+
+</html>

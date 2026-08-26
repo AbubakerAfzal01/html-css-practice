@@ -1,0 +1,493 @@
+```text
+              <----------------------------------------------->
+ ------------>        DAY-04: IMAGES & MEDIA                   <-------------
+              <----------------------------------------------->
+
+
+1. WHAT IS THE <img> TAG?
+   The <img> tag is used to display images on a webpage. It is a void
+   element, which means it does not contain inner content and does not
+   require a closing </img> tag.
+
+Key points:
+     * The src attribute defines the location of the image.
+     * The alt attribute provides alternative text for the image.
+     * <img> is used to display images directly on the webpage.
+     * The <img> element is a void element.
+     * The alt attribute is important for accessibility and when the
+       image cannot be displayed.
+
+Example:
+     <img src="images/photo.jpg" alt="A beautiful landscape">
+
+
+2. WHAT ARE THE src AND alt ATTRIBUTES?
+   The src attribute tells the browser where the image file is located.
+   The alt attribute describes the image using alternative text.
+
+Key points:
+     * src = source/location of the image.
+     * alt = alternative text describing the image.
+     * src is required for the browser to know which image to load.
+     * alt is important for accessibility.
+     * If the image cannot load, the alt text can provide useful information.
+
+Example:
+     <img src="images/github.png" alt="Screenshot of a GitHub repository">
+
+
+3. WHAT ARE THE width AND height ATTRIBUTES?
+   The width and height attributes control the displayed dimensions of
+   an image or media element.
+
+Key points:
+     * width controls the displayed width.
+     * height controls the displayed height.
+     * Values are commonly written in pixels when using HTML attributes.
+     * If only width is provided, the browser can calculate the height
+       according to the image's original aspect ratio.
+     * Incorrect width and height values can stretch or squash an image.
+
+Example:
+     <img src="images/photo.jpg"
+          alt="Photo"
+          width="600"
+          height="400">
+
+Aspect Ratio Example:
+     If an image is naturally 1200 x 800 and only width="600" is given,
+     the browser can maintain the original 3:2 aspect ratio and display
+     the image at approximately 600 x 400.
+
+
+4. WHAT HAPPENS IF WIDTH AND HEIGHT ARE GIVEN INCORRECTLY?
+   If width and height do not match the original aspect ratio of an image,
+   the image can appear distorted.
+
+Example:
+     <img src="images/photo.jpg"
+          alt="Photo"
+          width="600"
+          height="100">
+
+Problem:
+     * The image may appear stretched horizontally.
+     * The image may appear compressed vertically.
+     * Its original proportions may be lost.
+
+Important:
+     CSS is generally preferred for responsive and flexible image sizing
+     in modern websites.
+
+
+5. WHAT IS THE <figure> TAG?
+   The <figure> tag is a semantic HTML element used to group
+   self-contained content such as images, diagrams, charts, code examples,
+   illustrations, or other media.
+
+Key points:
+     * It gives the content semantic meaning.
+     * It can contain an image and its caption.
+     * It is not limited to images.
+     * It helps organize related content together.
+     * It can contain <figcaption>.
+
+Example:
+     <figure>
+         <img src="images/github.png"
+              alt="Screenshot of a GitHub repository">
+         <figcaption>Figure 1: Screenshot of a GitHub repository</figcaption>
+     </figure>
+
+
+6. WHAT IS THE <figcaption> TAG?
+   The <figcaption> tag is used to provide a caption or explanation
+   for the content inside a <figure> element.
+
+Key points:
+     * <figcaption> must be placed inside <figure>.
+     * It can appear before or after the figure content.
+     * It gives the figure a meaningful description.
+     * It can describe an image, diagram, chart, code example, etc.
+     * It is more semantic than simply placing a paragraph below an image.
+
+Example:
+     <figure>
+         <img src="images/photo.jpg" alt="My project screenshot">
+         <figcaption>Figure 1: My Project Screenshot</figcaption>
+     </figure>
+
+
+7. CAN <figure> CONTAIN CODE INSTEAD OF AN IMAGE?
+   Yes. The <figure> element can contain any self-contained content that
+   is related to the main document but can be understood independently.
+
+Example:
+     <figure>
+         <pre><code>function greet() {
+             console.log("Hello, World!");
+         }</code></pre>
+         <figcaption>A simple JavaScript function example</figcaption>
+     </figure>
+
+Key points:
+     * <figure> is not only for images.
+     * Code examples can also be placed inside <figure>.
+     * <figcaption> can explain what the code represents.
+
+
+8. WHAT IS THE <audio> TAG?
+   The <audio> tag is used to embed audio content such as music,
+   recordings, podcasts, or other sound files into a webpage.
+
+Key points:
+     * The controls attribute displays the browser's audio controls.
+     * Audio can be provided using a src attribute or <source> elements.
+     * Multiple <source> elements can be provided for different formats.
+     * Fallback text can be placed inside the <audio> element.
+
+Example:
+     <audio controls>
+         <source src="audio/song.mp3" type="audio/mpeg">
+         Your browser does not support the audio element.
+     </audio>
+
+
+9. WHAT IS THE controls ATTRIBUTE?
+   The controls attribute tells the browser to display built-in controls
+   for the audio or video element.
+
+Key points:
+     * It provides Play/Pause controls.
+     * It usually provides a progress bar.
+     * It provides volume controls for supported media.
+     * The exact appearance depends on the browser.
+
+Example:
+     <audio controls>
+         <source src="audio/song.mp3" type="audio/mpeg">
+     </audio>
+
+
+10. WHY IS THE <source> TAG USED INSIDE <audio>?
+    The <source> tag defines a media file and its MIME type. Multiple
+    sources can be provided because browsers may support different
+    audio or video formats.
+
+Key points:
+      * src defines the media file.
+      * type tells the browser what type of media it is.
+      * Multiple <source> elements can be used.
+      * The browser can choose a source it supports.
+
+Example:
+      <audio controls>
+          <source src="song.mp3" type="audio/mpeg">
+          <source src="song.ogg" type="audio/ogg">
+          Your browser does not support audio.
+      </audio>
+
+
+11. WHAT IS THE <video> TAG?
+    The <video> tag is used to embed video content into a webpage.
+
+Key points:
+      * It is similar to the <audio> element.
+      * It supports controls.
+      * It can use multiple <source> elements.
+      * It supports attributes such as autoplay, muted, loop, and poster.
+      * Fallback text can be provided inside the element.
+
+Example:
+      <video width="320" height="240" controls>
+          <source src="video/movie.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+
+
+12. WHAT IS THE poster ATTRIBUTE?
+    The poster attribute specifies an image that is displayed before the
+    video starts playing.
+
+Key points:
+      * It works like a preview or thumbnail image.
+      * It gives the video a visual preview before playback.
+      * It is useful for improving the appearance of video content.
+
+Example:
+      <video width="640"
+             height="360"
+             controls
+             poster="images/video-thumbnail.jpg">
+          <source src="video/movie.mp4" type="video/mp4">
+      </video>
+
+
+13. WHAT IS autoplay AND WHY IS muted OFTEN USED WITH IT?
+    The autoplay attribute tells the browser to start media automatically.
+    However, browsers commonly restrict autoplay when the media starts
+    with sound.
+
+Key points:
+      * autoplay attempts to start the media automatically.
+      * muted starts the media without sound.
+      * Using muted with autoplay makes autoplay more likely to be allowed.
+      * Autoplay should be used carefully because unexpected media can
+        negatively affect the user experience.
+
+Example:
+      <video autoplay muted>
+          <source src="video/background.mp4" type="video/mp4">
+      </video>
+
+
+14. WHAT IS THE <track> TAG?
+    The <track> element is used to provide timed text for video content,
+    such as subtitles, captions, or other text tracks.
+
+Key points:
+      * It is normally placed inside the <video> element.
+      * The src attribute points to a WebVTT (.vtt) file.
+      * kind defines the type of track.
+      * srclang specifies the language.
+      * label provides a readable name for the track.
+      * default can be used to make a track selected automatically.
+
+Example:
+      <video width="320" height="240" controls>
+          <source src="video/sample-video.mp4" type="video/mp4">
+
+          <track src="video/captions.vtt"
+                 kind="subtitles"
+                 srclang="en"
+                 label="English"
+                 default>
+      </video>
+
+
+15. WHAT IS THE <iframe> TAG?
+    The <iframe> tag is used to embed another HTML page or embeddable
+    external content inside the current webpage.
+
+Key points:
+      * iframe means Inline Frame.
+      * It can display external or embedded content.
+      * It is commonly used for videos, maps, forms, and other services.
+      * The src attribute defines the content to embed.
+      * width and height control the displayed frame size.
+
+Example:
+      <iframe
+          src="https://example.com"
+          width="600"
+          height="400"
+          title="Embedded content">
+      </iframe>
+
+
+16. WHAT ARE REAL-WORLD USE CASES OF <iframe>?
+    The <iframe> element is commonly used when a website needs to embed
+    content provided by another service.
+
+Real-world use cases:
+      * Embedding YouTube videos
+      * Embedding Google Maps
+      * Embedding online forms
+      * Embedding documents
+      * Embedding other permitted web content
+
+Example:
+      <iframe
+          src="https://example.com"
+          width="600"
+          height="400"
+          title="Example website">
+      </iframe>
+
+
+17. WHY IS THE title ATTRIBUTE IMPORTANT IN <iframe>?
+    The title attribute provides a meaningful description of the content
+    inside the iframe.
+
+Key points:
+      * It improves accessibility.
+      * Screen readers can use the title to identify the iframe.
+      * It helps users understand what the embedded content represents.
+      * Every meaningful iframe should have a descriptive title.
+
+Example:
+      <iframe
+          src="https://example.com"
+          title="Example website">
+      </iframe>
+
+
+18. WHY DO SOME WEBSITES NOT LOAD INSIDE AN <iframe>?
+    Not every website allows itself to be embedded inside another webpage.
+    Websites can use security policies to prevent iframe embedding.
+
+Key points:
+      * X-Frame-Options can control whether a page may be framed.
+      * Content Security Policy can use frame-ancestors to control embedding.
+      * These protections can help prevent clickjacking attacks.
+      * Therefore, an iframe does not guarantee that every external website
+        will load successfully.
+
+Example:
+      <iframe src="https://example.com" title="Example content"></iframe>
+
+    The external website decides whether its content can be embedded.
+
+
+19. WHAT IS loading="lazy"?
+    The loading="lazy" attribute tells the browser that an image or iframe
+    can be loaded later instead of being loaded immediately.
+
+Example:
+      <img src="images/lazy-image.jpg"
+           alt="Lazy loaded image"
+           loading="lazy"
+           width="600"
+           height="400">
+
+Key points:
+      * It can delay loading of resources that are not immediately needed.
+      * It can reduce initial page loading work.
+      * It can save bandwidth.
+      * It can improve performance on pages containing many images.
+      * It is especially useful for content far below the visible area.
+
+
+20. WHAT IS THE DIFFERENCE BETWEEN src AND href?
+    Both attributes point to resources, but they are used in different
+    contexts and have different meanings.
+
+src:
+      * Usually tells an element which resource to load or embed.
+      * Commonly used with <img>, <script>, <audio>, and <video>.
+
+Example:
+      <img src="images/photo.jpg" alt="Photo">
+
+href:
+      * Usually defines a referenced destination or resource.
+      * Commonly used with <a> and <link>.
+
+Example:
+      <a href="about.html">About</a>
+
+Basic Difference:
+      * src  = Source/resource to load
+      * href = Hypertext reference/destination or referenced resource
+
+
+21. WHAT DID I PRACTICE TODAY?
+    Images & Media:
+      * <img> tag
+      * src attribute
+      * alt attribute
+      * width and height attributes
+      * Image aspect ratio
+      * <figure> and <figcaption>
+      * Figure containing code
+      * <audio> tag
+      * controls attribute
+      * <source> tag
+      * Multiple media sources
+      * <video> tag
+      * poster attribute
+      * autoplay and muted
+      * <track> for subtitles/captions
+      * <iframe> tag
+      * iframe title attribute
+      * iframe security restrictions
+      * loading="lazy"
+      * Difference between src and href
+
+
+22. WHAT DID I UNDERSTAND?
+    <img>: Displays an image on a webpage.
+    src: Defines the location/source of an image or other media resource.
+    alt: Provides alternative text describing an image.
+    width / height: Control the displayed dimensions of an element.
+    Aspect Ratio: Describes the proportional relationship between width and height.
+    <figure>: Groups self-contained content with semantic meaning.
+    <figcaption>: Provides a caption for content inside <figure>.
+    <audio>: Embeds audio content into a webpage.
+    controls: Displays built-in browser controls for media.
+    <source>: Provides a media file and its MIME type.
+    <video>: Embeds video content into a webpage.
+    poster: Displays a preview image before video playback.
+    autoplay: Attempts to start media automatically.
+    muted: Starts media without sound.
+    <track>: Provides timed text such as subtitles or captions.
+    <iframe>: Embeds another HTML page or external content.
+    title: Describes iframe content for accessibility.
+    loading="lazy": Allows certain resources to be loaded later.
+    src vs href: src usually identifies a resource to load, while href
+                 usually identifies a referenced destination or resource.
+
+
+23. MISTAKES I IDENTIFIED
+
+    Missing alt Attribute:
+      I learned that an image should have meaningful alternative text.
+      The alt attribute improves accessibility and provides information
+      when the image cannot be displayed.
+
+    Incorrect Image Dimensions:
+      I learned that setting random width and height values can distort
+      an image by changing its original aspect ratio.
+
+    Misunderstanding <figure>:
+      I initially thought <figure> was only used for images. I learned
+      that it can also contain code, diagrams, charts, illustrations,
+      and other self-contained content.
+
+    Forgetting <figcaption> Placement:
+      I learned that <figcaption> belongs inside the <figure> element
+      because it provides a caption for that figure.
+
+    Understanding <source>:
+      I learned that <source> allows multiple audio or video formats to
+      be provided so the browser can choose a supported format.
+
+    Autoplay with Sound:
+      I learned that browsers commonly restrict autoplay when media
+      starts with sound, which is why muted is often used with autoplay.
+
+    Missing iframe title:
+      I learned that iframe should have a meaningful title because it
+      improves accessibility and helps screen-reader users understand
+      the embedded content.
+
+    Assuming Every Website Works in iframe:
+      I learned that external websites can prevent iframe embedding
+      using security policies such as X-Frame-Options and CSP.
+
+    Confusing src and href:
+      I learned that src and href are not interchangeable. src generally
+      identifies a resource to load, while href generally identifies a
+      referenced destination or resource.
+
+    Lazy Loading:
+      I learned that loading="lazy" can delay loading of images or iframes
+      that are not immediately needed, helping improve initial performance.
+
+    File Path Mistakes:
+      I learned that image, audio, video, and caption paths must correctly
+      match the actual folder and file structure of my project.
+
+
+-----------------------------------------------------------------------
+DAY - 04 OUTCOME
+
+By the end of Day 04, I can add images to webpages using <img>, provide
+accessible alternative text, control image dimensions, and organize
+media using <figure> and <figcaption>.
+
+I can also embed audio and video, add subtitles using <track>, use poster
+and autoplay/muted correctly, embed permitted external content using
+<iframe>, apply lazy loading, and understand the difference between
+src and href.
+```
