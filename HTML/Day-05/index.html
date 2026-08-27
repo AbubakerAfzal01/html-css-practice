@@ -7,7 +7,7 @@
 </head>
 <body>
     
-    <h1>HTML Tables</h1>
+    <h3>HTML Tables</h3>
     <table>
         <tr>
             <th>Sr. No.</th>
@@ -35,7 +35,7 @@
         </tr>
     </table>
 
-    <h1>HTML Table with caption </h1>
+    <h3>HTML Table with caption </h3>
     <table>
         <caption>Employee Information</caption>
         <tr>
@@ -62,7 +62,101 @@
             <td>28</td>
             <td>Chicago</td>
         </tr>
+        <tfoot>
+            <tr>
+                <td colspan="4">Total Employees: 3</td>
+            </tr>
+        </tfoot>
     </table>
+    <!-- Table with border and row spanning -->
+    <h3>Table with Border and Row Spanning</h3>
+    <table border="1">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Item</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">Fruits</td>
+      <td>Apple</td>
+    </tr>
+    <tr>
+      <td>Banana</td>
+    </tr>
+    <tr>
+      <td>Vegetables</td>
+      <td>Carrot</td>
+    </tr>
+  </tbody>
+</table>
+<!-- Table with scope attribute and column spanning -->
+<h3>Table with Scope Attribute and Column Spanning</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>John Doe</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Jane Smith</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td colspan="3">Total Employees: 2</td>
+    </tr>
+  </tbody>
+
+  <!-- Table with Border and all Day-05 tags-->
+  <table border="1" cellpadding="8" style="border-collapse: collapse; text-align: center;">
+  <caption>Semester 1 Final Exam Report (2026)</caption>
+  <thead>
+    <tr>
+      <th scope="col">Student Name</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Marks Obtained</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <td rowspan="2">Ali Khan</td>
+      <td>Web Development</td>
+      <td>85</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>Database Systems</td>
+      <td>90</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>Zainab Ahmed</td>
+      <td>Data Structures</td>
+      <td>78</td>
+      <td>Pass</td>
+    </tr>
+  </tbody>
+ 
+  <tfoot>
+    <tr>
+      <td colspan="2"><strong>Total Average Marks</strong></td>
+      <td colspan="2"><strong>84.3 / 100</strong></td>
+    </tr>
+  </tfoot>
+</table>
+
 
 </body>
 </html>

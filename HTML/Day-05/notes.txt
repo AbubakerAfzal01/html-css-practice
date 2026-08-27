@@ -1,0 +1,358 @@
+
+              <----------------------------------------------->
+ ------------>             DAY-05: HTML TABLES                <-------------
+              <----------------------------------------------->
+
+
+1. WHAT IS THE <table> TAG?
+   The <table> tag is used to create tables in HTML. It helps us organize
+   related information into rows and columns so that the data is easier
+   to read and understand.
+
+Key points:
+     * <table> creates the main table structure.
+     * Tables are useful for displaying data in rows and columns.
+     * Tables can be used for student marks, employee records, reports,
+       timetables, product information, etc.
+     * Tables should be used for tabular data, not for designing the
+       overall layout of a webpage.
+
+Example:
+     <table>
+         ...
+     </table>
+
+
+2. WHAT ARE <tr>, <th>, AND <td>?
+   These three tags are the basic building blocks of an HTML table.
+   Each one has a different purpose.
+
+<tr>:
+     * <tr> means Table Row.
+     * It is used to create a row inside the table.
+
+<th>:
+     * <th> means Table Header.
+     * It is used for headings such as Name, Age, City, Marks, etc.
+     * Browsers usually display <th> text as bold and centered by default.
+
+<td>:
+     * <td> means Table Data.
+     * It is used to place normal data inside a table cell.
+
+Simple difference:
+     * <tr> = creates a row.
+     * <th> = creates a header cell.
+     * <td> = creates a data cell.
+
+Example:
+     <tr>
+         <th>Name</th>
+         <th>Age</th>
+     </tr>
+
+     <tr>
+         <td>John Doe</td>
+         <td>25</td>
+     </tr>
+
+
+3. WHAT IS THE <caption> TAG?
+   The <caption> tag is used to give a table a title or short description.
+   It tells the user what the table is about.
+
+Key points:
+     * <caption> must be written inside the <table>.
+     * It is normally placed before <thead>, <tbody>, or the table rows.
+     * It gives the table a meaningful title.
+     * It is specifically associated with the table.
+
+Example:
+     <table>
+         <caption>Employee Information</caption>
+         ...
+     </table>
+
+Difference between <caption> and <h2>:
+     * <h2> is a general heading for a section of a webpage.
+     * <caption> is specifically connected to a table.
+     * <h2> introduces a section, while <caption> describes the table.
+
+
+4. WHAT ARE <thead>, <tbody>, AND <tfoot>?
+   These elements divide a table into meaningful sections and make the
+   structure easier to understand.
+
+<thead>:
+     * Contains the header rows of the table.
+     * Usually contains <th> elements.
+
+<tbody>:
+     * Contains the main data of the table.
+     * This is where most of the table's actual information is placed.
+
+<tfoot>:
+     * Contains footer or summary information.
+     * It can be used for totals, averages, or other summary data.
+
+Example:
+     <table>
+         <thead>
+             <tr>
+                 <th>Name</th>
+                 <th>Marks</th>
+             </tr>
+         </thead>
+
+         <tbody>
+             <tr>
+                 <td>Ali</td>
+                 <td>85</td>
+             </tr>
+         </tbody>
+
+         <tfoot>
+             <tr>
+                 <td>Total</td>
+                 <td>85</td>
+             </tr>
+         </tfoot>
+     </table>
+
+Benefits:
+     * They make the table structure easier to understand.
+     * CSS can target the header, body, and footer separately.
+     * They provide meaningful structure for accessibility.
+     * They can help browsers handle table sections more logically when
+       printing, although exact printing behavior depends on the browser
+       and CSS.
+
+
+5. WHAT IS THE colspan ATTRIBUTE?
+   The colspan attribute allows one table cell to span across multiple
+   columns.
+
+Syntax:
+     <td colspan="number">Content</td>
+
+Example from today's practice:
+     <td colspan="3">Total Employees: 2</td>
+
+   Our table had three columns:
+
+     ID | Name | Age
+
+   Because colspan="3" is used, the "Total Employees: 2" cell occupies
+   the space of all three columns.
+
+Key point:
+     * colspan works horizontally across columns.
+
+Easy way to remember:
+     colspan = spans Columns
+
+
+6. WHAT IS THE rowspan ATTRIBUTE?
+   The rowspan attribute allows one table cell to span across multiple
+   rows.
+
+Syntax:
+     <td rowspan="number">Content</td>
+
+Example from the Fruits/Vegetables table:
+     <tr>
+         <td rowspan="2">Fruits</td>
+         <td>Apple</td>
+     </tr>
+
+     <tr>
+         <td>Banana</td>
+     </tr>
+
+   Here, rowspan="2" means that the "Fruits" cell occupies two rows.
+   That is why we do not need to write another Fruits cell in the
+   second row.
+
+Difference between colspan and rowspan:
+     * colspan = spans columns horizontally.
+     * rowspan = spans rows vertically.
+
+Easy memory trick:
+     * COLspan = Columns
+     * ROWspan = Rows
+
+
+7. WHAT IS THE scope ATTRIBUTE?
+   The scope attribute tells the browser and assistive technologies
+   what a table header is describing.
+
+scope="col":
+     * Used when a <th> represents a column header.
+     * It tells us that the header describes the data in that column.
+
+Example:
+     <th scope="col">Student Name</th>
+     <th scope="col">Subject</th>
+     <th scope="col">Marks</th>
+
+scope="row":
+     * Used when a <th> represents a row header.
+     * It tells us that the header describes the information in that row.
+
+Example:
+     <tr>
+         <th scope="row">Ali Khan</th>
+         <td>Web Development</td>
+         <td>85</td>
+     </tr>
+
+Why is scope important?
+     * It improves table accessibility.
+     * Screen readers can understand the relationship between headers
+       and data cells more clearly.
+     * It helps users understand which heading belongs to which data.
+
+Simple difference:
+     * scope="col" = header describes a column.
+     * scope="row" = header describes a row.
+
+
+8. WHAT DID I PRACTICE TODAY?
+
+   HTML Tables:
+     * <table> tag
+     * <tr> tag
+     * <th> tag
+     * <td> tag
+     * <caption> tag
+     * <thead> element
+     * <tbody> element
+     * <tfoot> element
+     * colspan attribute
+     * rowspan attribute
+     * scope="col"
+     * scope="row"
+     * Table borders for basic practice
+     * Employee information table
+     * Fruits and Vegetables table
+     * Semester 1 Final Exam Report table
+     * Using <strong> inside table cells
+     * Semantic and accessible table structure
+
+
+9. WHAT DID I UNDERSTAND?
+
+     <table>:
+       Creates the main structure of an HTML table.
+
+     <tr>:
+       Creates a table row.
+
+     <th>:
+       Creates a header cell.
+
+     <td>:
+       Creates a normal data cell.
+
+     <caption>:
+       Gives the table a meaningful title or description.
+
+     <thead>:
+       Contains the header section of the table.
+
+     <tbody>:
+       Contains the main data of the table.
+
+     <tfoot>:
+       Contains footer or summary information.
+
+     colspan:
+       Allows one cell to span across multiple columns.
+
+     rowspan:
+       Allows one cell to span across multiple rows.
+
+     scope="col":
+       Identifies a header that describes a column.
+
+     scope="row":
+       Identifies a header that describes a row.
+
+     Accessibility:
+       I understood that proper table structure and scope information
+       help assistive technologies understand relationships between
+       headers and data.
+
+
+10. MISTAKES I IDENTIFIED
+
+     Missing </table>:
+       I forgot to close the table containing ID, Name, and Age before
+       starting the final "Semester 1 Final Exam Report" table.
+
+       Correct structure:
+            </tbody>
+       </table>
+
+       <!-- Next table -->
+
+       <table>
+
+
+     Incorrect HTML Comment Syntax:
+       I initially wrote comments like:
+
+            *<!-- Table with border and row spanning -->*
+
+       The * characters are unnecessary.
+
+       Correct:
+            <!-- Table with border and row spanning -->
+
+
+     Confusion between colspan and rowspan:
+       At first, it was easy to mix up which one works with rows and
+       which one works with columns.
+
+       Correct rule:
+            colspan = spans columns
+            rowspan = spans rows
+
+
+     Table Border Practice:
+       I used border="1" while practicing tables. It works for basic
+       learning, but in modern websites, table borders and other visual
+       styling are normally handled with CSS.
+
+       Example:
+            table {
+                border-collapse: collapse;
+            }
+
+            th, td {
+                border: 1px solid black;
+            }
+
+       This helped me understand that HTML provides the structure,
+       while CSS is normally used for visual styling.
+
+
+-----------------------------------------------------------------------
+
+DAY - 05 OUTCOME
+
+By the end of Day-05, I can create structured tables in HTML and organize
+data properly into rows, columns, headers, and body sections.
+
+I can use <table>, <tr>, <th>, <td>, <caption>, <thead>, <tbody>, and
+<tfoot> correctly. I also understand how colspan and rowspan work and
+the difference between them.
+
+I learned how scope="col" and scope="row" improve table accessibility by
+making the relationship between headers and data clearer.
+
+Most importantly, I practiced real examples such as an employee table,
+a Fruits/Vegetables table, and a Semester 1 Final Exam Report. I also
+identified and corrected my own mistakes, which helped me understand
+HTML table structure more clearly.
+
