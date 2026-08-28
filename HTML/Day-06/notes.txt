@@ -1,0 +1,766 @@
+              <----------------------------------------------->
+ ------------>             DAY-06: HTML FORMS                 <-------------
+              <----------------------------------------------->
+
+
+1. WHAT IS THE <form> TAG?
+
+   The <form> tag is used to create an HTML form. Forms are used to
+   collect information from users, such as names, email addresses,
+   passwords, search queries, dates, and other data.
+
+   The <form> element works as a container for form controls like
+   <input>, <label>, <button>, <select>, and <textarea>.
+
+Key points:
+     * <form> creates the main structure of a form.
+     * It is used to collect information from users.
+     * Form controls are normally placed inside the <form>.
+     * The action attribute tells where the form data should be sent.
+     * The method attribute tells how the data should be submitted.
+
+Example:
+     <form action="/submit" method="post">
+         <!-- form controls -->
+     </form>
+
+
+2. WHAT IS THE action ATTRIBUTE?
+
+   The action attribute tells the browser where to send the form data
+   when the form is submitted.
+
+Example:
+     <form action="/submit" method="post">
+         ...
+     </form>
+
+   Here, "/submit" is the destination where the form data is sent.
+
+Easy way to remember:
+     action = where the form data goes.
+
+
+3. WHAT IS THE method ATTRIBUTE?
+
+   The method attribute tells the browser how the form data should be
+   sent to the server.
+
+   The two commonly used methods are:
+
+     * GET
+     * POST
+
+Example:
+     <form action="/search" method="get">
+         ...
+     </form>
+
+     <form action="/login" method="post">
+         ...
+     </form>
+
+
+4. WHAT IS THE GET METHOD?
+
+   The GET method sends form data as part of the URL, usually in the
+   query string.
+
+Example:
+     <form action="/search" method="get">
+         <input type="text" name="q">
+         <button type="submit">Search</button>
+     </form>
+
+   If the user searches for "HTML", the URL may look like:
+
+     /search?q=HTML
+
+Key points:
+     * GET data is normally visible in the URL.
+     * It is commonly used for searches and filters.
+     * GET requests can usually be bookmarked or shared.
+     * GET should not be used for passwords or other sensitive data.
+
+Easy way to remember:
+     GET = request/get information.
+
+
+5. WHAT IS THE POST METHOD?
+
+   The POST method sends form data in the request body instead of
+   putting the submitted values directly into the URL.
+
+Example:
+     <form action="/login" method="post">
+         <input type="text" name="username">
+         <input type="password" name="password">
+         <button type="submit">Login</button>
+     </form>
+
+Key points:
+     * POST data is sent in the request body.
+     * It is commonly used for login, registration, and submitting data.
+     * Submitted values normally do not appear in the URL.
+     * POST itself does not encrypt or secure the data.
+     * HTTPS should be used when sending sensitive information.
+
+Important:
+     POST does NOT mean the data is automatically secure. HTTPS is what
+     protects data while it travels between the browser and server.
+
+Easy way to remember:
+     POST = send/submit data.
+
+
+6. WHAT IS THE DIFFERENCE BETWEEN GET AND POST?
+
+   GET and POST are both commonly used when submitting HTML forms, but
+   they handle the submitted data differently.
+
+GET:
+     * Data is normally included in the URL.
+     * Good for searches and filters.
+     * URLs can usually be bookmarked and shared.
+     * Should not be used for sensitive information.
+
+POST:
+     * Data is sent in the request body.
+     * Commonly used for submitting or changing data.
+     * Data is not normally shown in the URL.
+     * HTTPS is still needed for secure transmission.
+
+Simple difference:
+
+     GET  = Data normally goes in the URL.
+     POST = Data goes in the request body.
+
+
+7. WHAT IS THE <input> TAG?
+
+   The <input> tag is used to create input controls where users can
+   enter or select different types of information.
+
+   The <input> element is a void element, so it does not need a closing
+   </input> tag.
+
+Example:
+     <input type="text" name="username">
+
+Key points:
+     * <input> is used to collect user input.
+     * The type attribute decides what kind of input is shown.
+     * The name attribute identifies the field when the form is submitted.
+     * The id attribute identifies the element in the page.
+     * placeholder can give the user a small hint.
+
+
+8. WHAT IS THE type ATTRIBUTE OF <input>?
+
+   The type attribute tells the browser what kind of input control
+   should be displayed.
+
+Examples practiced today:
+
+     type="text"
+     type="email"
+     type="password"
+     type="number"
+     type="date"
+
+Example:
+     <input type="text" name="username">
+
+     <input type="email" name="email">
+
+     <input type="password" name="password">
+
+     <input type="number" name="age">
+
+     <input type="date" name="dob">
+
+
+9. WHAT IS <input type="text">?
+
+   The text input is used when we want the user to enter normal,
+   single-line text.
+
+Example:
+     <input type="text" name="username">
+
+Common uses:
+     * Username
+     * Full name
+     * City
+     * Address
+     * Search text
+     * Other short text values
+
+Example:
+     <label for="user-full-name">Full Name:</label>
+     <input type="text"
+            id="user-full-name"
+            name="fullName"
+            placeholder="E.g. Muhammad Ali">
+
+
+10. WHAT IS <input type="email">?
+
+   The email input is used to collect an email address.
+
+Example:
+     <input type="email"
+            id="email"
+            name="email"
+            placeholder="example@gmail.com">
+
+Key points:
+     * The browser can perform basic email-format validation.
+     * It can provide an appropriate keyboard on some mobile devices.
+     * It does not confirm that the email address actually exists.
+
+
+11. WHAT IS <input type="password">?
+
+   The password input is used to collect password information.
+
+Example:
+     <input type="password"
+            id="password"
+            name="password">
+
+   The browser normally hides the characters typed by the user.
+
+Key points:
+     * Password characters are visually masked.
+     * It is commonly used in login and registration forms.
+     * The password is still submitted as form data.
+     * HTTPS should be used when sending passwords to a server.
+
+
+12. WHAT IS <input type="number">?
+
+   The number input is used when the user needs to enter a numerical
+   value.
+
+Example:
+     <input type="number"
+            id="age"
+            name="age">
+
+   We can also set limits using min and max.
+
+Example:
+     <input type="number"
+            name="age"
+            min="1"
+            max="100">
+
+Here:
+     * min="1" sets the minimum value.
+     * max="100" sets the maximum value.
+
+
+13. WHAT IS <input type="date">?
+
+   The date input is used to allow users to select a date.
+
+Example:
+     <label for="dob">Date of Birth:</label>
+     <input type="date"
+            id="dob"
+            name="dob">
+
+   Depending on the browser and device, a date picker may appear.
+
+Common uses:
+     * Date of Birth
+     * Appointment date
+     * Event date
+     * Booking date
+     * Registration date
+
+
+14. WHAT IS THE <label> TAG?
+
+   The <label> tag gives a form control a clear description. It tells
+   the user what information they need to enter or select.
+
+Example:
+     <label for="username">Username:</label>
+     <input type="text"
+            id="username"
+            name="username">
+
+Key points:
+     * Labels make forms easier to understand.
+     * Labels improve accessibility.
+     * A label can be connected to an input using for and id.
+     * Clicking a label can focus or activate its associated control.
+
+
+15. HOW DO YOU CONNECT <label> WITH <input>?
+
+   There are two common ways to connect a label with an input.
+
+METHOD 1 — Using for and id:
+
+     <label for="username">Username:</label>
+     <input type="text"
+            id="username"
+            name="username">
+
+   The value of for must match the input's id.
+
+     for="username"
+             ↓
+     id="username"
+
+METHOD 2 — Wrapping the input inside the label:
+
+     <label>
+         Username:
+         <input type="text" name="username">
+     </label>
+
+   In this method, the input is placed inside the label, so we do not
+   need a separate for/id connection.
+
+Important:
+     * for and id must match when using the first method.
+     * id identifies the element in the webpage.
+     * name is used when the form data is submitted.
+
+
+16. WHAT IS THE name ATTRIBUTE?
+
+   The name attribute gives a form control the name under which its
+   value will be submitted.
+
+Example:
+     <input type="text" name="username">
+
+   If the user enters:
+
+     Abubaker
+
+   The submitted data can conceptually contain:
+
+     username=Abubaker
+
+Key point:
+     * name is very important when submitting form data.
+     * A form control without a name generally does not contribute its
+       value to the submitted form data.
+
+Easy way to remember:
+     name = identifies the submitted field.
+
+
+17. WHAT IS THE id ATTRIBUTE IN A FORM?
+
+   The id attribute gives an element a unique identifier on the page.
+
+Example:
+     <label for="email">Email:</label>
+     <input type="email"
+            id="email"
+            name="email">
+
+Here:
+     * id="email" identifies the input in the HTML document.
+     * for="email" connects the label to the input.
+     * name="email" identifies the field when the form is submitted.
+
+Important difference:
+
+     id   = identifies the element in the webpage.
+     name = identifies the submitted form field.
+
+
+18. WHAT IS THE placeholder ATTRIBUTE?
+
+   The placeholder attribute gives the user a short hint about what
+   they should enter.
+
+Example:
+     <input type="text"
+            name="fullName"
+            placeholder="E.g. Muhammad Ali">
+
+   The placeholder normally disappears when the user starts typing.
+
+Key points:
+     * It provides a temporary hint.
+     * It is not a replacement for a <label>.
+     * Important instructions should not depend only on placeholder text.
+
+
+19. WHAT IS THE required ATTRIBUTE?
+
+   The required attribute tells the browser that a field must have a
+   value before the form can normally be submitted.
+
+Example:
+     <input type="email"
+            name="email"
+            required>
+
+   If the user leaves the field empty, the browser can stop the normal
+   submission and show a validation message.
+
+Important:
+     * required provides basic client-side validation.
+     * Server-side validation is still necessary.
+     * It is useful for fields that the user must complete.
+
+
+20. WHAT IS THE <button> TAG IN A FORM?
+
+   The <button> tag creates a clickable button. Inside a form, it can
+   be used to submit the form or perform another action.
+
+Example:
+     <button type="submit">Search</button>
+
+   A common button type is:
+
+     type="submit"
+          = submits the form.
+
+Example:
+     <form action="/search" method="get">
+         <input type="text" name="q">
+         <button type="submit">Search</button>
+     </form>
+
+
+21. WHAT IS THE PURPOSE OF <button type="submit">?
+
+   <button type="submit"> is used to submit the form.
+
+Example:
+     <button type="submit">Login</button>
+
+   When the user clicks the button, the browser tries to submit the
+   form using the action and method defined in the <form>.
+
+Example:
+     <form action="/login" method="post">
+
+         <input type="text" name="username">
+         <input type="password" name="password">
+
+         <button type="submit">Login</button>
+
+     </form>
+
+
+22. WHAT HAPPENS WHEN AN HTML FORM IS SUBMITTED?
+
+   When a form is submitted, the browser collects the values from the
+   form controls and sends the data according to the form's action and
+   method.
+
+Example:
+     <form action="/login" method="post">
+
+         <input type="text" name="username">
+         <input type="password" name="password">
+
+         <button type="submit">Login</button>
+
+     </form>
+
+   If the user enters:
+
+     username = Abubaker
+     password = 12345
+
+   The browser sends the form data to the action URL using the selected
+   method.
+
+Important:
+     * The name attribute is used as the field name.
+     * The entered value becomes the field value.
+     * The server receives and processes the submitted data.
+
+
+23. WHAT IS THE DIFFERENCE BETWEEN id AND name?
+
+   Both id and name are commonly used with form controls, but they have
+   different purposes.
+
+id:
+     * Identifies an element in the HTML document.
+     * Should be unique within the page.
+     * Used by <label for="...">.
+     * Can also be used by CSS and JavaScript.
+
+name:
+     * Identifies the field when form data is submitted.
+     * Used to send the field's value to the server.
+
+Example:
+     <input type="text"
+            id="username"
+            name="username">
+
+Simple difference:
+
+     id   = identifies the HTML element.
+     name = identifies the submitted form field.
+
+
+24. WHAT IS CLIENT-SIDE FORM VALIDATION?
+
+   Client-side validation means checking the user's input in the
+   browser before the form is normally submitted.
+
+   HTML provides several built-in validation features.
+
+Examples:
+     * required
+     * type="email"
+     * min
+     * max
+     * minlength
+     * maxlength
+     * pattern
+
+Example:
+     <input type="email"
+            name="email"
+            required>
+
+   The browser can check whether the field has a value and whether the
+   value looks like an email address.
+
+Important:
+     Client-side validation improves the user experience, but it should
+     NOT be treated as a security feature. The server must validate the
+     submitted data again.
+
+
+25. WHAT IS A VOID ELEMENT?
+
+   A void element is an HTML element that does not have a closing tag.
+
+   The <input> element is a void element.
+
+Example:
+     <input type="text" name="username">
+
+   We do NOT write:
+
+     </input>
+
+Other common void elements include:
+
+     <br>
+     <img>
+     <hr>
+     <meta>
+     <link>
+
+
+26. WHAT IS THE DIFFERENCE BETWEEN <input> AND <button>?
+
+   <input> creates different types of form controls depending on its
+   type attribute.
+
+Examples:
+     <input type="text">
+     <input type="email">
+     <input type="password">
+     <input type="number">
+     <input type="date">
+
+   <button> creates a clickable button.
+
+Example:
+     <button type="submit">Submit</button>
+
+Simple difference:
+
+     <input>  = collects or represents user input.
+     <button> = provides a clickable action.
+
+
+27. WHAT DID I PRACTICE TODAY?
+
+   HTML Forms:
+     * <form> tag
+     * action attribute
+     * method attribute
+     * GET method
+     * POST method
+     * <input> element
+     * type="text"
+     * type="email"
+     * type="password"
+     * type="number"
+     * type="date"
+     * <label> tag
+     * for attribute
+     * id attribute
+     * name attribute
+     * placeholder attribute
+     * <button> element
+     * type="submit"
+     * required attribute
+     * Basic client-side validation
+     * Search form
+     * Login form
+     * User profile form
+
+
+28. WHAT DID I UNDERSTAND?
+
+     <form>:
+       Creates the main structure for collecting and submitting user input.
+
+     action:
+       Tells where the submitted form data should be sent.
+
+     method:
+       Tells how the form data should be submitted.
+
+     GET:
+       Usually sends form data in the URL and is commonly used for
+       searches and filters.
+
+     POST:
+       Sends form data in the request body and is commonly used for
+       submitting or changing data.
+
+     <input>:
+       Creates different types of form controls.
+
+     <label>:
+       Describes a form control and improves usability and accessibility.
+
+     id:
+       Uniquely identifies an element in the webpage.
+
+     name:
+       Identifies a form field when its value is submitted.
+
+     placeholder:
+       Gives the user a temporary hint about what to enter.
+
+     required:
+       Makes a field required before normal browser submission.
+
+     <button>:
+       Creates a clickable button, such as a submit button.
+
+
+29. MISTAKES / IMPROVEMENTS I IDENTIFIED
+
+     Form Controls Outside <form>:
+       In some of my practice examples, I placed labels and inputs
+       directly in the <body> instead of placing them inside a form.
+
+       Better structure:
+
+            <form action="/submit" method="post">
+
+                <label for="email">Email:</label>
+                <input type="email"
+                       id="email"
+                       name="email">
+
+                <button type="submit">Submit</button>
+
+            </form>
+
+
+     Missing Submit Button:
+       My full practical example did not initially have a submit button.
+
+       Correct:
+
+            <button type="submit">Save Profile</button>
+
+
+     Confusion Between id and name:
+       At first, id and name can look like they have the same purpose.
+
+       Correct rule:
+
+            id   = identifies the element.
+            name = identifies the submitted field.
+
+
+     Confusion Between GET and POST:
+       GET and POST are both used to submit forms, but they work
+       differently.
+
+       Correct rule:
+
+            GET  = data normally appears in the URL.
+            POST = data is sent in the request body.
+
+
+     Thinking POST Means Secure:
+       POST does not automatically encrypt or protect sensitive data.
+
+       Correct understanding:
+
+            HTTPS = protects data during transmission.
+            POST  = defines how the data is sent.
+
+
+     Using Placeholder Instead of Label:
+       A placeholder is only a hint and should not replace a proper
+       <label>.
+
+       Better:
+
+            <label for="username">Username:</label>
+            <input type="text"
+                   id="username"
+                   name="username"
+                   placeholder="Enter username">
+
+
+     Missing Validation:
+       Forms should use suitable validation where needed.
+
+       Example:
+
+            <input type="email"
+                   name="email"
+                   required>
+
+
+-----------------------------------------------------------------------
+
+DAY - 06 OUTCOME
+
+By the end of Day-06, I can create basic HTML forms for collecting
+different types of information from users.
+
+I understand the purpose of the <form> tag and how the action and method
+attributes control where and how form data is submitted.
+
+I understand the difference between GET and POST. I know that GET data
+is normally included in the URL, while POST data is sent in the request
+body.
+
+I can use different <input> types such as text, email, password, number,
+and date. I also understand how <label>, for, id, name, and placeholder
+work together to make forms easier to understand and use.
+
+I learned that the name attribute is important when submitting form data,
+while id is mainly used to identify an element and connect it with its
+<label>.
+
+I also practiced submit buttons and basic browser-side validation using
+attributes such as required. I understand that client-side validation is
+helpful for users, but server-side validation is still necessary.
+
+Most importantly, I practiced real examples such as search forms, login
+forms, and a user profile form. This helped me understand how HTML forms
+collect information and prepare it for submission to a server.
