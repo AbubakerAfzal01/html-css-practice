@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6: HTML Forms</title>
+</head>
+<body>
+    <!-- HTML Forms -->
+     <!--Post & get-->
+     <h3>HTML Forms</h3>
+    <p>HTML forms are used to collect user input. The form element is used to create an HTML form. Inside the form element, you can use various input elements to collect different types of data from users.</p>
+    <p>Here is syntax of a simple HTML form:</p>   
+    <form action="/submit" method="post">
+        <!-- inputs comes there -->
+    </form>
+    <!-- Example of GET example -->
+    <h3>Example of a simple GET HTML form</h3>
+        <form action="/search" method="get">
+        <input type="text" name="q">
+        <button type="submit">Search</button>
+    </form>
+    <h5>Example:2</h5>
+    <h3>Search Products</h3>
+    <form action="/search-results" method="get">
+        <input type="text" name="query" placeholder="Search products...">
+        <button type="submit">Search</button>
+    </form>
+    <!-- Example of POST example -->
+    <h3>Example of a simple POST HTML form</h3>
+    <form action="/login" method="post">
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <button type="submit">Login</button>
+    </form>
+    <h5>Example:2</h5>
+    <h3>Login to Your Account</h3>
+    <form action="/authenticate" method="post">
+        <input type="text" name="account_number" placeholder="Account Number">
+        <input type="password" name="pin" placeholder="PIN">
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- Label and input elements -->
+    <h3>Example with Labels</h3>
+    <!--Method 1 — with for and id matching: -->
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+   <!-- wrap label within label: -->
+    <label>
+    Username:
+    <input type="text" name="username">
+    </label>
+
+    <!-- Full practical example -->
+    <h3>Full Practical Example</h3>
+    <form action="/save-user-profile" method="POST">
+        <label for="user-full-name">Full Name:</label>
+        <input type="text" id="user-full-name" name="fullName" placeholder="E.g. Muhammad Ali">
+    </form>
+    <!-- Example of different input types -->
+    <h3>Example of Different Input Types</h3>   
+    <label for="email">Email:</label>
+  
+    <input type="email" id="email" name="email" placeholder="abubakerafzal01@gmail.com"> <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age"><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob">
+    
+</body>
+</html> 
