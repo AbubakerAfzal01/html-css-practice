@@ -23,10 +23,10 @@ This course is being built day by day - more days will be added as the course pr
 | 04 | Images & Media | Completed |
 | 05 | HTML Tables | Completed |
 | 06 | HTML Forms | Completed |
-| 07 | Semantic HTML & Accessibility | Pending |
+| 07 | Semantic HTML & Accessibility | Completed |
 | 08 | HTML Mini Project + Revision | Pending |
 
-Current Progress: 6 / 8 days completed (more days to be added)
+Current Progress: 7 / 8 days completed (more days to be added)
 
 ## Daily Time Structure
 
