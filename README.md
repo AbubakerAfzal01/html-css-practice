@@ -75,6 +75,9 @@ html-css-practice/
 |   |       |--notes.txt
 |   |       |--README.md
 |   |-- Day-07/
+|   |       |--index.html
+|   |       |--notes.txt
+|   |       |--README.md
 |   |-- Day-08/
 ```
 
