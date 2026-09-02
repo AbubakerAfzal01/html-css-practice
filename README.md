@@ -24,7 +24,7 @@ This course is being built day by day - more days will be added as the course pr
 | 05 | HTML Tables | Completed |
 | 06 | HTML Forms | Completed |
 | 07 | Semantic HTML & Accessibility | Completed |
-| 08 | HTML Mini Project + Revision | Pending |
+| 08 | HTML Mini Project + Revision | Completed |
 
 Current Progress: 7 / 8 days completed (more days to be added)
 
@@ -79,6 +79,12 @@ html-css-practice/
 |   |       |--notes.txt
 |   |       |--README.md
 |   |-- Day-08/
+|   |       |--images/
+|   |       |       |--image-2
+|   |       |       |--image-1
+|   |       |--index.html
+|   |       |--notes.txt
+|   |       |--README.md
 ```
 
 Each day's folder includes:
