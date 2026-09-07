@@ -1,1 +1,558 @@
 
+      <----------------------------------------------->
+ ------------>       DAY-07: SEMANTIC HTML & ACCESSIBILITY       <-------------
+              <----------------------------------------------->
+
+
+1. WHAT ARE SEMANTIC HTML TAGS?
+
+   Semantic HTML tags are elements that clearly describe the meaning and
+   purpose of the content inside them.
+
+   Instead of using generic elements everywhere, semantic tags tell both
+   developers and browsers what a particular part of the webpage represents.
+
+Examples:
+     <header>
+     <nav>
+     <main>
+     <section>
+     <article>
+     <aside>
+     <footer>
+
+Key points:
+     * Semantic tags make the HTML structure easier to understand.
+     * They describe the purpose of different parts of a webpage.
+     * They improve code readability and maintainability.
+     * They provide useful structure for accessibility tools.
+     * They are better than using generic containers when a meaningful
+       semantic element is available.
+
+
+2. WHAT IS THE PURPOSE OF <header>, <nav>, <main>, <section>,
+   <article>, <aside>, AND <footer>?
+
+<header>:
+     * Contains introductory content for a page or section.
+     * It can contain headings, introductory text, logos, etc.
+
+Example:
+     <header>
+         <h1>Abubaker Afzal</h1>
+         <p>Computer Science Student</p>
+     </header>
+
+
+<nav>:
+     * Contains important navigation links.
+     * It tells browsers and assistive technologies that this area is
+       used for navigation.
+
+Example:
+     <nav>
+         <ul>
+             <li><a href="#about">About</a></li>
+             <li><a href="#skills">Skills</a></li>
+         </ul>
+     </nav>
+
+
+<main>:
+     * Contains the main or primary content of the webpage.
+     * The content should be unique to that particular page.
+     * A page normally has one <main> element.
+
+Example:
+     <main>
+         <section>
+             <h2>About Me</h2>
+             <p>...</p>
+         </section>
+     </main>
+
+
+<section>:
+     * Groups related content around a particular topic.
+     * It is useful when a part of the page represents a meaningful
+       section of content.
+
+Example:
+     <section>
+         <h2>Technical Skills</h2>
+         <p>...</p>
+     </section>
+
+
+<article>:
+     * Represents an independent piece of content.
+     * The content should make sense on its own.
+     * Examples include blog posts, news articles, project entries,
+       or independent portfolio items.
+
+Example:
+     <article>
+         <h3>My First HTML Project</h3>
+         <p>...</p>
+     </article>
+
+
+<aside>:
+     * Contains secondary or additional content related to the main
+       content.
+     * It is often used for sidebars, related information, or extra
+       details.
+
+Example:
+     <aside>
+         <h2>Contact Details</h2>
+         <p>Email: example@email.com</p>
+     </aside>
+
+
+<footer>:
+     * Contains closing information for a page or section.
+     * It can contain copyright information, contact details, or links.
+
+Example:
+     <footer>
+         <p>&copy; 2026 Abubaker Afzal.</p>
+     </footer>
+
+
+Simple understanding:
+
+     <header>  = Introduction
+     <nav>     = Navigation
+     <main>    = Main content
+     <section> = Related content group
+     <article> = Independent content
+     <aside>   = Secondary content
+     <footer>  = Closing information
+
+
+3. WHAT IS THE DIFFERENCE BETWEEN <section> AND <article>?
+
+   Both elements help organize content, but their purpose is different.
+
+<section>:
+     * Groups related content under one topic.
+     * It is normally part of a larger page structure.
+     * It represents a thematic section of content.
+
+<article>:
+     * Represents an independent piece of content.
+     * It should make sense even when separated from the rest of the page.
+     * It is useful for content that could stand on its own.
+
+Example:
+
+     <section>
+         <h2>Education</h2>
+
+         <article>
+             <h3>BS Computer Science</h3>
+             <p>The Islamia University of Bahawalpur</p>
+         </article>
+
+         <article>
+             <h3>Intermediate</h3>
+             <p>Higher Secondary Education</p>
+         </article>
+     </section>
+
+   In this example, Education is the main topic, so it is a <section>.
+   The individual education records are independent pieces of content,
+   so they can be represented using <article>.
+
+Easy way to remember:
+
+     <section> = Related content grouped by topic
+     <article> = Independent content that can stand on its own
+
+
+4. WHAT IS DIV-SOUP?
+
+   Div-soup means creating a webpage structure using too many generic
+   <div> elements, even when meaningful semantic HTML elements are
+   available.
+
+Example of unnecessary div-soup:
+
+     <div class="header">
+         <div class="navigation">
+             <div class="content">
+                 ...
+             </div>
+         </div>
+     </div>
+
+   This structure does not clearly explain the purpose of each part.
+
+A better semantic structure:
+
+     <header>
+         ...
+     </header>
+
+     <nav>
+         ...
+     </nav>
+
+     <main>
+         ...
+     </main>
+
+Key points:
+     * Semantic elements give meaning to the structure.
+     * They make HTML easier to read.
+     * They help accessibility tools understand the page.
+     * They reduce unnecessary use of generic containers.
+
+
+5. WHEN SHOULD WE USE <div>?
+
+   <div> is still useful. Semantic HTML does not mean that <div> should
+   never be used.
+
+   We should use <div> when there is no suitable semantic element for
+   the purpose of the grouping.
+
+Example:
+
+     <div class="card">
+         <p>Some content</p>
+     </div>
+
+   Here, if the container is only being used for CSS styling or
+   JavaScript functionality and does not have a specific semantic
+   meaning, <div> is acceptable.
+
+Simple rule:
+
+     If a meaningful semantic element exists:
+          Use the semantic element.
+
+     If no suitable semantic element exists:
+          <div> is fine.
+
+
+6. WHAT IS HEADING HIERARCHY?
+
+   Heading hierarchy means organizing headings in a logical order.
+
+   HTML provides six heading levels:
+
+     <h1>
+     <h2>
+     <h3>
+     <h4>
+     <h5>
+     <h6>
+
+   The main page heading is normally <h1>. Major topics can use <h2>,
+   and subtopics can use <h3>, and so on.
+
+Example:
+
+     <h1>My Portfolio</h1>
+
+         <h2>Education</h2>
+
+             <h3>BS Computer Science</h3>
+
+         <h2>Skills</h2>
+
+             <h3>HTML</h3>
+
+             <h3>CSS</h3>
+
+Key points:
+     * Headings should represent the structure of the content.
+     * Do not choose headings only because of their visual size.
+     * CSS should be used when we want to change the visual size.
+     * Heading levels should follow a logical structure.
+     * Avoid randomly jumping between heading levels when it creates
+       a confusing document structure.
+
+
+7. HOW MANY <h1> TAGS SHOULD A PAGE HAVE?
+
+   A normal webpage should have one clear main <h1> that represents
+   the main topic of the page.
+
+Example:
+
+     <h1>Abubaker Afzal</h1>
+
+   Then the main topics can use <h2>:
+
+     <h2>Student Profile</h2>
+     <h2>Academic Path</h2>
+     <h2>Technical Focus Areas</h2>
+
+   This creates a clear hierarchy.
+
+   The important idea is that the page should have one clear primary
+   heading and the remaining headings should organize the content
+   underneath it.
+
+
+8. HOW MANY TIMES SHOULD <main> BE USED?
+
+   The <main> element normally appears only once on a webpage.
+
+   It identifies the primary content of the page.
+
+Example:
+
+     <body>
+
+         <header>
+             ...
+         </header>
+
+         <nav>
+             ...
+         </nav>
+
+         <main>
+             ...
+         </main>
+
+         <footer>
+             ...
+         </footer>
+
+     </body>
+
+   In my Day-07 practice, the main sections of my portfolio are placed
+   inside <main> because they represent the primary content of the page.
+
+Key point:
+
+     One webpage = normally one <main>
+
+
+9. WHAT IS ACCESSIBILITY?
+
+   Accessibility means designing websites so that different users,
+   including users with disabilities, can access and use the content.
+
+   HTML structure plays an important role in accessibility because
+   assistive technologies such as screen readers use the structure
+   of the webpage to understand its content.
+
+Examples of good accessibility practices:
+     * Use semantic HTML.
+     * Use meaningful headings.
+     * Use descriptive link text.
+     * Make interactive elements keyboard accessible.
+     * Provide useful alternative text for meaningful images.
+     * Use ARIA only when it is actually needed.
+
+
+10. WHAT IS KEYBOARD ACCESSIBILITY?
+
+   Keyboard accessibility means that a user should be able to interact
+   with important parts of a webpage without depending only on a mouse.
+
+   For example, a keyboard user should be able to move through links
+   and buttons using the Tab key and activate them using the keyboard.
+
+Common keyboard actions:
+
+     Tab:
+       Moves to the next focusable element.
+
+     Shift + Tab:
+       Moves to the previous focusable element.
+
+     Enter:
+       Activates a focused link or certain interactive elements.
+
+Key point:
+     A website should not depend only on mouse interactions for basic
+     navigation and important actions.
+
+
+11. WHAT IS aria-label?
+
+   aria-label is an accessibility attribute that provides an accessible
+   name for an element when its visible content does not clearly explain
+   its purpose.
+
+Example:
+
+     <button aria-label="Close menu">X</button>
+
+   The visible text is only "X", which might not clearly explain what
+   the button does.
+
+   aria-label gives the button a meaningful accessible name:
+
+     "Close menu"
+
+Important point:
+     * aria-label should not be added everywhere unnecessarily.
+     * If visible text already clearly describes an element, extra ARIA
+       is often not needed.
+     * Semantic HTML should be preferred before adding ARIA.
+
+
+12. WHAT DID I PRACTICE TODAY?
+
+   Semantic HTML:
+     * <header>
+     * <nav>
+     * <main>
+     * <section>
+     * <article>
+     * <aside>
+     * <footer>
+
+   Structure:
+     * Semantic page structure
+     * Section organization
+     * Article organization
+     * Header and footer placement
+     * Main content organization
+     * Navigation structure
+
+   Headings:
+     * <h1>
+     * <h2>
+     * <h3>
+     * Heading hierarchy
+     * Logical content structure
+
+   Accessibility:
+     * Basic accessibility concepts
+     * Keyboard accessibility
+     * aria-label
+     * Screen reader awareness
+     * Semantic HTML for accessibility
+
+   Code quality:
+     * Avoiding unnecessary <div> elements
+     * Understanding div-soup
+     * Using semantic elements when appropriate
+     * Reviewing HTML structure
+
+
+13. WHAT DID I UNDERSTAND?
+
+     <header>:
+       Used for introductory content.
+
+     <nav>:
+       Used for important navigation links.
+
+     <main>:
+       Contains the primary content of the webpage.
+
+     <section>:
+       Groups related content around a topic.
+
+     <article>:
+       Represents independent content.
+
+     <aside>:
+       Contains secondary or related information.
+
+     <footer>:
+       Contains closing information.
+
+     <section> vs <article>:
+       Section groups related content, while article represents
+       independent content.
+
+     <div>:
+       A generic container that is useful when no suitable semantic
+       element exists.
+
+     Heading hierarchy:
+       Headings should follow a logical structure instead of being
+       chosen only for their visual appearance.
+
+     <main>:
+       Normally used once for the primary content of a page.
+
+     Accessibility:
+       Semantic HTML helps make the structure easier for assistive
+       technologies to understand.
+
+     Keyboard accessibility:
+       Important interactive elements should be usable without
+       depending only on a mouse.
+
+     aria-label:
+       Provides an accessible name when the visible content does not
+       clearly describe the purpose of an element.
+
+
+14. MISTAKES I IDENTIFIED
+
+     Depending too much on AI-generated code:
+       I realized that getting complete HTML from AI is not the same
+       as actually learning HTML.
+
+       Sometimes AI-generated code looks professional, but if I cannot
+       explain why a particular tag or structure was used, then I have
+       not properly learned the concept.
+
+       My goal should be to write the structure myself first and then
+       use AI for review, correction, or explanation instead of blindly
+       copying the complete solution.
+
+
+     Confusion between <section> and <article>:
+       At first, both tags looked similar because both are used to
+       organize content.
+
+       After practicing, I understood that <section> is mainly for
+       grouping related content around a topic, while <article> is
+       for independent content.
+
+
+     Using <div> as a default:
+       I realized that <div> should not automatically be my first choice
+       for every container.
+
+       Before using <div>, I should think whether a semantic element
+       such as <section>, <article>, <nav>, <header>, or <footer>
+       better describes the content.
+
+
+     Accessibility was not my first priority:
+       Earlier I mainly focused on whether the HTML worked correctly.
+
+       Today I understood that good HTML should also have meaningful
+       structure and should be easier for assistive technologies to
+       understand.
+
+
+     Writing without fully understanding:
+       Another mistake I identified was focusing on completing the code
+       instead of stopping and asking myself why I was using a particular
+       element.
+
+       I need to improve this by explaining each important element in
+       my own words before considering the topic completed.
+
+
+-----------------------------------------------------------------------
+
+DAY - 07 OUTCOME
+
+By the end of Day-07, I understood the basic purpose of semantic HTML
+elements such as <header>, <nav>, <main>, <section>, <article>, <aside>,
+and <footer>. I also understood the difference between <section> and
+<article>, and when a generic <div> is appropriate.
+
+I practiced heading hierarchy, the proper use of <main>, keyboard
+accessibility, and the basic purpose of aria-label. More importantly,
+I realized that writing HTML is not only about making the page work.
+The structure should also have meaning and should be understandable
+for both developers and assistive technologies.
+
