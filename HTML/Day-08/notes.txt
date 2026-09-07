@@ -1,1 +1,281 @@
 
+              <----------------------------------------------->
+ ------------>   DAY-08: HTML MINI PROJECT + REVISION          <-------------
+              <----------------------------------------------->
+
+
+1. PROJECT OVERVIEW
+
+   Today I built a 4-page mini website — Home, About, Projects, and
+   Contact — bringing together everything I'd learned across Days
+   01-07.
+
+   The point wasn't just to have a website. It was to see whether the
+   individual pieces I'd practiced on separate days — lists, links,
+   images, tables, forms, semantic layout — could actually work
+   together in one real project.
+
+   Each page is its own .html file, and all four are connected through
+   a shared navigation.
+
+
+2. PAGE-BY-PAGE BREAKDOWN
+
+<index.html> (Home):
+     * <header> holds the site title.
+     * <nav> has all 4 links.
+     * <main> contains two <section> elements — one for the intro, one
+       for "what you'll find here."
+     * <figure> + <img> + <figcaption> — for the profile photo.
+     * <footer> with <address> and copyright.
+
+<about.html>:
+     * <article> — my story, since it stands on its own as content.
+     * <blockquote> — a short quote.
+     * <section> with <dl>, <dt>, <dd> — to list out skills.
+     * <aside> — a "fun fact" box, related to the main content but
+       secondary to it.
+     * <abbr title="HyperText Markup Language">HTML</abbr> — a nod
+       back to Day-01.
+     * <ol> — for a small timeline.
+
+<projects.html>:
+     * <section> — a short intro line.
+     * <table> — <caption>, <thead>, <tbody>, <tfoot>, <th scope="col">
+       — listing out my projects.
+     * <colspan="2"> — used in the tfoot to merge the "Total Projects"
+       row.
+     * <del> and <ins> — showing an old vs. updated line of text.
+
+<contact.html>:
+     * <section> — intro.
+     * <form> — <label> + <input> (text, email, number, date) +
+       <button>.
+     * <address> — mailto and tel links.
+
+The same pattern repeats across all 4 pages:
+     <header> -> <nav> -> <main> -> <footer>
+
+
+3. WHICH DAYS' CONCEPTS DID I COMBINE?
+
+     Day 01 (Text formatting):
+       <strong>, <em>, <mark>, <small>, <del>, <ins>, <abbr>
+
+     Day 02 (Lists):
+       <ul>, <ol>, <li>, <dl>, <dt>, <dd>
+
+     Day 03 (Navigation, links):
+       <a> (relative links, mailto, tel), <nav>
+
+     Day 04 (Images):
+       <img>, <figure>, <figcaption>
+
+     Day 05 (Tables):
+       <table>, <caption>, <thead>, <tbody>, <tfoot>, <th scope="col">,
+       <colspan>
+
+     Day 06 (Forms):
+       <form>, <label>, <input> (text/email/number/date), <button>,
+       required
+
+     Day 07 (Semantic layout + accessibility):
+       <header>, <nav>, <main>, <section>, <article>, <aside>,
+       <footer>, <address>, alt text, labels linked to inputs
+
+
+4. NAVIGATION STRUCTURE
+
+   Every page has the same <nav> with 4 links (Home, About, Projects,
+   Contact) — the only difference is that the current page's link sits
+   inside <mark>, so it's visually obvious where you are.
+
+   The links are relative (like href="about.html"), not absolute —
+   this is the same Day-03 concept repeating here: since all the files
+   live in one folder, relative paths just work without needing a base
+   URL.
+
+Example:
+
+     <nav>
+         <ul>
+             <li><a href="index.html">Home</a></li>
+             <li><mark>About</mark></li>
+             <li><a href="projects.html">Projects</a></li>
+             <li><a href="contact.html">Contact</a></li>
+         </ul>
+     </nav>
+
+
+5. TABLE USAGE (Projects page)
+
+   The table lists 4 projects — Project Name, Tech Used, Status, and
+   Link (with an <a> tag in the link column).
+
+   <colspan="2"> is used inside the tfoot so "Total Projects" can
+   stretch across two columns while the count sits in the remaining
+   two — this gives the table a clean summary row without adding an
+   extra one.
+
+   <th scope="col"> is set on every header cell so screen readers know
+   these are column headers — this is Day-07's accessibility idea
+   actually being put to use.
+
+
+6. FORM USAGE (Contact page)
+
+   Input types used:
+     * text — for Name
+     * email — for Email
+     * number — for Phone Number
+     * date — for Preferred Contact Date
+
+   The required attribute is on Name and Email, so the browser makes
+   sure those two fields aren't left empty before the form can be
+   submitted. Phone and Date are left optional since not everyone
+   wants to share those.
+
+   Every <input> is linked to a <label for="..."> with a matching id —
+   another Day-07 accessibility habit — so a screen reader user always
+   knows what each field is asking for.
+
+
+7. SEMANTIC STRUCTURE
+
+     <header>:
+       Site title and tagline on every page.
+
+     <nav>:
+       The same 4-link navigation, repeated on every page.
+
+     <main>:
+       Appears once per page, holding that page's unique content.
+
+     <section>:
+       Used on Home and Contact to group related content (intro, quick
+       links, the form area).
+
+     <article>:
+       Used on About for "My Story" — content that makes sense fully
+       on its own.
+
+     <aside>:
+       Used on About for the "fun fact" box — related to the main
+       content, but secondary.
+
+     <footer>:
+       Address and copyright on every page — closing information.
+
+   This structure follows Day-07 directly: one <main> per page, and
+   everything else placed in whichever semantic tag actually fits.
+
+
+8. WHAT DID I PRACTICE TODAY?
+
+   Structure:
+     * 4 separate .html files
+     * A shared navigation pattern
+     * The same header/nav/main/footer skeleton repeated
+
+   Text/Semantic:
+     * strong, em, mark, small, del, ins, blockquote, abbr
+
+   Lists:
+     * ul, ol, li, dl, dt, dd
+
+   Links/Navigation:
+     * a (relative, mailto, tel), nav
+
+   Media:
+     * img, figure, figcaption
+
+   Tables:
+     * table, caption, thead, tbody, tfoot, th (scope), td, colspan
+
+   Forms:
+     * form, label, input (text/email/number/date), button, required
+
+   Semantic layout:
+     * header, nav, main, section, article, aside, footer, address
+
+
+9. WHAT DID I UNDERSTAND (ABOUT COMBINING CONCEPTS)?
+
+   Learning something on its own is one thing — when I'm just
+   practicing tables, or just practicing forms, it feels isolated. But
+   putting everything together into a real 4-page site made a few
+   things click:
+
+     * Navigation needs a consistent pattern — even when copy-pasting
+       it across pages, I had to be careful that only the current
+       page's link got treated differently.
+     * Semantic tags only really start to make sense once you're
+       deciding on real content — "is this a section or an article?"
+       came up again and again.
+     * Sticking to a fixed set of allowed tags actually helped — it
+       meant I only reached for a tag when I genuinely understood what
+       it meant, instead of throwing in something random.
+
+
+10. MISTAKES I IDENTIFIED
+
+     Reusing <mark> for the current page:
+       I used <mark> in the navigation to highlight the current page,
+       even though <mark>'s actual semantic meaning is "highlight this
+       text as relevant" (like in search results), not "show the
+       current state." It's a bit like the earlier mistake of bending
+       a tag's meaning to serve a purely visual/structural purpose.
+       I used it here because there wasn't a better option in the
+       allowed tags, but once the CSS phase starts, an "active state"
+       done properly through a class would be the right way to do it.
+
+     Accidentally using <br>:
+       While building the contact form, I'd added <br> after each
+       <label>, even though <br> wasn't in the allowed tags list at
+       all. Caught it on review and fixed the spacing using <p> tags
+       instead, without needing any extra tag.
+
+     Structuring the table and form without <div>:
+       At first it felt a bit awkward organizing table rows and form
+       fields without reaching for <div>. But using <p> and the
+       table's own tags (tr, td, th) was enough to get it done cleanly
+       — Day-07's rule of "only use div when there's genuinely no
+       semantic option" held up here.
+
+
+11. REVISION SUMMARY (Days 01-07)
+
+     Day 01: Basic HTML structure and text formatting tags — strong,
+             em, mark, small, del, ins, sub, sup.
+
+     Day 02: Lists — ul, ol, li, and description lists (dl, dt, dd).
+
+     Day 03: Navigation and links — relative/absolute links, fragment
+             links, mailto, tel, and the <nav> tag.
+
+     Day 04: Media — img, figure, figcaption, and why alt text
+             matters.
+
+     Day 05: Tables — table, caption, thead/tbody/tfoot, colspan,
+             rowspan, and the scope attribute.
+
+     Day 06: Forms — form, label, input (text/email/password/number/
+             date), and button.
+
+     Day 07: Semantic HTML and accessibility — header, nav, main,
+             section, article, aside, footer, heading hierarchy, and
+             the basics of accessibility (aria-label, keyboard access).
+
+
+-----------------------------------------------------------------------
+
+DAY-08 OUTCOME
+
+The HTML phase is basically done now. I'm not just practicing tags in
+isolation anymore — I've built a full 4-page connected website where
+structure, navigation, media, tables, and forms all work together.
+
+At this point I can sit down and write the structural skeleton of a
+basic multi-page site on my own, without losing track of what each tag
+actually means. The natural next step is CSS: this same structure is
+now ready to be styled, laid out (flexbox/grid), and made responsive.
