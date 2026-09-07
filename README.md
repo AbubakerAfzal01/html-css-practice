@@ -5,13 +5,12 @@ A hands-on practical course building a strong foundation in modern HTML and CSS 
 Starting from HTML fundamentals and progressing toward modern CSS - Flexbox, Grid, CSS Variables, and responsive design. The goal is not to memorize tags or properties, but to understand them well enough to build real websites independently.
 
 This course is being built day by day - more days will be added as the course progresses.
-
 ## Course Structure (so far)
 
 | Phase | Days | Focus |
 |---|---|---|
 | HTML | 01-08 | HTML5 fundamentals, text, links, media, tables, forms, semantics, accessibility |
-| CSS | TBD | To be planned as the course progresses |
+| CSS | 09-20 | CSS basics through Flexbox, Grid, variables, animations, responsive design, and a final project |
 
 ## Progress
 
@@ -25,8 +24,20 @@ This course is being built day by day - more days will be added as the course pr
 | 06 | HTML Forms | Completed |
 | 07 | Semantic HTML & Accessibility | Completed |
 | 08 | HTML Mini Project + Revision | Completed |
+| 09 | CSS Basics & Selectors | In Progress |
+| 10 | Cascade, Specificity, Colors & Typography | Pending |
+| 11 | Box Model & Units | Pending |
+| 12 | Display & Positioning | Pending |
+| 13 | Pseudo-classes & Pseudo-elements | Pending |
+| 14 | Flexbox | Pending |
+| 15 | CSS Grid | Pending |
+| 16 | CSS Variables & Modern Functions | Pending |
+| 17 | Transitions, Transforms & Animations | Pending |
+| 18 | Responsive / Mobile-First Design | Pending |
+| 19 | CSS Mini Project (Landing Page) | Pending |
+| 20 | Final Project (Complete Responsive Website) | Pending |
 
-Current Progress: 7 / 8 days completed (more days to be added)
+Current Progress: 8 / 20 days completed (Day numbers 09-20 are a planning estimate and may shift as topics are covered)
 
 ## Daily Time Structure
 
@@ -80,11 +91,22 @@ html-css-practice/
 |   |       |--README.md
 |   |-- Day-08/
 |   |       |--images/
-|   |       |       |--image-2
-|   |       |       |--image-1
+|   |       |       |--hi.png
 |   |       |--index.html
+|   |       |--project.html
+|   |       |--about.html
+|   |       |--contact.html
 |   |       |--notes.txt
 |   |       |--README.md
+|   |       |--------------HTML COMPLETED
+|---CSS\
+|   |-- Day-09/
+|   |       |--index.html
+|   |       |--style.css
+|   |       |--notes.txt
+|   |       |--README.md
+|   |-- Day-10/
+|   |        |--pending
 ```
 
 Each day's folder includes:
