@@ -1,0 +1,499 @@
+               <----------------------------------------------->
+   ------------>            DAY-09: CSS BASICS                 <-------------
+               <----------------------------------------------->
+
+1. WHAT IS CSS?
+
+   CSS stands for Cascading Style Sheets. It is used to style HTML
+   elements and control how a webpage looks.
+
+   HTML gives a webpage its structure and content, while CSS is used
+   to control things like colors, fonts, sizes, alignment, and other
+   visual styling.
+
+Simple difference:
+     HTML = Structure
+     CSS  = Styling
+
+Example:
+     <h1>Hello CSS</h1>
+
+     h1 {
+         color: blue;
+     }
+
+   HTML creates the heading, while CSS changes its color.
+
+
+2. WHAT ARE THE THREE WAYS TO CONNECT CSS WITH HTML?
+
+   There are three common ways to add CSS to an HTML page:
+
+   A. INLINE CSS
+
+      Inline CSS is written directly inside an HTML element using
+      the style attribute.
+
+Example:
+     <p style="color: red;">This is a paragraph.</p>
+
+   It is useful for quick testing, but it is not a good choice for
+   larger projects because HTML and CSS become mixed together.
+
+   B. INTERNAL CSS
+
+      Internal CSS is written inside a <style> tag in the <head>
+      section of the HTML file.
+
+Example:
+     <style>
+         p {
+             color: red;
+         }
+     </style>
+
+   It is useful for small pages where the CSS is only needed for
+   that particular HTML file.
+
+   C. EXTERNAL CSS
+
+      External CSS is written in a separate .css file and connected
+      to the HTML file using the <link> tag.
+
+HTML:
+     <link rel="stylesheet" href="style.css">
+
+CSS file:
+     p {
+         color: red;
+     }
+
+   This is the approach I practiced today.
+
+Why is external CSS better for professional projects?
+     * HTML and CSS stay separate.
+     * The code is easier to read and maintain.
+     * The same CSS file can be used on multiple pages.
+     * It keeps the project more organized.
+
+Professional choice:
+     External CSS is generally preferred for larger and professional
+     projects.
+
+
+3. WHAT ARE CSS SELECTORS?
+
+   CSS selectors tell the browser which HTML elements should receive
+   a particular style.
+
+   Today I practiced three basic selectors:
+
+     * Element selector
+     * Class selector
+     * ID selector
+
+   A. ELEMENT SELECTOR
+
+      An element selector uses the HTML tag name directly.
+
+Example:
+     p {
+         color: red;
+     }
+
+   This selects all <p> elements on the page.
+
+Key point:
+     p = selects paragraph elements.
+
+   B. CLASS SELECTOR
+
+      A class selector uses a dot (.) before the class name.
+
+Example:
+     .highlight {
+         background-color: rgb(0, 30, 255);
+     }
+
+HTML:
+     <p class="highlight">This is the paragraph with a class.</p>
+
+   A class can be used on multiple elements when we want them to
+   share the same styling.
+
+Example:
+     <p class="highlight">Paragraph 1</p>
+     <p class="highlight">Paragraph 2</p>
+
+   Both paragraphs can use the same .highlight rule.
+
+   C. ID SELECTOR
+
+      An ID selector uses a hash (#) before the ID name.
+
+Example:
+     #intro {
+         color: green;
+     }
+
+HTML:
+     <p id="intro">This is the paragraph with an ID.</p>
+
+   An ID is normally used to identify one specific element on a page.
+
+Simple difference:
+     Element = tag name
+     Class   = .
+     ID      = #
+
+
+4. CLASS VS ID
+
+   Class and ID both help us target HTML elements, but they are used
+   for different purposes.
+
+Class:
+     .highlight {
+         color: blue;
+     }
+
+   Class is reusable and can be assigned to multiple elements.
+
+ID:
+     #intro {
+         color: green;
+     }
+
+   ID is intended to identify a specific element.
+
+Easy way to remember:
+     . = Class = Reusable
+     # = ID = Specific / Unique
+
+
+5. WHAT IS CSS SPECIFICITY?
+
+   Specificity helps the browser decide which CSS rule should win
+   when more than one rule targets the same element.
+
+Basic order:
+     Element < Class < ID
+
+   So an ID selector normally has higher specificity than a class
+   selector, and a class selector has higher specificity than an
+   element selector.
+
+Example:
+     p {
+         color: red;
+     }
+
+     .highlight {
+         color: blue;
+     }
+
+     #intro {
+         color: green;
+     }
+
+   If these rules target the same element, the more specific selector
+   normally gets priority.
+
+Easy memory:
+     ID > Class > Element
+
+
+6. WHAT ARE CSS COLORS?
+
+   CSS gives us different ways to write colors.
+
+   I practiced named colors and RGB in today's code, and also learned
+   the basic idea of HEX and RGBA.
+
+   A. NAMED COLORS
+
+      We can use a color name directly.
+
+Example:
+     color: blue;
+
+Other examples:
+     red
+     green
+     yellow
+     black
+     white
+
+   B. HEX COLORS
+
+      HEX means hexadecimal. A HEX color normally starts with # and
+      uses six hexadecimal characters.
+
+Example:
+     color: #0000ff;
+
+   #0000ff represents blue.
+
+   C. RGB COLORS
+
+      RGB stands for Red, Green, and Blue.
+
+      Each value normally ranges from 0 to 255.
+
+Example:
+     color: rgb(0, 0, 255);
+
+   Here:
+     Red   = 0
+     Green = 0
+     Blue  = 255
+
+   This produces blue.
+
+My practice:
+     background-color: rgb(0, 30, 255);
+
+   D. RGBA COLORS
+
+      RGBA is RGB plus Alpha.
+
+Example:
+     background-color: rgba(0, 30, 255, 0.5);
+
+   The fourth value is the alpha value.
+
+   Alpha controls transparency.
+
+     0   = fully transparent
+     0.5 = partly transparent
+     1   = fully opaque
+
+Simple difference:
+     RGB  = Red + Green + Blue
+     RGBA = Red + Green + Blue + Alpha
+
+
+7. WHAT ARE TYPOGRAPHY PROPERTIES?
+
+   Typography properties control how text looks and how it is
+   aligned.
+
+   Today I practiced:
+
+     * font-family
+     * font-size
+     * font-weight
+     * text-align
+
+   A. font-family
+
+      It sets the font used for the text.
+
+Example:
+     body {
+         font-family: Arial, sans-serif;
+     }
+
+   Arial is the first choice here. If Arial is not available,
+   the browser can use another sans-serif font.
+
+Why use a fallback?
+     * The preferred font might not be available.
+     * It gives the browser another font to use.
+     * It helps keep the text readable.
+
+   B. font-size
+
+      It controls the size of the text.
+
+Example:
+     h1 {
+         font-size: 32px;
+     }
+
+   C. font-weight
+
+      It controls how thick or bold the text appears.
+
+Example:
+     p {
+         font-weight: bold;
+     }
+
+   D. text-align
+
+      It controls the horizontal alignment of text.
+
+Example:
+     p {
+         text-align: center;
+     }
+
+Common values:
+     left
+     center
+     right
+     justify
+
+
+8. WHAT DID I PRACTICE TODAY?
+
+   CSS Basics:
+     * What CSS is
+     * Difference between HTML and CSS
+     * Inline CSS
+     * Internal CSS
+     * External CSS
+     * Linking an external stylesheet
+     * Element selectors
+     * Class selectors
+     * ID selectors
+     * Basic CSS specificity
+     * Named colors
+     * HEX colors
+     * RGB colors
+     * RGBA colors
+     * Alpha/transparency
+     * font-family
+     * font-size
+     * font-weight
+     * text-align
+     * Fallback fonts
+     * Styling headings
+     * Styling paragraphs
+     * Using classes
+     * Using IDs
+
+
+9. WHAT DID I UNDERSTAND?
+
+     CSS:
+       CSS is used to style HTML and control the visual appearance
+       of a webpage.
+
+     HTML vs CSS:
+       HTML provides the structure, while CSS handles the styling.
+
+     External CSS:
+       CSS can be kept in a separate file and connected to HTML
+       using <link>.
+
+     Element selector:
+       Selects an HTML element using its tag name.
+
+     Class selector:
+       Uses . and targets elements with a particular class.
+
+     ID selector:
+       Uses # and targets an element with a particular ID.
+
+     Specificity:
+       Helps decide which CSS rule gets priority when rules conflict.
+
+     Basic specificity:
+       ID > Class > Element
+
+     RGB:
+       Uses Red, Green, and Blue values.
+
+     RGBA:
+       Adds an Alpha value to RGB for transparency.
+
+     font-family:
+       Defines the font used for text.
+
+     font-size:
+       Controls text size.
+
+     font-weight:
+       Controls text thickness.
+
+     text-align:
+       Controls horizontal text alignment.
+
+     Fallback font:
+       Gives the browser another font to use if the first font
+       is not available.
+
+
+10. MISTAKES I IDENTIFIED
+
+     Mistake 1: .body vs body
+
+       I initially confused the element selector with a class
+       selector.
+
+       Correct:
+            body {
+                font-family: Arial, sans-serif;
+            }
+
+       `body` selects the HTML <body> element.
+
+       `.body` would look for an element with:
+            class="body"
+
+       So:
+            body  = Element selector
+            .body = Class selector
+
+
+     Mistake 2: .id vs #intro
+
+       I also confused the syntax for class and ID selectors.
+
+       Correct:
+            .id {
+                color: red;
+            }
+
+            #intro {
+                color: green;
+            }
+
+       `.id` means a class named "id".
+
+       `#intro` means an ID named "intro".
+
+       HTML:
+            <p id="intro">This is the paragraph with an ID.</p>
+
+       Correct rule:
+            . = Class
+            # = ID
+
+
+     Mistake 3: Confusion about specificity
+
+       I learned that all selectors do not have the same priority.
+
+       Basic order:
+            Element < Class < ID
+
+       So an ID selector normally has more specificity than a class
+       selector, and a class selector has more specificity than an
+       element selector.
+
+
+     Mistake 4: Understanding fallback fonts
+
+       I learned that `sans-serif` in:
+            font-family: Arial, sans-serif;
+
+       is not another specific font name. It is a generic fallback
+       font family. If Arial is unavailable, the browser can choose
+       an available sans-serif font.
+
+
+-----------------------------------------------------------------------
+
+DAY - 09 OUTCOME
+
+By the end of Day-09, I learned the basic idea of CSS and how it works
+with HTML. I practiced connecting an external stylesheet, using
+different selectors, changing colors, and styling text.
+
+I now understand the basic difference between element, class, and ID
+selectors and how specificity affects conflicting rules. I also
+identified my own mistakes with `body` vs `.body` and `.id` vs
+`#intro`, which made the selector syntax much clearer to me.
