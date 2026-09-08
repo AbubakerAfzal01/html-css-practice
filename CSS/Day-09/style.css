@@ -1,3 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+}
 h1 {
     color: blue;
+    font-size: 32px;
+}
+p{
+    color: red;
+    font-weight: bold;  
+    text-align: center; 
+}
+#intro {
+    color: green;
+}
+.highlight {
+    background-color: rgb(0, 30, 255);
 }
