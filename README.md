@@ -25,7 +25,7 @@ This course is being built day by day - more days will be added as the course pr
 | 07 | Semantic HTML & Accessibility | Completed |
 | 08 | HTML Mini Project + Revision | Completed |
 | 09 | CSS Basics & Selectors | Completed |
-| 10 | Cascade, Specificity, Colors & Typography | Pending |
+| 10 | Cascade, Specificity, Colors & Typography | Completed |
 | 11 | Box Model & Units | Pending |
 | 12 | Display & Positioning | Pending |
 | 13 | Pseudo-classes & Pseudo-elements | Pending |
