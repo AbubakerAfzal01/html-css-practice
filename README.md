@@ -110,6 +110,11 @@ html-css-practice/
 |   |       |--style.css
 |   |       |--notes.txt
 |   |       |--README.md
+|   |-- Day-11/
+|   |       |--index.html
+|   |       |--style.css
+|   |       |--notes.txt
+|   |       |--README.md
 ```
 
 Each day's folder includes:
