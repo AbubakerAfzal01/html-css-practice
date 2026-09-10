@@ -26,7 +26,7 @@ This course is being built day by day - more days will be added as the course pr
 | 08 | HTML Mini Project + Revision | Completed |
 | 09 | CSS Basics & Selectors | Completed |
 | 10 | Cascade, Specificity, Colors & Typography | Completed |
-| 11 | Box Model & Units | Pending |
+| 11 | Box Model & Units | Completed |
 | 12 | Display & Positioning | Pending |
 | 13 | Pseudo-classes & Pseudo-elements | Pending |
 | 14 | Flexbox | Pending |
@@ -37,7 +37,7 @@ This course is being built day by day - more days will be added as the course pr
 | 19 | CSS Mini Project (Landing Page) | Pending |
 | 20 | Final Project (Complete Responsive Website) | Pending |
 
-Current Progress: 9 / 20 days completed (Day numbers 09-20 are a planning estimate and may shift as topics are covered)
+Current Progress: 11 / 20 days completed (Day numbers 09-20 are a planning estimate and may shift as topics are covered)
 
 ## Daily Time Structure
 
