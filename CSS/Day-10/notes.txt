@@ -1,0 +1,348 @@
+                <----------------------------------------------->
+    ------------>          DAY-10: CSS BASICS                 <-------------
+                <----------------------------------------------->
+
+
+1. WHAT IS CSS CASCADE?
+
+    CSS Cascade is the process the browser uses to decide which CSS
+    rule should be applied when multiple rules target the same element.
+
+    If two rules have the same specificity, the rule written later
+    in the CSS normally wins.
+
+Example:
+
+    nav ul {
+        color: green;
+    }
+
+    nav ul {
+        color: blue;
+    }
+
+    Both selectors have the same specificity.
+
+    Result:
+        The text becomes blue because the second rule comes later.
+
+Key point:
+    Same specificity = later rule wins.
+
+
+2. WHAT IS !important?
+
+    !important gives a CSS declaration very high priority.
+
+Example:
+
+    p {
+        color: red !important;
+    }
+
+    This can override normal CSS rules that try to change the same
+    property.
+
+    Professionals usually avoid using !important unnecessarily because:
+
+    * It can make CSS harder to understand.
+    * It can make future overrides difficult.
+    * Too many !important rules can create CSS conflicts.
+    * The code becomes less predictable.
+
+    So, it is better to use proper selectors and specificity first.
+
+Simple idea:
+    !important = "Apply this rule with very high priority."
+
+
+3. WHAT ARE DESCENDANT SELECTORS?
+
+    A descendant selector is used to target an element that is
+    somewhere inside another element.
+
+Example:
+
+    nav a {
+        color: green;
+    }
+
+    This means:
+
+    "Select <a> elements that are inside <nav>."
+
+    It does not mean that both <nav> and <a> are selected.
+
+
+nav a VS nav, a
+---------------
+
+    nav a
+
+    Means:
+        Select <a> elements inside <nav>.
+
+
+    nav, a
+
+    Means:
+        Select <nav> and <a> separately.
+
+    The comma separates different selectors.
+
+Simple difference:
+
+    nav a = descendant selector
+    nav, a = two separate selectors
+
+
+REAL EXAMPLE FROM MY FILE
+-------------------------
+
+    I used:
+
+    section ul li a {
+        text-decoration: none;
+    }
+
+    This means the <a> must be inside:
+
+        <section>
+            <ul>
+                <li>
+                    <a>
+
+    So the selector follows this structure:
+
+        section
+           ↓
+          ul
+           ↓
+          li
+           ↓
+           a
+
+    Only links matching this structure are targeted.
+
+
+4. TYPOGRAPHY PROPERTIES
+------------------------
+
+    Typography properties control how text looks and how it is
+    displayed.
+
+
+A. line-height
+--------------
+
+    line-height controls the vertical space between lines of text.
+
+Example:
+
+    p {
+        line-height: 1.6;
+    }
+
+    It gives the lines more breathing space and can make paragraphs
+    easier to read.
+
+    Important:
+        line-height controls line spacing, not the font size.
+
+
+B. letter-spacing
+-----------------
+
+    letter-spacing controls the horizontal space between letters.
+
+Example:
+
+    h1 {
+        letter-spacing: 4px;
+    }
+
+    This makes the letters more separated.
+
+
+C. text-decoration
+------------------
+
+    text-decoration adds or removes decoration from text.
+
+    Common values:
+
+        underline
+        overline
+        line-through
+        none
+
+Example:
+
+    a {
+        text-decoration: none;
+    }
+
+    This removes the underline from the link.
+
+    My code:
+
+    section ul li a {
+        text-decoration: none;
+    }
+
+
+D. text-transform
+-----------------
+
+    text-transform changes the capitalization of displayed text.
+
+    Common values:
+
+        uppercase
+        lowercase
+        capitalize
+
+Example:
+
+    h1 {
+        text-transform: uppercase;
+    }
+
+    "My Portfolio" would be displayed as:
+
+        MY PORTFOLIO
+
+    It changes how the text is displayed. It does not permanently
+    change the original HTML text.
+
+
+5. WHAT DID I PRACTICE TODAY?
+
+    CSS Cascade:
+        * Same-specificity rules
+        * Later rule wins
+
+    !important:
+        * What it does
+        * Why it should not be overused
+
+    Descendant selectors:
+        * nav a
+        * section ul li a
+        * Difference between nav a and nav, a
+
+    Typography:
+        * line-height
+        * letter-spacing
+        * text-decoration
+        * text-transform
+
+    I also practiced identifying the exact HTML element that I want
+    to style instead of styling the wrong parent element.
+
+
+6. WHAT DID I UNDERSTAND?
+
+    CSS Cascade:
+        When specificity is the same, the rule written later wins.
+
+    !important:
+        It gives a CSS declaration very high priority.
+
+    Descendant selector:
+        nav a selects <a> elements inside <nav>.
+
+    Comma selector:
+        nav, a selects <nav> and <a> separately.
+
+    line-height:
+        It controls the vertical spacing between lines.
+
+    letter-spacing:
+        It controls the spacing between individual letters.
+
+    text-decoration:
+        It adds or removes decorations such as underlines.
+
+    text-transform:
+        It changes the displayed capitalization of text.
+
+    Correct element targeting:
+        I should target the actual element that needs the styling.
+
+
+7. MISTAKES I IDENTIFIED
+------------------------
+
+    Mistake 1: Targeting nav ul instead of the link
+
+    My code was:
+
+        nav ul {
+            color: green;
+            text-decoration: underline;
+        }
+
+    I expected the navigation links to become green and underlined.
+
+    But the actual clickable text is inside the <a> element.
+
+    HTML structure:
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+            </ul>
+        </nav>
+
+    So, if I want to style the links directly, I should target <a>:
+
+        nav a {
+            color: green;
+            text-decoration: underline;
+        }
+
+
+    Mistake 2: Wrong element targeting
+
+    I learned that styling a parent element does not always give
+    the exact result I expect on its child elements.
+
+    Browser default styles can also affect elements such as links.
+
+    The important lesson is:
+
+        "Always identify the exact element that you want to style."
+
+
+    Mistake 3: Confusing the HTML structure
+
+    I learned that when a selector has multiple elements, the order
+    represents the relationship between those elements.
+
+    Example:
+
+        section ul li a
+
+    means the <a> is inside an <li>, which is inside a <ul>,
+    which is inside a <section>.
+
+
+-----------------------------------------------------------------------
+
+DAY-10 OUTCOME
+
+    By the end of Day-10, I learned how CSS decides which rule should
+    be applied when multiple rules target the same element.
+
+    I also practiced descendant selectors and learned the difference
+    between nav a and nav, a. Along with this, I improved my
+    understanding of line-height, letter-spacing, text-decoration,
+    and text-transform.
+
+    The biggest learning moment was my nav ul mistake. It helped me
+    understand that I need to target the exact element I want to style
+    instead of assuming the parent element will always give the result
+    I expect.
