@@ -1,3 +1,28 @@
 body {
     font-family: Arial, sans-serif;
 }
+h1 {
+    color: blue;
+    font-size: 15px;
+}
+nav ul {
+    color: green;
+    text-decoration: underline;
+}
+header h1 {
+    color: blue;
+    font-size: 32px;
+    letter-spacing: 4px;
+}
+p {
+    color: red;
+    font-weight: bold;  
+    text-align: center; 
+    line-height: 1.6;
+
+}
+section ul li a {
+    text-decoration: none;
+}
+
+
