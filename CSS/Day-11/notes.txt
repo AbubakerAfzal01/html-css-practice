@@ -1,0 +1,634 @@
+                <----------------------------------------------->
+    ------------>       DAY-11: BOX MODEL & UNITS              <-------------
+                <----------------------------------------------->
+
+
+1. WHAT IS THE CSS BOX MODEL?
+-----------------------------
+
+    The basic idea of the CSS Box Model is that the browser treats
+    every HTML element like a box.
+
+    Every box has 4 main parts:
+
+        1. Content
+        2. Padding
+        3. Border
+        4. Margin
+
+    Their order from inside to outside is:
+
+        Content → Padding → Border → Margin
+
+
+    Simple structure:
+
+        Margin = outside space
+               ↓
+             Border
+               ↓
+        Padding = inside space
+               ↓
+        Content = actual text/image
+
+
+2. CONTENT
+----------
+
+    Content is the actual data inside an element.
+
+Example:
+
+    <div>Hello World</div>
+
+    Here, "Hello World" is the content.
+
+    Text, images, or other data can be inside the content area.
+
+
+3. PADDING
+----------
+
+    Padding is the space INSIDE an element.
+
+    It creates space between the content and the border.
+
+Example:
+
+    .box {
+        padding: 20px;
+    }
+
+    This creates 20px of space around the content.
+
+    Simple idea:
+
+        Padding = Inside spacing
+
+
+4. BORDER
+---------
+
+    Border is placed around the padding.
+
+    It creates a boundary around the element.
+
+Example:
+
+    .box {
+        border: 2px solid black;
+    }
+
+    Here:
+
+        2px   = border thickness
+        solid = border style
+        black = border color
+
+
+5. MARGIN
+---------
+
+    Margin is the space OUTSIDE an element.
+
+    It creates distance between the element and other elements.
+
+Example:
+
+    .box {
+        margin: 15px;
+    }
+
+    Simple idea:
+
+        Margin = Outside spacing
+
+
+PADDING VS MARGIN
+-----------------
+
+    Padding:
+        Space inside the element.
+
+    Margin:
+        Space outside the element.
+
+    Easy way to remember:
+
+        Padding = inside the box
+        Margin  = outside the box
+
+
+6. BACKGROUND AND PADDING
+-------------------------
+
+    If an element has a background color, the background also
+    extends into the padding area.
+
+Example:
+
+    .box {
+        background-color: yellow;
+        padding: 20px;
+        margin: 20px;
+    }
+
+    In this case, the yellow background will be visible around
+    the content and padding area.
+
+    The margin area will not have the element's yellow background.
+
+    I also practiced this concept with a quick check.
+
+
+7. INDIVIDUAL PADDING SIDES
+---------------------------
+
+    Padding can also be set separately for each side.
+
+Example:
+
+    .box {
+        padding-top: 10px;
+        padding-right: 15px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+    }
+
+    This allows me to control each side separately.
+
+
+8. PADDING SHORTHAND
+--------------------
+
+    Padding can also be written in shorthand.
+
+Example:
+
+    .box {
+        padding: 10px 15px 10px 15px;
+    }
+
+    The values follow this order:
+
+        top → right → bottom → left
+
+    Remembering this order is important.
+
+
+9. TWO-VALUE PADDING SHORTHAND
+------------------------------
+
+    If only 2 values are given:
+
+        padding: 10px 15px;
+
+    Then:
+
+        10px = top + bottom
+        15px = left + right
+
+    This makes the code shorter and cleaner.
+
+
+10. WHAT IS box-sizing?
+-----------------------
+
+    box-sizing decides how the browser calculates the width and
+    height of an element.
+
+    The two important values are:
+
+        content-box
+        border-box
+
+
+11. content-box
+---------------
+
+    content-box is the default box-sizing value.
+
+    With content-box, the width only represents the CONTENT area.
+
+Example:
+
+    .box {
+        width: 200px;
+        padding: 20px;
+        border: 5px solid black;
+    }
+
+    Total width:
+
+        200px content
+        + 20px left padding
+        + 20px right padding
+        + 5px left border
+        + 5px right border
+
+        = 250px total width
+
+    So, with content-box, the actual box can become larger than
+    the given width.
+
+
+12. border-box
+--------------
+
+    With border-box, padding and border are included inside the
+    given width.
+
+Example:
+
+    .box {
+        box-sizing: border-box;
+        width: 200px;
+        padding: 20px;
+        border: 5px solid black;
+    }
+
+    Total width:
+
+        = 200px
+
+    The padding and border are adjusted inside those 200px.
+
+    This makes it easier to control the layout.
+
+
+13. UNIVERSAL box-sizing RULE
+-----------------------------
+
+    A common professional CSS rule is:
+
+        * {
+            box-sizing: border-box;
+        }
+
+    The * selector means:
+
+        "Select all elements."
+
+    So this rule gives all elements border-box sizing.
+
+    It helps prevent unexpected size increases caused by padding
+    and borders.
+
+
+14. CSS UNITS
+------------
+
+    CSS has different units for different situations.
+
+    In Day-11, I studied:
+
+        px
+        %
+        rem
+        em
+        vw
+        vh
+
+
+15. px
+------
+
+    px means pixels.
+
+    It is commonly used for fixed-size values.
+
+Example:
+
+    .box {
+        width: 200px;
+    }
+
+    Here, the width is 200 pixels.
+
+
+16. %
+------
+
+    % is a percentage unit.
+
+    It is usually relative to the size of the parent element.
+
+Example:
+
+    .parent {
+        width: 800px;
+    }
+
+    .child {
+        width: 50%;
+    }
+
+    Child width:
+
+        50% of 800px = 400px
+
+
+17. rem
+-------
+
+    rem is relative to the root HTML element's font-size.
+
+    Usually in the browser:
+
+        1rem = 16px
+
+Example:
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    If the root font-size is 16px:
+
+        1.2rem = 19.2px
+
+
+18. em
+------
+
+    em is relative to the font-size context.
+
+    It can be affected by the font-size of the parent or current
+    element.
+
+Example:
+
+    .box {
+        font-size: 20px;
+        padding: 2em;
+    }
+
+    Here:
+
+        2em = 40px
+
+    em can sometimes become confusing with nested elements because
+    the parent font-size can affect the calculation.
+
+
+19. vw
+------
+
+    vw means viewport width.
+
+    1vw is 1% of the viewport width.
+
+Example:
+
+    .box {
+        width: 50vw;
+    }
+
+    This means the box will be 50% of the viewport width.
+
+
+20. vh
+------
+
+    vh means viewport height.
+
+    1vh is 1% of the viewport height.
+
+Example:
+
+    .hero {
+        height: 100vh;
+    }
+
+    This means the element can be as tall as the full viewport height.
+
+
+21. QUICK UNIT COMPARISON
+-------------------------
+
+    px:
+        Pixels / fixed size
+
+    %:
+        Relative to the parent size
+
+    rem:
+        Relative to the root font-size
+
+    em:
+        Relative to the font-size context
+
+    vw:
+        Relative to viewport width
+
+    vh:
+        Relative to viewport height
+
+
+22. list-style
+--------------
+
+    Browsers show bullets on lists by default.
+
+    To remove bullets from a navigation menu:
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+    Here:
+
+        list-style-type: none;
+            → removes the bullets
+
+        padding: 0;
+            → removes the default left spacing
+
+        margin: 0;
+            → removes the default margin
+
+
+    I also tried this myself:
+
+        #links {
+            list-style-type: square;
+        }
+
+    This changed the normal bullets into square bullets.
+
+
+23. PRACTICAL: MY EXISTING PAGE
+------------------------------
+
+    In Day-11, I applied the Box Model and CSS units to my
+    existing HTML page.
+
+    I:
+
+        * Added spacing to the header.
+        * Tried padding, margin and border on navigation links.
+        * Added padding to the Welcome section.
+        * Changed the heading width, padding and border.
+        * Changed the list bullets to squares.
+        * Used rem for paragraph font-size.
+        * Tried 100vw on the address element.
+        * Set the Quick Note section width to 50%.
+        * Added padding and margin to the footer.
+        * Tested different spacing values.
+
+
+24. WHAT DID I PRACTICE TODAY?
+------------------------------
+
+    CSS Box Model:
+        * Content
+        * Padding
+        * Border
+        * Margin
+
+    box-sizing:
+        * content-box
+        * border-box
+        * Universal box-sizing rule
+
+    CSS Units:
+        * px
+        * %
+        * rem
+        * em
+        * vw
+        * vh
+
+    Lists:
+        * list-style-type
+        * Removing default padding and margin
+        * Square bullets
+
+    Practical work:
+        * Added spacing to my existing page.
+        * Tried different units for width and spacing.
+        * Observed how padding and margin affect backgrounds.
+
+
+25. WHAT DID I UNDERSTAND?
+--------------------------
+
+    Box Model:
+        Every HTML element is treated as a box by the browser.
+
+    Content:
+        The actual text, image, or data.
+
+    Padding:
+        Space inside the content area.
+
+    Border:
+        The boundary around the padding.
+
+    Margin:
+        Space outside the element.
+
+    content-box:
+        The width represents only the content.
+
+    border-box:
+        Padding and border are included inside the given width.
+
+    %:
+        Useful for sizes relative to the parent.
+
+    rem:
+        Relative to the root font-size.
+
+    em:
+        Relative to the font-size context.
+
+    vw:
+        Relative to viewport width.
+
+    vh:
+        Relative to viewport height.
+
+    list-style:
+        Controls the bullets or markers of a list.
+
+
+26. MISTAKES I IDENTIFIED
+-------------------------
+
+    Mistake 1: Writing box-sizing without a selector
+
+    Wrong:
+
+        box-sizing: border-box;
+
+    Correct:
+
+        * {
+            box-sizing: border-box;
+        }
+
+    Or for a specific element:
+
+        .box {
+            box-sizing: border-box;
+        }
+
+
+    Mistake 2: padding: auto
+
+    I learned that:
+
+        padding: auto;
+
+    is not a valid normal padding value.
+
+    Padding can normally use values such as px, %, rem, and em.
+
+
+    Mistake 3: 100vw causing horizontal scrolling
+
+    I tried:
+
+        address {
+            width: 100vw;
+        }
+
+    In some situations, 100vw can cause a horizontal scrollbar
+    because it represents the full viewport width.
+
+    In this situation:
+
+        width: 100%;
+
+    can be more suitable.
+
+    Important lesson:
+
+        100vw = viewport width
+        100%  = relative to the parent's available width
+
+
+    Mistake 4: Confusing padding and margin
+
+    At first, they seemed similar to me, but after practicing,
+    the difference became clear:
+
+        Padding = inside
+        Margin  = outside
+
+
+-----------------------------------------------------------------------
+
+DAY-11 OUTCOME
+
+    By the end of Day-11, I understood the CSS Box Model and learned
+    how content, padding, border, and margin work together.
+
+    I also practiced box-sizing and different CSS units on my
+    existing page.
+
+    The main thing I learned today was the difference between
+    padding and margin and how spacing affects the page layout.
