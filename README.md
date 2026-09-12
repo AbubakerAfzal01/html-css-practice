@@ -10,11 +10,11 @@ The goal is simple:
 
 The course starts with core HTML concepts and gradually moves into modern CSS, including **Flexbox, Grid, CSS Variables, animations, responsive design, and practical projects**.
 
-> 🚧 **This course is actively in progress.** More days and projects will be added as I continue learning.
+> ### **This course is actively in progress.** More days and projects will be added as I continue learning.
 
 ---
 
-## 📚 Course Roadmap
+##  Course Roadmap
 
 | Phase       |  Days | Focus                                                                                           |
 | :---------- | :---: | :---------------------------------------------------------------------------------------------- |
@@ -23,7 +23,7 @@ The course starts with core HTML concepts and gradually moves into modern CSS, i
 
 ---
 
-## 📈 Progress
+##  Progress
 
 ### HTML — Completed
 
@@ -46,14 +46,14 @@ The course starts with core HTML concepts and gradually moves into modern CSS, i
 |  10 | Cascade, Specificity, Colors & Typography |  Completed |
 |  11 | Box Model & Units                         |  Completed |
 |  12 | Display & Positioning                     |  Completed |
-|  13 | Pseudo-classes & Pseudo-elements          |  ⏳ Pending  |
-|  14 | Flexbox                                   |  ⏳ Pending  |
-|  15 | CSS Grid                                  |  ⏳ Pending  |
-|  16 | CSS Variables & Modern Functions          |  ⏳ Pending  |
-|  17 | Transitions, Transforms & Animations      |  ⏳ Pending  |
-|  18 | Responsive / Mobile-First Design          |  ⏳ Pending  |
-|  19 | CSS Mini Project — Landing Page           |  ⏳ Pending  |
-|  20 | Final Project — Responsive Website        |  ⏳ Pending  |
+|  13 | Pseudo-classes & Pseudo-elements          |   Pending  |
+|  14 | Flexbox                                   |   Pending  |
+|  15 | CSS Grid                                  |   Pending  |
+|  16 | CSS Variables & Modern Functions          |   Pending  |
+|  17 | Transitions, Transforms & Animations      |   Pending  |
+|  18 | Responsive / Mobile-First Design          |   Pending  |
+|  19 | CSS Mini Project — Landing Page           |   Pending  |
+|  20 | Final Project — Responsive Website        |   Pending  |
 
 ### Current Progress
 
@@ -63,7 +63,7 @@ The course starts with core HTML concepts and gradually moves into modern CSS, i
 
 ---
 
-## ⏱️ Daily Learning Structure
+## Daily Learning Structure
 
 Each study session generally follows this workflow:
 
@@ -79,7 +79,7 @@ The focus is on **active coding and understanding**, not passive watching or cop
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```text
 html-css-practice/
@@ -173,7 +173,7 @@ Each completed day contains:
 
 ---
 
-## 🔄 Learning Workflow
+##  Learning Workflow
 
 ```text
 Learn
@@ -195,7 +195,7 @@ Every topic is reinforced through actual code and small practical exercises.
 
 ---
 
-## 🧰 Tools & Technologies
+##  Tools & Technologies
 
 ### Core
 
@@ -214,7 +214,7 @@ Every topic is reinforced through actual code and small practical exercises.
 
 ---
 
-## 🎯 Learning Goals
+##  Learning Goals
 
 By the end of this course, I aim to be comfortable with:
 
@@ -232,7 +232,7 @@ By the end of this course, I aim to be comfortable with:
 
 ---
 
-## 🚀 What Comes Next
+##  What Comes Next
 
 After completing the HTML & CSS foundation, the next step will be to move toward:
 
@@ -262,7 +262,7 @@ This repository represents the **foundation of that journey**.
 
 ---
 
-## 👨‍💻 About
+## About
 
 I am a **Computer Science student and aspiring Full-Stack Developer**, building my web development skills through consistent, practical coding.
 
