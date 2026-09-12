@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+}
+h1 {
+    color: #333;
+    text-align: center;
+}
+nav li a{
+    padding: 1px;
+    margin: 1px;
+    border: 1px solid black;
+}
+/* short-hand padding : clockwise: top, right, bottom, left*/
+#welcome {
+    padding: 10px 15px 10px 15px;
+}
+
+#hi {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 20px;
+    border: 5px solid black;
+}
+/* absolute units: px */
+h1 {
+    font-size: 30px;
+}
+
+#links {
+    
+    width: auto; 
+}
+ /* relative units: rem */
+
+p {
+    font-size: 1.2rem;
+}
+/* viewport height */
+.body {
+    width: 100vw;  } 
+
+#quick-note {
+    width: 50%;
+    background-color: rgb(221, 230, 173);
+}
+   
+footer {
+    background-color: rgb(221, 230, 173);
+    text-align: center;
+    padding: 10px 15px 10px 15px;
+    margin: 10px 15px 10px 15px;
+}
+a
