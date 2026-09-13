@@ -272,4 +272,23 @@ Instead of trying to learn everything at once, I am following a structured appro
 
 ---
 
+### Git & GitHub Integration
+
+This repository is maintained using the Git and GitHub concepts I learned during my Git & GitHub course.
+
+I applied Git in my HTML & CSS learning workflow to:
+
+- Track changes in my practice files
+- Create meaningful commits
+- Organize course content
+- Push updates to GitHub
+- Maintain the repository using version control
+
+> This repository demonstrates my practical application of Git & GitHub while learning HTML and CSS.
+
+#### Explore My Git & GitHub Practice
+
+https://github.com/AbubakerAfzal01/git-github-practice
+  
+---
 ⭐ **This repository is a work in progress. More practice, projects, and improvements will be added over time.**
