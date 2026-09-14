@@ -1,9 +1,18 @@
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
 }
 h1 {
     color: #333;
     text-align: center;
+     font-size: 30px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 nav li a{
     padding: 1px;
@@ -16,18 +25,14 @@ nav li a{
 }
 
 #hi {
-    box-sizing: border-box;
+   
     width: 300px;
     padding: 20px;
     border: 5px solid black;
 }
-/* absolute units: px */
-h1 {
-    font-size: 30px;
-}
 
 #links {
-    
+    list-style-type: square;
     width: auto; 
 }
  /* relative units: rem */
@@ -36,7 +41,7 @@ p {
     font-size: 1.2rem;
 }
 /* viewport height */
-.body {
+address {
     width: 100vw;  } 
 
 #quick-note {
@@ -50,4 +55,12 @@ footer {
     padding: 10px 15px 10px 15px;
     margin: 10px 15px 10px 15px;
 }
-a
+.contact-info {
+    margin: 15px 15px 15px 15px;
+    padding: 10px 15px 10px 15px;
+}
+.copyright {
+    margin: 2px 5px 5px 1px;
+    padding: 10px 15px 10px 100px;
+    
+}
