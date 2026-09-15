@@ -2,8 +2,8 @@
     box-sizing: border-box;
 }
 body {
-    font-family: Arial, sans-serif;
-}
+            font-family: 'times new roman', Tahoma, Geneva, Verdana, sans-serif;
+        }
 h1 {
     color: #333;
     text-align: center;
