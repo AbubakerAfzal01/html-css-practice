@@ -1,0 +1,701 @@
+            <----------------------------------------------->
+------------>       DAY-12: DISPLAY & POSITIONING       <-------------
+            <----------------------------------------------->
+
+
+1. WHAT IS DISPLAY PROPERTY?
+-----------------------------
+
+The `display` property controls how an HTML element behaves
+in the layout and how it takes space on the page.
+
+In simple words:
+
+    display = how an element is shown and arranged.
+
+
+2. display: block
+-----------------
+
+A block element starts on a new line.
+
+It normally takes the available width of its parent.
+
+Width and height can be controlled.
+
+Example:
+
+    .box {
+        display: block;
+        width: 200px;
+        height: 100px;
+    }
+
+Common block elements:
+
+    <div>
+    <section>
+    <p>
+    <h1>
+
+
+3. display: inline
+-------------------
+
+An inline element stays in the same line with other
+inline elements.
+
+It only takes the space required by its content.
+
+Width and height normally do not work as expected
+on inline elements.
+
+Example:
+
+    .text {
+        display: inline;
+        width: 200px;
+        height: 100px;
+    }
+
+I tested this myself with:
+
+    .hi {
+        display: inline;
+        width: 200px;
+        height: 100px;
+    }
+
+I noticed that the width and height were not applied
+as expected.
+
+This made the difference between inline and block
+much clearer to me.
+
+
+4. display: inline-block
+-------------------------
+
+`inline-block` combines some behavior of inline and block.
+
+The element can stay side-by-side with other elements,
+but width and height can still be controlled.
+
+Example:
+
+    nav li {
+        display: inline-block;
+    }
+
+I used this for my navigation items so they could
+appear side-by-side.
+
+
+5. display: none
+----------------
+
+`display: none` completely hides an element.
+
+It also removes the element from the layout, so it
+does not take any space.
+
+Example:
+
+    .box {
+        display: none;
+    }
+
+
+6. QUICK DISPLAY COMPARISON
+----------------------------
+
+block:
+    New line.
+    Width and height work.
+
+inline:
+    Same line.
+    Width and height normally do not work.
+
+inline-block:
+    Same line.
+    Width and height work.
+
+none:
+    Hidden.
+    No space is reserved.
+
+
+7. WHAT IS POSITION PROPERTY?
+-----------------------------
+
+The `position` property controls how an element is
+positioned on the page.
+
+It is mainly used with:
+
+    top
+    right
+    bottom
+    left
+
+
+8. position: static
+-------------------
+
+`static` is the default position of an element.
+
+The element stays in the normal document flow.
+
+top, right, bottom and left do not normally move
+a static element.
+
+Simple idea:
+
+    static = default position
+
+
+9. position: relative
+---------------------
+
+`relative` keeps the element in the normal document flow.
+
+Its original space is still reserved.
+
+We can move it using top, right, bottom or left.
+
+Example:
+
+    .box {
+        position: relative;
+        top: 10px;
+        left: 20px;
+    }
+
+The element moves visually, but its original space
+is still there.
+
+Simple idea:
+
+    relative = move from its original position
+
+
+10. position: absolute
+----------------------
+
+`absolute` removes the element from the normal
+document flow.
+
+Its original space is not reserved.
+
+It is positioned relative to the nearest positioned
+ancestor.
+
+Example:
+
+    .box {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+
+11. WHAT IS A POSITIONED ANCESTOR?
+----------------------------------
+
+An absolutely positioned element looks for the nearest
+parent or ancestor whose position is not `static`.
+
+Example:
+
+    .footer {
+        position: relative;
+    }
+
+    .copyright {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+Here, `.footer` becomes the positioned ancestor.
+
+If the parent does not have a positioned value such as
+relative, absolute, fixed or sticky, the browser looks
+for another positioned ancestor.
+
+If there is no positioned ancestor, the absolute element
+is positioned relative to the initial containing block.
+
+
+12. position: fixed
+-------------------
+
+`fixed` positions an element relative to the browser
+viewport.
+
+It stays in the same place while the page is scrolling.
+
+Example:
+
+    .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+
+Simple idea:
+
+    fixed = attached to the viewport
+
+
+13. position: sticky
+--------------------
+
+`sticky` behaves like a normal element at first.
+
+When scrolling reaches the specified position, it
+becomes stuck.
+
+Example:
+
+    .sticky {
+        position: sticky;
+        top: 0;
+    }
+
+The element can stick to the top while scrolling,
+but its behavior is affected by its parent/container.
+
+
+14. QUICK POSITION COMPARISON
+-----------------------------
+
+static:
+    Default position.
+
+relative:
+    Stays in normal flow.
+    Original space remains reserved.
+
+absolute:
+    Removed from normal flow.
+    Positioned relative to a positioned ancestor.
+
+fixed:
+    Positioned relative to the viewport.
+    Stays in place while scrolling.
+
+sticky:
+    Starts in normal flow.
+    Sticks after reaching its offset.
+
+
+15. RELATIVE VS ABSOLUTE
+------------------------
+
+The main difference is whether the original space
+is kept.
+
+relative:
+
+    Original space = RESERVED
+
+    The element can move from its original position.
+
+
+absolute:
+
+    Original space = NOT RESERVED
+
+    The element is removed from normal document flow.
+
+
+Easy way to remember:
+
+    relative = moves but keeps its space
+
+    absolute = moves independently
+
+
+16. PRACTICAL: NAVIGATION
+-------------------------
+
+I used:
+
+    nav li {
+        display: inline-block;
+    }
+
+This made the navigation items appear side-by-side.
+
+This was a simple practical example of how
+`inline-block` works.
+
+
+17. PRACTICAL: INLINE ELEMENT
+-----------------------------
+
+I used:
+
+    .hi {
+        display: inline;
+        width: 200px;
+        height: 100px;
+    }
+
+I noticed that the width and height did not work
+as expected.
+
+This was one of the tests that helped me understand
+the behavior of inline elements.
+
+
+18. PRACTICAL: COPYRIGHT BADGE
+------------------------------
+
+I used:
+
+    .footer {
+        position: relative;
+    }
+
+    .copyright {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+The footer became the positioned ancestor.
+
+The copyright text was placed at the top-right
+corner of the footer.
+
+This helped me understand why `relative` is often
+used on the parent when using `absolute` on a child.
+
+
+19. PRACTICAL: BACK-TO-TOP BUTTON
+---------------------------------
+
+I used:
+
+    .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+
+While scrolling, I observed that the button stayed
+in the same position on the screen.
+
+It did not move away with the normal page content.
+
+This helped me understand `position: fixed`.
+
+
+20. PRACTICAL: STICKY HEADER
+----------------------------
+
+I used:
+
+    .sticky {
+        position: sticky;
+        top: 0;
+        background: yellow;
+        padding: 10px;
+    }
+
+At first, the heading behaves like a normal element.
+
+When I scroll and it reaches the top, it sticks there.
+
+I also noticed that sticky is not exactly the same
+as fixed.
+
+The sticky element is affected by the boundaries of
+its parent/container. When that area ends, the sticky
+behavior also ends.
+
+
+21. FIXED VS STICKY
+-------------------
+
+fixed:
+
+    Relative to the viewport.
+    Stays in the same place while scrolling.
+
+
+sticky:
+
+    Starts in normal flow.
+    Becomes stuck after reaching its offset.
+    Its behavior is limited by its containing area.
+
+
+Easy way to remember:
+
+    fixed  = viewport
+
+    sticky = normal position + scrolling + boundary
+
+
+22. WHAT IS z-index?
+--------------------
+
+`z-index` controls which overlapping element appears
+in front of another element.
+
+A higher applicable z-index can place an element above
+another overlapping element.
+
+Example:
+
+    .box {
+        position: relative;
+        z-index: 2;
+    }
+
+z-index is commonly used with positioned elements
+such as:
+
+    relative
+    absolute
+    fixed
+    sticky
+
+
+23. WHAT DID I PRACTICE TODAY?
+------------------------------
+
+Display:
+
+    * block
+    * inline
+    * inline-block
+    * none
+
+Position:
+
+    * static
+    * relative
+    * absolute
+    * fixed
+    * sticky
+
+Practical work:
+
+    * Made navigation items appear side-by-side.
+    * Tested width and height on an inline element.
+    * Created a copyright badge.
+    * Used a relative footer as the positioned ancestor.
+    * Created a fixed back-to-top button.
+    * Tested a sticky heading.
+    * Observed scrolling behavior.
+    * Practiced the basic idea of z-index.
+
+
+24. WHAT DID I UNDERSTAND?
+--------------------------
+
+display:
+    Controls how an element behaves in the layout.
+
+block:
+    New line + width/height can be controlled.
+
+inline:
+    Same line + width/height normally do not work.
+
+inline-block:
+    Same line + width/height can be controlled.
+
+none:
+    Hidden + no space reserved.
+
+
+relative:
+    Keeps its original space.
+
+absolute:
+    Removes itself from normal flow.
+
+fixed:
+    Stays relative to the viewport.
+
+sticky:
+    Becomes stuck during scrolling within its
+    containing area.
+
+positioned ancestor:
+    The nearest ancestor with a non-static position.
+
+z-index:
+    Controls stacking order when elements overlap.
+
+
+25. MISTAKES I IDENTIFIED
+-------------------------
+
+Mistake 1: Selector mismatch
+
+I noticed selector mismatches such as:
+
+    CSS:
+    #quick-notes
+
+    HTML:
+    id="quick-note"
+
+These are different selectors.
+
+I also had:
+
+    CSS:
+    .ul
+
+    HTML:
+    class="links"
+
+These do not match either.
+
+Lesson:
+
+    The class or id name in CSS must match the
+    class or id used in HTML.
+
+
+Mistake 2: Duplicate selectors
+
+I had some selectors defined more than once,
+such as:
+
+    #quick-note
+
+    .copyright
+
+CSS follows the cascade.
+
+If the same property is defined again with the
+same specificity, the later rule normally wins.
+
+Lesson:
+
+    Avoid unnecessary duplicate selectors because
+    they can make CSS confusing.
+
+
+Mistake 3: Missing closing brace
+
+A missing `}` can break the CSS structure.
+
+Example:
+
+    .box {
+        color: red;
+
+The rule is incomplete because the closing brace
+is missing.
+
+Lesson:
+
+    Every CSS rule needs a proper opening `{`
+    and closing `}`.
+
+
+Mistake 4: Redundant CSS
+
+I had:
+
+    .topic {
+        display: block;
+    }
+
+An `<h1>` is already a block-level element by default.
+
+So this rule is not necessary unless I am specifically
+practicing the display property.
+
+Lesson:
+
+    Clean CSS means avoiding unnecessary rules.
+
+
+Mistake 5: Missing background-color
+
+I noticed that my `.back-to-top` button was not
+displaying properly.
+
+The actual issue was that I had only set the text
+color using:
+
+    color: ...
+
+But I had not added a `background-color` property
+to the `.back-to-top` element.
+
+Because of this, the button was blending into the
+page background and was not clearly visible.
+
+Lesson:
+
+    `color` changes the text color.
+
+    `background-color` changes the background of
+    the element.
+
+Example:
+
+    .back-to-top {
+        color: white;
+        background-color: black;
+    }
+
+Adding a background color made the button much
+more visible.
+
+
+26. DAY-12 OUTCOME
+------------------
+
+Today I learned how CSS controls the display behavior
+and positioning of HTML elements.
+
+I practiced these concepts on my existing mini portfolio
+page instead of only reading about them.
+
+The main things I practiced were:
+
+    * display values
+    * position values
+    * inline and inline-block
+    * relative and absolute positioning
+    * fixed positioning
+    * sticky positioning
+    * positioned ancestors
+    * basic z-index
+    * CSS selector matching
+    * CSS cascade
+
+
+The clearest concept for me was:
+
+    relative vs absolute
+
+because I could actually see that relative keeps its
+original space while absolute is removed from the
+normal flow.
+
+
+The more confusing concept was:
+
+    sticky
+
+because its behavior depends on scrolling and the
+boundaries of its parent/container.
+
+
+Overall, Day-12 helped me understand how display,
+positioning and scrolling work together in a real
+webpage.
