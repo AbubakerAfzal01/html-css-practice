@@ -48,7 +48,7 @@ The course starts with core HTML concepts and gradually moves into modern CSS, i
 |  12 | Display & Positioning                     |  Completed |
 |  13 | Pseudo-classes & Pseudo-elements          | Completed  |
 |  14 | Flexbox                                   | Completed |
-|  15 | CSS Grid                                  |   Pending  |
+|  15 | CSS Grid                                  | Completed |
 |  16 | CSS Variables & Modern Functions          |   Pending  |
 |  17 | Transitions, Transforms & Animations      |   Pending  |
 |  18 | Responsive / Mobile-First Design          |   Pending  |
