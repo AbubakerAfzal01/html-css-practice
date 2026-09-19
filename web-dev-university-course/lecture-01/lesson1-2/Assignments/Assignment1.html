@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abubaker Afzal </title>
+    <link rel="stylesheet" href="assignment1.css">
+</head>
+<body>
+
+    <h1 class="topic">My First HTML Page</h1>
+
+    <header class="header">
+        <h2>Abubaker Afzal's Portfolio</h2>
+        <p><small>Learning HTML, one day at a time</small></p>
+       
+    </header>
+
+    <div class="navigation">
+        <nav>
+            <ul>
+                <li class="li-item"><a href="#about">About</a></li>
+                <li class="li-item"><a href="#skills">Skills</a></li>
+                <li class="li-item"><a href="#journey">Journey</a></li>
+                <li class="li-item"><a href="#links">Links</a></li>
+                <li class="li-item"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+     <a href="https://abubaker-afzal.vercel.app"><pre class="port-light1">---> 👉🔗View  Portfolio <---</pre></a>
+     <a href="https://drive.google.com/file/d/1l4dzf7pFvlVIH88H1s3X-EvHQbm_7N4I/view"><pre class="port-light1">--->   👉🔗VIEW RESUME   <---</pre></a>
+
+    <main>
+
+        <section id="welcome">
+            <h2>Welcome</h2>
+            <p class="intro-text">Hi, I am <strong>Abubaker Afzal</strong>, a <strong>beginner web developer</strong> currently learning <span class="color">HTML &amp; CSS</span> step by step. This mini project is a <em>revision</em> of everything covered in Lecture 1.</p>
+        </section>
+
+        <hr> 
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p title="This is a tooltip">My name is Abubaker Afzal. I am a BSCS student and I want to become a frontend developer.</p>
+        </section>
+
+        <hr>
+
+        <section id="skills">
+            <h3>My Skills</h3>
+            <ul class="links">
+                <li class="link-item1">HTML5</li>
+                <li class="link-item1">CSS3</li>
+                <li class="link-item1">Python</li>
+                <li class="link-item1">Java</li>
+                <li class="link-item1">C++</li>
+                <li class="link-item1">MySQL</li>
+                <li class="link-item1">JavaScript</li>
+            </ul>
+        </section>
+
+        <hr> 
+
+     
+        <section id="terminal-output">
+            <h2>Git Bash Console</h2>
+            <pre>
+USer@Abubaker MINGW64 ~
+$ cd desktop
+
+USer@Abubaker MINGW64 ~/desktop
+$ cd html-css-practice
+
+USer@Abubaker MINGW64 ~/desktop/html-css-practice (main)
+$ ls
+CSS/  HTML/  README.md  web-dev-university-course/
+
+USer@Abubaker MINGW64 ~/desktop/html-css-practice (main)
+$ cd HTML
+
+USer@Abubaker MINGW64 ~/desktop/html-css-practice/HTML (main)
+$ ls
+Day-01/  Day-02/  Day-03/  Day-04/  Day-05/  Day-06/  Day-07/  Day-08/
+            </pre>
+        </section>
+
+        <hr> 
+
+        <section id="links">
+            <h2>My Favorite Link</h2>
+            <p>Visit The Islamia Univeristy Of Bahawalpur to learn more: <a href="https://iub.edu.pk" title="Go to W3Schools">Click here</a></p>
+            <h2>An Image Example</h2>
+            <img src="https://iub.edu.pk/themes/iub-revamp/assets/images/favicon.png" alt="IUB Logo" width="200" height="100">
+        </section>
+
+        <hr>
+
+        <section id="journey">
+            <h2>My Learning Journey</h2>
+            <p>I am a BSCS student at <a href="https://iub.edu.pk" title="Visit IUB">The Islamia University of Bahawalpur</a>. I started in Session Spring 2025.</p>
+            <p class="highlight">I am currently learning HTML and CSS, and after this I will dive deep into JavaScript.</p>
+
+            <h3>Roadmap</h3>
+            <p>Here is my short-term plan:</p>
+            <ol>
+                <li>HTML mastery</li>
+                <li>CSS styling</li>
+                <li>JavaScript basics</li>
+                <li>Building real projects</li>
+                <li>Becoming a full-stack developer</li>
+            </ol>
+        </section>
+
+        <hr> 
+
+        <section id="image2">
+            <h2>Another Image Example</h2>
+            <img src="hi.jpg" alt="My profile photo" width="300">
+            <img src="hii.jpg" alt="My profile photo"  width="275">
+            <figcaption>That's me!</figcaption>
+           
+            <p title="Fun fact">This image is added just as a demo.</p>
+        </section>
+
+        <hr> 
+
+        
+        <section id="sql-structure">
+            <h2>SQL Database Table Structure</h2>
+            <pre>
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY AUTO_INCREMENT,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50),
+    Department VARCHAR(10) DEFAULT 'BSCS',
+    EnrollmentYear INT
+);
+
+INSERT INTO Students (FirstName, LastName, EnrollmentYear)
+VALUES ('Abubaker', 'Afzal', 2025);
+
+SELECT * FROM Students;
+            </pre>
+        </section>
+
+        <hr> 
+
+        <section id="you-find">
+            <h2 class="hi">What You'll Find Here</h2>
+            <ul class="links">
+                <li class="link-item1">My story and skills — see <a href="https://abubaker-afzal.vercel.app/certifications.html">About</a></li>
+                <li class="link-item1">Things I've built — see <a href="https://abubaker-afzal.vercel.app/projects.html">Projects</a></li>
+                <li class="link-item1">Ways to reach me — see <a href="https://abubaker-afzal.vercel.app/index.html#contact">Contact</a></li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="quick-note">
+            <h2>Quick Note</h2>
+            <p><small>This site is built using only semantic HTML from Lecture 1 to Day 12. Styling comes from a simple external CSS file.</small></p>
+         
+        </section>
+
+        <hr>
+         <h4> <a href="https://abubaker-afzal.vercel.app" ><pre class="port-light2">---> View  Portfolio <---</pre></a>
+
+
+    </main>
+
+   
+    <footer class="footer" id="contact">
+        <div class="address">
+            <p class="contact-info">Email: <a href="mailto:abubakerafzal01@gmail.com">abubakerafzal01@gmail.com</a></p>
+        </div>
+        <p class="contact-text">Your Feedback is always welcome!</p>
+        <p><small class="copyright">&copy; <span class="red">Abubaker Afzal. All rights reserved.</span></small></p>
+        <div class="back-to-top">↑</div>
+      
+    </footer>
+
+</body>
+</html>
