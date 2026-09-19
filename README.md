@@ -46,18 +46,18 @@ The course starts with core HTML concepts and gradually moves into modern CSS, i
 |  10 | Cascade, Specificity, Colors & Typography |  Completed |
 |  11 | Box Model & Units                         |  Completed |
 |  12 | Display & Positioning                     |  Completed |
-|  13 | Pseudo-classes & Pseudo-elements          | Completed  |
-|  14 | Flexbox                                   | Completed |
-|  15 | CSS Grid                                  | Completed |
-|  16 | CSS Variables & Modern Functions          |   Pending  |
-|  17 | Transitions, Transforms & Animations      |   Pending  |
-|  18 | Responsive / Mobile-First Design          |   Pending  |
-|  19 | CSS Mini Project — Landing Page           |   Pending  |
-|  20 | Final Project — Responsive Website        |   Pending  |
+|  13 | Pseudo-classes & Pseudo-elements          |  Completed |
+|  14 | Flexbox                                   |  Pending |
+|  15 | CSS Grid                                  |  Pending |
+|  16 | CSS Variables & Modern Functions          |   Pending   |
+|  17 | Transitions, Transforms & Animations      |   Pending   |
+|  18 | Responsive / Mobile-First Design          |   Pending   |
+|  19 | CSS Mini Project — Landing Page           |   Pending   |
+|  20 | Final Project — Responsive Website        |   Pending   |
 
 ### Current Progress
 
-**13 / 20 days completed**
+**14 / 20 days completed**
 
 > The CSS roadmap is a flexible plan. Topics and day numbers may change as the course develops.
 
@@ -110,22 +110,22 @@ html-css-practice/
 │   │   ├── notes.txt
 │   │   ├── README.md
 │   │   └── images/
-|   |
-|   ├── Day-05/
-|   |   ├── index.html
-|   |   ├── notes.txt
-|   |   └── README.md
-|   | 
-|   ├── Day-06/
-|   |   ├── index.html
-|   |   ├── notes.txt
-|   |   └── README.md
-|   | 
-|   ├── Day-07/
-|   |   ├── index.html
-|   |   ├── notes.txt
-|   |   └── README.md
-|   | 
+│   │
+│   ├── Day-05/
+│   │   ├── index.html
+│   │   ├── notes.txt
+│   │   └── README.md
+│   │ 
+│   ├── Day-06/
+│   │   ├── index.html
+│   │   ├── notes.txt
+│   │   └── README.md
+│   │ 
+│   ├── Day-07/
+│   │   ├── index.html
+│   │   ├── notes.txt
+│   │   └── README.md
+│   │ 
 │   └── Day-08/
 │       ├── index.html
 │       ├── project.html
@@ -134,39 +134,57 @@ html-css-practice/
 │       ├── notes.txt
 │       ├── README.md
 │       └── images/
-|
-|
-└── CSS/
-    │
-    ├── Day-09/
-    │   ├── index.html
-    │   ├── style.css
-    │   ├── notes.txt
-    │   └── README.md
-    │
-    ├── Day-10/
-    |   ├── index.html
-    │   ├── style.css
-    │   ├── notes.txt
-    │   └── README.md
-    │
-    ├── Day-11/
-    |   ├── index.html
-    │   ├── style.css
-    │   ├── notes.txt
-    │   └── README.md
-    │
-    ├── Day-12/
-    |   ├── index.html
-    |   ├── style.css
-    |   ├── notes.txt
-    |   └── README.md
-    |
-    └── Day-13/
-        ├── index.html
-        ├── style.css
-        ├── notes.txt
-        └── README.md
+│
+├── CSS/
+│   │
+│   ├── Day-09/
+│   │   ├── index.html
+│   │   ├── style.css
+│   │   ├── notes.txt
+│   │   └── README.md
+│   │
+│   ├── Day-10/
+│   │   ├── index.html
+│   │   ├── style.css
+│   │   ├── notes.txt
+│   │   └── README.md
+│   │
+│   ├── Day-11/
+│   │   ├── index.html
+│   │   ├── style.css
+│   │   ├── notes.txt
+│   │   └── README.md
+│   │
+│   ├── Day-12/
+│   │   ├── index.html
+│   │   ├── style.css
+│   │   ├── notes.txt
+│   │   └── README.md
+│   │
+│   ├── Day-13/
+│   │   ├── index.html
+│   │   ├── style.css
+│   │   ├── notes.txt
+│   │   └── README.md
+│   │
+│   ├── Day-14/
+│   │   └── ... (Flexbox practice)
+│   │
+│   └── Day-15/
+│       └── ... (CSS Grid practice)
+│
+└── web-dev-university-course/
+    └── lecture-01/
+        ├── lesson1-2/
+        │   └── Assignments/
+        │       ├── Assignment1.html
+        │       ├── assignment1.css
+        │       ├── hi.jpg
+        │       └── hii.jpg
+        └── practices/
+            ├── practice-01.html
+            ├── practice-02.1.html
+            └── practice-02.html
 ```
 
 Each completed day contains:
