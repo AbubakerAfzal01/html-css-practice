@@ -1,0 +1,578 @@
+                <----------------------------------------------->
+    ------------>   DAY-13: PSEUDO-CLASSES & PSEUDO-ELEMENTS    <-------------
+                <----------------------------------------------->
+
+
+1. WHAT IS A PSEUDO-CLASS?
+---------------------------
+
+    A pseudo-class is used to style an HTML element based on
+    its state, condition, or position.
+
+    Pseudo-class uses ONE colon (:).
+
+    Syntax:
+
+        selector:pseudo-class {
+            property: value;
+        }
+
+
+    A. STATE-BASED PSEUDO-CLASSES
+    ------------------------------
+
+    These are used when an element is in a particular state.
+
+    
+    1. :hover
+    ---------
+
+    It applies styles when the mouse pointer is placed over
+    an element.
+
+    Example:
+
+        nav a:hover {
+            background-color: lightblue;
+            color: darkblue;
+        }
+
+    In our practice:
+
+        When I move the mouse over a navigation link,
+        its background and text color change.
+
+
+    2. :focus
+    ---------
+
+    It applies styles when an input or other focusable element
+    is selected/focused.
+
+    Example:
+
+        input:focus {
+            border: 2px solid green;
+            outline: none;
+        }
+
+    In our practice:
+
+        When I click inside the Name or Email input,
+        its border changes to green.
+
+    Note:
+
+        Focus can also happen through keyboard navigation,
+        such as using the Tab key.
+
+
+    3. :active
+    ----------
+
+    It applies while an element is being activated/clicked.
+
+    Example:
+
+        button:active {
+            color: red;
+            border-color: red;
+            background-color: gray;
+        }
+
+    In our practice:
+
+        When I press/click the button,
+        its color, border, and background temporarily change.
+
+
+    B. POSITION-BASED PSEUDO-CLASSES
+    --------------------------------
+
+    These select elements according to their position
+    among their siblings.
+
+
+    1. :first-child
+    ---------------
+
+    Selects an element if it is the first child of its parent.
+
+    Example:
+
+        .skills li:first-child {
+            font-weight: bold;
+        }
+
+    In our practice:
+
+        The first skill, HTML, becomes bold.
+
+
+    2. :last-child
+    --------------
+
+    Selects an element if it is the last child of its parent.
+
+    Example:
+
+        .skills li:last-child {
+            color: red;
+        }
+
+    In our practice:
+
+        The last skill, VS Code, becomes red.
+
+
+    3. :nth-child()
+    ---------------
+
+    Used to select a child based on its position/number.
+
+    Example:
+
+        .skills li:nth-child(3) {
+            color: blue;
+        }
+
+    This selects the 3rd <li>.
+
+    
+    nth-child(odd)
+    ---------------
+
+    Selects elements at odd positions:
+
+        1st
+        3rd
+        5th
+        7th
+        ...
+
+
+    nth-child(even)
+    ----------------
+
+    Selects elements at even positions:
+
+        2nd
+        4th
+        6th
+        8th
+        ...
+
+
+    In our practice:
+
+        .skills li:nth-child(odd) {
+            background-color: lightyellow;
+        }
+
+        .skills li:nth-child(even) {
+            background-color: rgb(224, 248, 255);
+        }
+
+    The odd and even items get different backgrounds.
+
+    This creates a simple ZEBRA STRIPING effect.
+
+
+
+
+2. WHAT IS A PSEUDO-ELEMENT?
+----------------------------
+
+    A pseudo-element is used to style a specific part of an
+    element or insert extra generated content.
+
+    Pseudo-elements normally use TWO colons (::).
+
+    Syntax:
+
+        selector::pseudo-element {
+            property: value;
+        }
+
+
+    Difference in syntax:
+
+        Pseudo-class   -> :
+        Pseudo-element -> ::
+
+    Example:
+
+        :hover
+
+        ::before
+
+
+    A. ::before
+    -----------
+
+    ::before inserts generated content before the actual
+    content of an element.
+
+    Example:
+
+        .skills li::before {
+            content: "✓ ";
+            color: green;
+            font-weight: bold;
+        }
+
+    In our practice:
+
+        A green checkmark is added before every skill.
+
+        HTML
+        CSS
+        JavaScript
+        Git
+        GitHub
+        VS Code
+
+    The checkmark is not actually written inside the HTML.
+    CSS generates it using ::before.
+
+
+    B. ::after
+    ----------
+
+    ::after inserts generated content after the actual
+    content of an element.
+
+    Example:
+
+        nav a::after {
+            content: " →";
+            color: #555;
+        }
+
+    In our practice:
+
+        An arrow is automatically added after each navigation
+        link.
+
+        Home →
+        About →
+        Projects →
+        Contact →
+
+
+    C. WHY IS content IMPORTANT?
+    ----------------------------
+
+    For generated content, the content property tells CSS
+    what should be inserted.
+
+    Example:
+
+        .required::before {
+            content: " *";
+        }
+
+    If we forget the content property:
+
+        .required::before {
+            color: red;
+        }
+
+    The pseudo-element has nothing to display.
+
+    So for our ::before and ::after text/symbol experiments,
+    content is essential.
+
+    This was one of the observations I discovered while
+    practicing.
+
+
+
+
+
+3. WHAT DID I PRACTICE TODAY?
+-----------------------------
+
+    1. Navigation Hover
+    -------------------
+
+    I used:
+
+        nav a:hover
+
+    When I hover over a navigation link, its background
+    and text color change.
+
+    This helped me understand the :hover state.
+
+
+    2. Button Active
+    ----------------
+
+    I used:
+
+        button:active
+
+    When I press the button, its color, border, and
+    background temporarily change.
+
+    This helped me understand the :active state.
+
+
+    3. Input Focus
+    --------------
+
+    I used:
+
+        input:focus
+
+    When I click/select an input field, its border changes.
+
+    This helped me understand the :focus state.
+
+
+    4. Skills List
+    --------------
+
+    I practiced:
+
+        :first-child
+        :last-child
+        :nth-child(odd)
+        :nth-child(even)
+
+    Results:
+
+        First item  -> HTML becomes bold
+        Last item   -> VS Code becomes red
+        Odd items   -> light yellow background
+        Even items  -> light blue background
+
+
+    5. ::before and ::after
+    -----------------------
+
+    I practiced pseudo-elements in three places:
+
+        a. Skills list
+
+           .skills li::before
+
+           Adds a checkmark before every skill.
+
+
+        b. Navigation
+
+           nav a::after
+
+           Adds an arrow after every navigation link.
+
+
+        c. Required text
+
+           .required::before
+           .required::after
+
+           Adds a red asterisk before and after the text.
+
+           Example result:
+
+                * Day 13 practice page *
+
+
+    The .required experiment helped me understand that
+    ::before and ::after can both be used on the same element.
+
+
+
+
+
+4. WHAT DID I UNDERSTAND?
+-------------------------
+
+    A. Pseudo-class vs Pseudo-element
+    ---------------------------------
+
+    Pseudo-class:
+
+        Uses one colon (:)
+
+        It describes a STATE or POSITION of an element.
+
+        Examples:
+
+            :hover
+            :focus
+            :active
+            :first-child
+            :last-child
+            :nth-child()
+
+
+    Pseudo-element:
+
+        Uses two colons (::)
+
+        It targets a PART of an element or creates
+        generated content.
+
+        Examples:
+
+            ::before
+            ::after
+
+
+    Simple way to remember:
+
+        Pseudo-class  = element ki STATE / POSITION
+
+        Pseudo-element = element ka PART / EXTRA CONTENT
+
+
+    B. Zebra Striping
+    -----------------
+
+    When I use:
+
+        :nth-child(odd)
+
+    together with:
+
+        :nth-child(even)
+
+    I can give alternating styles to list items.
+
+    Example:
+
+        1st -> Yellow
+        2nd -> Blue
+        3rd -> Yellow
+        4th -> Blue
+        5th -> Yellow
+        6th -> Blue
+
+    This alternating pattern is called ZEBRA STRIPING.
+
+    It is commonly used in tables and lists to make
+    different rows easier to distinguish.
+
+
+    C. Button Default Border
+    ------------------------
+
+    I noticed that the button already had a visible border
+    even before I specifically designed it.
+
+    This happens because the browser applies default
+    user-agent styles to HTML elements such as buttons.
+
+    The default appearance can include:
+
+        - border
+        - background
+        - padding
+        - font
+        - other browser-specific styles
+
+    So CSS is not always starting from a completely empty
+    design.
+
+
+
+
+5. MISTAKES I IDENTIFIED
+------------------------
+
+    1. Forgetting the content property
+    ----------------------------------
+
+    While working with ::before and ::after, I learned that
+    generated content needs the content property.
+
+    For example:
+
+        .required::before {
+            content: " *";
+        }
+
+    Without content, there is nothing to insert/display.
+
+
+    2. Confusion between : and ::
+    -----------------------------
+
+    At first, pseudo-class and pseudo-element syntax can
+    look similar.
+
+    The important difference is:
+
+        :   -> pseudo-class
+
+        ::  -> pseudo-element
+
+
+    Examples:
+
+        :hover
+        :focus
+        :active
+
+        ::before
+        ::after
+
+
+    3. Understanding :active
+    -------------------------
+
+    :active does not mean "the button has been permanently
+    clicked."
+
+    It applies while the element is being activated/pressed.
+
+
+
+
+
+6. DAY OUTCOME
+--------------
+
+    Today I learned how CSS can respond to different
+    conditions and positions without adding extra classes
+    to every element in HTML.
+
+    The main concepts I practiced were:
+
+        - :hover
+        - :focus
+        - :active
+        - :first-child
+        - :last-child
+        - :nth-child()
+        - ::before
+        - ::after
+        - content property
+
+
+    The pseudo-class concept became clearer after practicing
+    hover, focus, active, and child selectors.
+
+    The difference between pseudo-classes and pseudo-elements
+    is also clear:
+
+        :  -> state / position
+
+        :: -> part / generated content
+
+
+    The slightly confusing part was understanding
+    ::before / ::after and why the content property is needed.
+
+    Overall, Day 13 helped me understand how CSS can add
+    interactive states, position-based styling, and small
+    generated elements without changing the HTML structure.
+
+
+
+
+                    DAY 13 COMPLETE
+            
