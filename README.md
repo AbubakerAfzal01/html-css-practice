@@ -57,7 +57,7 @@ The course starts with core HTML concepts and gradually moves into modern CSS, i
 
 ### Current Progress
 
-**14 / 20 days completed**
+**13 / 20 days completed**
 
 > The CSS roadmap is a flexible plan. Topics and day numbers may change as the course develops.
 
