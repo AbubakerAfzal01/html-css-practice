@@ -1,0 +1,775 @@
+                <----------------------------------------------->
+    ------------>              DAY-15: CSS GRID                 <-------------
+                <----------------------------------------------->
+
+
+1. WHAT IS CSS GRID
+-------------------
+
+    CSS Grid is a layout system in CSS that helps us arrange
+    elements in rows and columns.
+
+    To use Grid, we write:
+
+        display: grid;
+
+
+    When I apply display: grid to a parent element, that
+    parent becomes the Grid container and its direct children
+    become Grid items.
+
+    Example:
+
+        .grid-container {
+            display: grid;
+        }
+
+
+    So basically:
+
+        Parent   = Grid container
+        Children = Grid items
+
+
+    GRID VS FLEXBOX
+    ---------------
+
+    The main difference I understood is:
+
+        Flexbox = one-dimensional
+        Grid    = two-dimensional
+
+
+    Flexbox mainly works in one direction at a time:
+
+        Row
+        OR
+        Column
+
+
+    Grid can work with both at the same time:
+
+        Rows
+        +
+        Columns
+
+
+    Simple way I remember it:
+
+        Flexbox -> One direction
+
+        Grid -> Rows + Columns
+
+
+    After practicing both Flexbox and Grid, I found that
+    Flexbox feels more suitable for things like navigation
+    bars and simple alignment, while Grid is useful when
+    I want a proper row-and-column layout.
+
+
+---------------------------------------------------------------
+
+
+2. GRID-TEMPLATE-COLUMNS
+------------------------
+
+    grid-template-columns is used to define the columns of
+    a Grid and their sizes.
+
+    I practiced different ways of defining columns.
+
+
+    A. FIXED PIXEL VALUES
+    ---------------------
+
+    Example:
+
+        .grid-container1 {
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+        }
+
+
+    This creates three columns, and each column is 200px wide.
+
+        200px | 200px | 200px
+
+
+    This is easy to understand, but the sizes are fixed.
+
+
+    B. fr UNIT
+    ----------
+
+    The fr unit means a fraction of the available space.
+
+    I used:
+
+        grid-template-columns: 4fr 4fr 4fr;
+
+
+    Here the ratio is:
+
+        4 : 4 : 4
+
+
+    Because all three values are equal, the available space
+    is divided equally between the three columns.
+
+
+    C. repeat()
+    -----------
+
+    Instead of writing the same value again and again, I can
+    use the repeat() function.
+
+    Example:
+
+        grid-template-columns: repeat(3, 5fr);
+
+
+    This basically means:
+
+        5fr 5fr 5fr
+
+
+    So repeat(3, 5fr) means:
+
+        Repeat 5fr three times.
+
+
+    FR EXPERIMENT
+    -------------
+
+    I tested:
+
+        4fr 4fr 4fr
+
+    and:
+
+        repeat(3, 5fr)
+
+
+    At first, I thought changing 4fr to 5fr might make the
+    columns bigger.
+
+    But because all three columns were changed equally, the
+    result was still an equal three-column layout.
+
+    What actually matters is the ratio.
+
+    For example:
+
+        1fr 2fr 1fr
+
+    would give the middle column twice as much space as the
+    first and third columns.
+
+    So I understood that fr values work more like a ratio
+    when they are used together.
+
+
+    D. MIXED VALUES
+    ---------------
+
+    I also tested:
+
+        grid-template-columns: 200px 1fr 1fr;
+
+
+    This means:
+
+        First column  -> 200px fixed
+        Second column -> 1 fraction
+        Third column  -> 1 fraction
+
+
+    The browser first gives 200px to the first column and
+    then divides the remaining space between the two 1fr
+    columns.
+
+    This was useful because Grid does not require every
+    column to use the same type of value.
+
+
+---------------------------------------------------------------
+
+
+3. GRID-TEMPLATE-ROWS
+---------------------
+
+    grid-template-rows is used when I want to define the
+    size of Grid rows.
+
+    In my example I used:
+
+        grid-template-rows: repeat(3, 100px);
+
+
+    This creates three rows, each 100px high.
+
+
+    So my Grid has:
+
+        3 columns
+        3 rows
+
+
+    If I do not define the rows, Grid can create rows
+    automatically when more items need to be placed.
+
+    For example:
+
+        grid-template-columns: repeat(3, 1fr);
+
+    With 9 items, Grid naturally creates:
+
+        1   2   3
+        4   5   6
+        7   8   9
+
+
+    I do not have to manually write three rows for this.
+
+    These automatically created rows are part of the
+    implicit Grid.
+
+
+---------------------------------------------------------------
+
+
+4. GAP
+------
+
+    The gap property adds space between Grid items.
+
+    I used:
+
+        gap: 15px;
+
+
+    in my project grid.
+
+    Instead of adding margin to every item, I can simply
+    use gap on the parent container.
+
+    It keeps the spacing between the items consistent.
+
+
+    I already used gap in Day 14 with Flexbox, so the basic
+    idea was familiar.
+
+    The main difference is that with Grid, gap works between
+    both:
+
+        Columns
+        Rows
+
+
+    This makes it very convenient for Grid layouts.
+
+
+---------------------------------------------------------------
+
+
+5. GRID-COLUMN SPANNING
+-----------------------
+
+    Grid allows an item to take up more than one column.
+
+    We can control this using grid-column.
+
+
+    A. grid-column: start / end
+    ---------------------------
+
+    Example:
+
+        grid-column: 1 / 3;
+
+
+    This uses Grid line numbers.
+
+    If I have three columns, there are four vertical
+    Grid lines:
+
+        |       |       |       |
+        1       2       3       4
+
+
+    So:
+
+        grid-column: 1 / 3;
+
+    means the item starts at line 1 and ends at line 3.
+
+    Therefore, it covers two columns.
+
+
+    B. span
+    -------
+
+    The span keyword tells Grid how many columns the item
+    should occupy.
+
+    Example:
+
+        grid-column: span 2;
+
+
+    This means the item should take up two columns from
+    its starting position.
+
+
+    C. -1
+    ------
+
+    One thing I discovered while practicing was that:
+
+        -1
+
+    means the last Grid line.
+
+    For example:
+
+        grid-column: 2 / -1;
+
+
+    means:
+
+        Start at Grid line 2
+        End at the last Grid line
+
+
+    For a three-column Grid:
+
+        |       |       |       |
+        1       2       3       4
+
+    Here -1 means line 4.
+
+
+    D. PAGE LAYOUT PRACTICAL
+    ------------------------
+
+    I used Grid to make a simple page layout with:
+
+        Header
+        Sidebar
+        Main Content
+        Footer
+
+
+    I used:
+
+        grid-template-columns: 1fr 3fr;
+
+
+    This gave the sidebar 1 fraction and the main content
+    3 fractions of the available space.
+
+
+    For the header I used:
+
+        grid-column: 1 / 3;
+
+
+    And for the footer:
+
+        grid-column: 1 / 3;
+
+
+    This made both the header and footer cover the full
+    two-column layout.
+
+
+    The layout became roughly:
+
+        --------------------------------
+        |            Header            |
+        --------------------------------
+        | Sidebar |    Main Content    |
+        --------------------------------
+        |            Footer            |
+        --------------------------------
+
+
+---------------------------------------------------------------
+
+
+6. WHAT DID I PRACTICE TODAY?
+-----------------------------
+
+    I created five different Grid examples instead of
+    putting everything into one container.
+
+    The reason was simple: I wanted to understand each
+    concept separately.
+
+
+    1. Fixed Pixel Grid
+
+        200px 200px 200px
+
+
+    2. fr Grid
+
+        4fr 4fr 4fr
+
+
+    3. repeat() Grid
+
+        repeat(3, 5fr)
+
+
+    4. Mixed Grid
+
+        200px 1fr 1fr
+
+
+    5. Rows + Columns Grid
+
+        repeat(3, 1fr)
+
+        repeat(3, 100px)
+
+
+    Making separate examples helped me actually see the
+    difference instead of just reading about it.
+
+
+    PROJECT CARDS
+    -------------
+
+    I also created a project card section with four cards.
+
+    The Grid was:
+
+        grid-template-columns: repeat(3, 1fr);
+
+
+    Because there are three columns but four cards, the
+    browser automatically placed the fourth card on the
+    next row.
+
+    It looked roughly like:
+
+        Card 1    Card 2    Card 3
+        Card 4
+
+
+    grid-column: 2 / -1 EXPERIMENT
+    -------------------------------
+
+    I also experimented with:
+
+        .project-card {
+            grid-column: 2 / -1;
+        }
+
+
+    I wanted to see how the cards would behave when each
+    card was made to span across multiple columns.
+
+
+    My project grid had three columns:
+
+        Column 1 | Column 2 | Column 3
+
+
+    The value:
+
+        grid-column: 2 / -1;
+
+    means:
+
+        Start at Grid line 2
+        End at the last Grid line
+
+
+    In a three-column Grid, this makes the card occupy
+    column 2 and column 3.
+
+    So column 1 is left empty.
+
+
+    Because every project card was now taking the space of
+    two columns, there was not enough room for another card
+    beside it.
+
+    As a result, the cards moved to the next row and appeared
+    vertically stacked:
+
+        [ empty ] [ Card 1              ]
+
+        [ empty ] [ Card 2              ]
+
+        [ empty ] [ Card 3              ]
+
+        [ empty ] [ Card 4              ]
+
+
+    This was the main reason the layout changed.
+
+    The selector was working correctly and was intentionally
+    targeting all four project cards.
+
+    The actual issue was the effect of grid-column spanning:
+    each card was becoming wider, while column 1 was being
+    left empty.
+
+    After understanding this, I removed the rule and returned
+    the project cards to the normal three-column layout.
+
+
+---------------------------------------------------------------
+
+
+7. WHAT DID I UNDERSTAND?
+-------------------------
+
+    A. AUTOMATIC GRID ROWS
+    ----------------------
+
+    One thing that became clear today is that I don't always
+    have to define the rows manually.
+
+    If I define:
+
+        grid-template-columns: repeat(3, 1fr);
+
+    and then add more items, Grid automatically creates
+    additional rows when needed.
+
+
+    For example:
+
+        1   2   3
+        4   5   6
+        7   8   9
+
+
+    The browser handles the placement automatically.
+
+
+    B. SPANNING CHANGES THE LAYOUT
+    ------------------------------
+
+    When an item spans multiple columns, it takes up more
+    Grid space.
+
+    For example:
+
+        grid-column: 1 / 3;
+
+
+    makes the item cover two columns.
+
+    This can also affect where the other Grid items are
+    placed.
+
+    My project-card experiment helped me understand this
+    better because the layout changed when I applied a
+    spanning rule.
+
+    It showed me that even a small Grid property can change
+    the whole arrangement of items.
+
+
+---------------------------------------------------------------
+
+
+8. MISTAKES I IDENTIFIED
+------------------------
+
+    1. DUPLICATE .project-card SELECTOR
+    -----------------------------------
+
+    I noticed that I had written the .project-card selector
+    more than once in my CSS.
+
+    Example:
+
+        .project-card {
+            ...
+        }
+
+
+        .project-card {
+            ...
+        }
+
+
+    This reminded me about the CSS cascade.
+
+    Having the same selector multiple times is not always
+    wrong, but it can make the CSS confusing.
+
+    If the same property is written again later, the later
+    rule can override the earlier one.
+
+
+    2. UNDERSTANDING THE EFFECT OF grid-column
+    ------------------------------------------
+
+    I used:
+
+        .project-card {
+            grid-column: 2 / -1;
+        }
+
+
+    My project grid had three columns:
+
+        Column 1 | Column 2 | Column 3
+
+
+    With:
+
+        grid-column: 2 / -1;
+
+    each card started from Grid line 2 and extended to the
+    last Grid line.
+
+    This means each card occupied:
+
+        Column 2 + Column 3
+
+
+    while:
+
+        Column 1
+
+    was left empty.
+
+
+    Since each card was now taking two columns, there was
+    not enough space for another card beside it.
+
+    Therefore, the cards moved to new rows and appeared
+    vertically stacked instead of appearing side-by-side.
+
+
+    The important thing I learned was that:
+
+        grid-column: 2 / -1;
+
+    does not simply "move" a card.
+
+    It changes how much Grid space the card occupies.
+
+    When the rule was applied to all project cards, every
+    card became two columns wide, which changed the whole
+    layout.
+
+
+    After understanding the spanning behavior, I removed
+    the rule and kept the normal:
+
+        repeat(3, 1fr);
+
+    three-column layout for the project cards.
+
+
+    3. UNDERSTANDING GRID LINES
+    ---------------------------
+
+    I also realized that Grid line numbers are different
+    from column numbers.
+
+    For three columns, there are four vertical Grid lines:
+
+        |       |       |       |
+        1       2       3       4
+
+
+    So:
+
+        grid-column: 1 / 3;
+
+    covers columns 1 and 2.
+
+
+    And:
+
+        grid-column: 2 / 4;
+
+    covers columns 2 and 3.
+
+
+    This made the start/end concept much clearer to me.
+
+
+---------------------------------------------------------------
+
+
+9. DAY OUTCOME
+--------------
+
+    Today I learned the basic working of CSS Grid and how
+    it is different from Flexbox.
+
+    The main things I practiced were:
+
+        - display: grid
+        - Grid container
+        - Grid items
+        - grid-template-columns
+        - grid-template-rows
+        - fr
+        - repeat()
+        - gap
+        - grid-column
+        - Grid lines
+        - span
+        - -1
+        - automatic rows
+
+
+    The clearest concept for me was grid-template-columns
+    and the fr unit.
+
+    The experiments with:
+
+        4fr 4fr 4fr
+
+    and:
+
+        repeat(3, 5fr)
+
+    helped me understand that equal fr values create
+    equal columns and that the values work as ratios.
+
+
+    The mixed layout:
+
+        200px 1fr 1fr
+
+    also helped me understand that fixed and flexible
+    column sizes can be used together.
+
+
+    The slightly confusing part was grid-column spanning,
+    especially understanding the Grid line numbers and
+    the meaning of -1.
+
+    The project-card experiment actually helped me
+    understand this better because I could see how making
+    every card span two columns changed the whole layout.
+
+
+    Overall, Day 15 helped me understand that:
+
+        Flexbox -> mainly one-dimensional
+
+        Grid -> two-dimensional
+
+
+    I now have a better idea of when to use Grid for layouts
+    involving rows and columns, especially for cards and
+    full-page layouts.
+
+
+
+                    DAY 15 COMPLETE
+             Learn -> Practice -> Understand
