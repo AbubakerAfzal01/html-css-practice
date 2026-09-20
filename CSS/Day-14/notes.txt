@@ -1,0 +1,598 @@
+                <----------------------------------------------->
+    ------------>             DAY-14: FLEXBOX                    <-------------
+                <----------------------------------------------->
+
+
+1. WHAT IS FLEXBOX?
+-------------------
+
+    Flexbox is a CSS layout system used to arrange elements
+    in a row or column and control their alignment and spacing.
+
+    To make an element a flex container, we use:
+
+        display: flex;
+
+    When display: flex is applied to a container:
+
+        - The container becomes a FLEX CONTAINER.
+        - Its direct children become FLEX ITEMS.
+        - Flexbox gives us control over the direction,
+          alignment, spacing, and wrapping of those children.
+
+    Example:
+
+        .container {
+            display: flex;
+        }
+
+    Here:
+
+        .container = Flex container
+
+        .box elements inside it = Flex items
+
+
+    Simple idea:
+
+        Parent
+          |
+          |---- Child 1
+          |---- Child 2
+          |---- Child 3
+
+        Parent = Flex container
+        Children = Flex items
+
+
+
+
+2. FLEX-DIRECTION
+-----------------
+
+    The flex-direction property controls the direction in
+    which flex items are placed inside the flex container.
+
+
+    A. row
+    ------
+
+    row places items horizontally from left to right.
+
+    Example:
+
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+
+    Result:
+
+        1    2    3    4    5
+
+
+    B. column
+    ----------
+
+    column places items vertically from top to bottom.
+
+    Example:
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+    Result:
+
+        1
+        2
+        3
+        4
+        5
+
+
+    DEFAULT VALUE
+    -------------
+
+    The default value of flex-direction is:
+
+        row
+
+    This means:
+
+        display: flex;
+
+    already arranges the direct children in a row by default.
+
+    Therefore:
+
+        flex-direction: row;
+
+    is not always necessary if I want the default row
+    direction.
+
+
+
+
+3. JUSTIFY-CONTENT (MAIN AXIS)
+------------------------------
+
+    justify-content controls how flex items are positioned
+    and distributed along the MAIN AXIS.
+
+    The main axis depends on flex-direction.
+
+    With:
+
+        flex-direction: row;
+
+    the main axis is horizontal.
+
+    With:
+
+        flex-direction: column;
+
+    the main axis becomes vertical.
+
+
+    Example:
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+    This moves the flex items toward the center of the
+    main axis.
+
+
+    Some common values:
+
+        center
+        flex-start
+        flex-end
+        space-between
+        space-around
+        space-evenly
+
+
+    A. center
+    ----------
+
+    Places the flex items together in the center of the
+    main axis.
+
+    I used:
+
+        justify-content: center;
+
+    in the box container and card container to keep the
+    items centered.
+
+
+    B. space-between
+    ----------------
+
+    Places the first item at the start and the last item
+    at the end, while distributing the remaining space
+    between the items.
+
+    Example:
+
+        1        2        3
+
+    I understood that justify-content is mainly about
+    controlling the distribution/position of items along
+    the main axis.
+
+
+
+
+4. ALIGN-ITEMS (CROSS AXIS)
+---------------------------
+
+    align-items controls the alignment of flex items along
+    the CROSS AXIS.
+
+    This is different from justify-content.
+
+        justify-content -> Main Axis
+
+        align-items     -> Cross Axis
+
+
+    When flex-direction is row:
+
+        Main Axis  = horizontal
+        Cross Axis = vertical
+
+
+    When flex-direction is column:
+
+        Main Axis  = vertical
+        Cross Axis = horizontal
+
+
+    Example:
+
+        .card-container {
+            display: flex;
+            align-items: flex-start;
+        }
+
+
+    A. stretch
+    ----------
+
+    stretch is the default value of align-items.
+
+    It can make flex items stretch along the cross axis
+    when their cross-axis size is not already fixed.
+
+    I tested the difference between:
+
+        align-items: stretch;
+
+    and:
+
+        align-items: flex-start;
+
+
+    B. flex-start
+    --------------
+
+    flex-start places the items at the beginning of the
+    cross axis instead of stretching them.
+
+    In my card experiment, the cards had different amounts
+    of text.
+
+    Card 2 had longer text than Card 1 and Card 3.
+
+    By using:
+
+        align-items: flex-start;
+
+    the cards were aligned from the top and their heights
+    could remain different.
+
+    This helped me understand that align-items controls the
+    cross-axis alignment, not the main-axis spacing.
+
+
+
+
+5. FLEX-WRAP AND GAP
+--------------------
+
+    A. flex-wrap
+    ------------
+
+    By default, flex items try to stay on one line.
+
+    If there is not enough horizontal space, the items can
+    overflow the container.
+
+    To allow items to move onto the next line, we use:
+
+        flex-wrap: wrap;
+
+
+    Example:
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+    When the available width becomes smaller:
+
+        1    2    3
+        4    5
+
+    instead of forcing all items onto one line.
+
+
+    Why is wrap useful?
+
+        It helps prevent flex items from overflowing when
+        there is not enough available space.
+
+    I practiced this with the five boxes in my container.
+
+
+    B. gap
+    ------
+
+    The gap property creates space between flex items.
+
+    Example:
+
+        gap: 15px;
+
+    In my practice:
+
+        .container {
+            gap: 15px;
+        }
+
+        .card-container {
+            gap: 20px;
+        }
+
+
+    Instead of adding margin individually to every item,
+    gap allows me to control the spacing between flex items
+    from the container.
+
+    This makes the spacing simpler and easier to manage.
+
+
+
+
+6. WHAT DID I PRACTICE TODAY?
+-----------------------------
+
+    A. Navigation Bar
+    -----------------
+
+    I used Flexbox on the navigation list:
+
+        .nav-list {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+    This placed the navigation links in a row and centered
+    them.
+
+
+    B. Box Container
+    ----------------
+
+    I created a container containing five boxes.
+
+    I practiced:
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+
+    This helped me understand:
+
+        - flex direction
+        - wrapping
+        - spacing
+        - horizontal centering
+
+
+    C. Card Layout
+    --------------
+
+    I created three cards inside a flex container.
+
+    I practiced:
+
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+
+
+    I also intentionally made Card 2's text longer than
+    the other cards.
+
+    This allowed me to observe how cards with different
+    content heights behave with Flexbox alignment.
+
+    Using:
+
+        align-items: flex-start;
+
+    kept the cards aligned from the top instead of making
+    the shorter cards stretch to match the available
+    cross-axis size.
+
+
+
+
+7. WHAT DID I UNDERSTAND?
+-------------------------
+
+    A. Alignment Before Flexbox
+    ---------------------------
+
+    Before understanding Flexbox, centering and aligning
+    elements could require different CSS properties and
+    sometimes felt difficult.
+
+    Flexbox provides a much easier way to control the
+    position and spacing of related elements.
+
+    For example:
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    can be used to center content along both axes when
+    the flex container is set up appropriately.
+
+
+    B. Main Axis vs Cross Axis
+    --------------------------
+
+    One of the most important concepts I understood today:
+
+        justify-content -> Main Axis
+
+        align-items     -> Cross Axis
+
+
+    With row:
+
+        Main Axis  = Horizontal
+        Cross Axis = Vertical
+
+
+    With column:
+
+        Main Axis  = Vertical
+        Cross Axis = Horizontal
+
+
+    C. Zebra-style spacing was not the focus today.
+
+    Instead, I learned how Flexbox gives direct control over
+    the position and spacing of multiple elements inside a
+    container.
+
+
+    D. border-color vs border shorthand
+    -----------------------------------
+
+    I continued a lesson from Day 13 about CSS borders.
+
+    I used this on the navigation links:
+
+        nav a {
+            border: 2px solid #c60c0c;
+        }
+
+
+    The border shorthand sets multiple border properties
+    together:
+
+        border-width
+        border-style
+        border-color
+
+
+    For example:
+
+        border: 2px solid red;
+
+
+    I also learned that:
+
+        border-color: red;
+
+    only sets the border color.
+
+    If a visible border has not already been defined,
+    using border-color alone may not produce the expected
+    visible border because the border style can still be
+    none.
+
+    This continued the border learning from Day 13.
+
+
+
+
+8. MISTAKES I IDENTIFIED
+------------------------
+
+    1. Redundant flex-direction: row
+    --------------------------------
+
+    I wrote:
+
+        flex-direction: row;
+
+    even though row is already the default value.
+
+    It is not wrong, but it is redundant when I already
+    want the default direction.
+
+    I learned that:
+
+        display: flex;
+
+    automatically uses:
+
+        flex-direction: row;
+
+
+    2. Using border-color alone
+    ---------------------------
+
+    I learned that:
+
+        border-color: red;
+
+    only changes the border color.
+
+    A complete border can be written using the shorthand:
+
+        border: 2px solid red;
+
+    This makes sure the width, style, and color are all
+    defined.
+
+
+    3. Understanding align-items
+    ----------------------------
+
+    At first, it was easy to confuse align-items with
+    justify-content.
+
+    The important rule I learned is:
+
+        justify-content -> Main Axis
+
+        align-items -> Cross Axis
+
+
+
+
+9. DAY OUTCOME
+--------------
+
+    Today I learned the basic working of CSS Flexbox and
+    how it can make layout and alignment much easier.
+
+    The main concepts I practiced were:
+
+        - display: flex
+        - flex container
+        - flex items
+        - flex-direction
+        - justify-content
+        - align-items
+        - flex-wrap
+        - gap
+        - Main Axis
+        - Cross Axis
+
+
+    The clearest concept for me was understanding the
+    difference between:
+
+        justify-content
+        and
+        align-items
+
+    especially:
+
+        justify-content -> Main Axis
+        align-items     -> Cross Axis
+
+
+    The card experiment with different text heights helped
+    me understand align-items more practically.
+
+    The slightly difficult part was understanding how the
+    Main Axis and Cross Axis change when flex-direction
+    changes.
+
+    Overall, Day 14 helped me understand why Flexbox is
+    useful for creating navigation bars, box layouts,
+    cards, and other responsive layouts.
+
+
+
+                    DAY 14 COMPLETE
+       
