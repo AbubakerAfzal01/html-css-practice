@@ -1,0 +1,138 @@
+.nav-list {
+    display: flex; 
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 5px 10px;
+    color: black;
+    border-radius: 5px;
+    border: 2px solid #c60c0c;
+}
+
+nav a:hover {
+    background-color: lightblue;
+    color: darkblue;
+}
+
+/* Fixed pixel values: */
+.grid-container1 {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+}
+
+/* fr unit (fraction) */
+.grid-container2 {
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr;
+}
+
+/* repeat() function ---- shorcut*/
+.grid-container3 {
+  display: grid;
+  grid-template-columns: repeat(3, 5fr);
+}
+
+/* we can also use mixed */
+.grid-container4 {
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+}
+
+/* grid-template-rows defined */
+.grid-container5 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 100px);
+}
+
+.project-card {
+    font-style: italic;
+    border: 3px solid black; 
+    margin: 10px;           
+    padding: 10px;         
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    color: rgb(255, 0, 0);
+    background-color: rgb(5, 250, 250);
+    padding: 20px;      
+    margin: 20px;          
+}
+
+.grid-item {
+  background-color: rgba(240, 234, 234, 0.963) ;
+  padding: 20px;
+  text-align: center;
+}
+
+.project-card {
+  grid-column: 2 / -1; 
+}
+
+.layout-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr; 
+  gap: 10px;
+}
+
+.layout-header {
+  grid-column: 1 / 3;
+}
+
+.layout-footer {
+  grid-column: 1 / 3;
+}
+
+.project-card {
+    font-style: italic;
+    border: 3px solid black; 
+    margin: 10px;           
+    padding: 10px;
+    
+}
+
+
+.layout-header {
+  grid-column: 1 / 3;
+  background-color: yellowgreen;
+  padding: 20px;
+}
+
+.layout-sidebar {
+  background-color: blueviolet;
+  padding: 20px;
+}
+
+.layout-main {
+  background-color: pink;
+  padding: 20px;
+}
+
+.layout-footer {
+  grid-column: 1 / 3;
+  background-color: peru;
+  padding: 20px;
+}
+
+.footer {
+    color: #1b0101;
+    background-color: rgb(241, 6, 190);
+    padding: 10px;
+    margin: 20px;
+}
+
+.hr {
+  border: 0;
+  border-top: 2px dashed #94a3b8; 
+  margin: 15px 0;
+}
+
