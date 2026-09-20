@@ -1,92 +1,85 @@
-
 body {
     font-family: sans-serif;
     background-color: #f4f6f9;
     padding: 20px;
     text-align: center;
-    
 }
 
-/* --- Remove Dots from All Lists --- */
 ul {
     list-style: none; 
     padding: 0;
-    
 }
 
-/* --- Navigation Layout --- */
 nav ul {
     display: flex; 
     gap: 15px;
     margin-bottom: 20px;
-    padding: 0 30% ;
+    justify-content: center;
+    padding: 0;
 }
 
 nav a {
     text-decoration: none;
     padding: 5px 10px;
     color: black;
-    
-    
 }
 
-/* State-based: nav link hover */
 nav a:hover {
-  background-color: lightblue;
-  color: darkblue;
-  
+    background-color: lightblue;
+    color: darkblue;
 }
 
-/* --- Form Input Fields --- */
+
 input {
     margin-bottom: 10px;
     padding: 8px;
     border: 1px solid #ccc;
 }
 
-/* State-based ----- input focus */
 input:focus {
-  border: 2px solid green;
-  outline: none;
+    border: 2px solid green;
+    outline: none;
 }
 
-/* --- Buttons --- */
 button {
     padding: 10px 20px;
     color: rgb(43, 2, 250);
     border-color: greenyellow;
-   
 }
 
-/* State-based ------ button click */
 button:active {
-  background-color: gray;
-  color: rgb(241, 11, 11);
+    color: rgb(241, 11, 11);
+    border-color: red;
+    background-color: gray;
 }
 
-/* --- Skills List --- */
+
 #skills-list {
     text-align: center;
 }
+
 .skills li {
     padding: 5px;
     margin-bottom: 5px;
     text-align: left;
 }
 
-/* Position-based: first and last item */
 .skills li:first-child {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .skills li:last-child {
-  color: red;
+    color: red;
 }
 
-/* Position-based: specific item */
-.skills li:nth-child(2) {
-  background-color: lightyellow;
+.skills li:nth-child(odd) {
+    background-color: lightyellow;
 }
+
+.skills li:nth-child(even) {
+    background-color: rgb(224, 248, 255);
+}
+
 
 .footer {
     text-align: center;
@@ -94,6 +87,26 @@ button:active {
     padding: 1px;
 }
 
-.note {
-    
+
+.skills li::before {
+    content: "✓ ";
+    color: green;
+    font-weight: bold;
+}
+
+
+nav a::after {
+    content: " →";
+    color: #555;
+}
+
+
+.required::before {
+    content: " *";
+    color: red;
+}
+
+.required::after {
+    content: " *";
+    color: red;
 }
