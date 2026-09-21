@@ -1,0 +1,121 @@
+:root {
+  /* --- Color Variables --- */
+  --primary-color: #34db74; 
+  --secondary-color: #bf2ecc; 
+  --dark-color: #503e2c;
+  --light-color: #ecf0f1; 
+  
+  /* --- Spacing Variables --- */
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 30px;
+  
+  /* --- Font Variables --- */
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-heading: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  background-color: rgb(218, 227, 229);
+}
+
+/* --- Card component: uses variables for color, spacing, font --- */
+.card {
+  background-color: var(--light-color);
+  padding: var(--spacing-md);
+  font-family: var(--font-main);
+  border-radius: 8px;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-family: var(--font-heading);
+  color: var(--dark-color);
+  margin: 0;
+}
+
+/* --- Button: reuses primary-color and spacing variables --- */
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+.topic {
+  font-family: var(--font-heading);
+  text-align: center;
+}
+
+/* --- Nav bar (Flexbox, from Day 14 practice) --- */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: white;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-md);
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  text-decoration: none;
+  font-family: var(--font-main);
+  color: var(--dark-color);
+}
+
+/* Hover color updates automatically if --primary-color changes */
+.nav-item:hover {
+  color: var(--primary-color);
+}
+
+/* --- calc() demo: subtracts spacing-lg twice (both sides) from full width --- */
+.calc-box {
+  width: calc(100% - var(--spacing-lg) * 2);
+  padding: var(--spacing-md);
+  background-color: var(--secondary-color);
+  color: white;
+  margin: var(--spacing-md) auto;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* --- min() demo: width never grows past 400px, even on large screens --- */
+.responsive-box {
+  width: min(100%, 400px);
+  padding: var(--spacing-md);
+  background-color: var(--dark-color);
+  color: white;
+  margin: var(--spacing-md) auto;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* --- clamp() demo: font-size scales with viewport width, 
+   but stays between 1rem (min) and 2rem (max) --- */
+.clamp-text {
+  font-size: clamp(1rem, 3vw, 2rem);
+  text-align: center;
+  font-family: var(--font-heading);
+}
