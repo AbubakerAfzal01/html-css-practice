@@ -1,0 +1,584 @@
+            <----------------------------------------------->
+------------>  DAY-17: TRANSITIONS, TRANSFORMS & ANIMATIONS <-------------
+            <----------------------------------------------->
+
+
+1. WHAT IS transition?
+----------------------
+
+The `transition` property is used to make changes between
+CSS states happen smoothly instead of happening instantly.
+
+Basic syntax:
+
+    transition: property duration timing-function;
+
+Example:
+
+    .nav-items {
+        transition: color 0.3s ease;
+    }
+
+I used `transition` on:
+
+    * Navigation links
+    * Transition box
+    * Transform boxes
+    * Hover card
+
+Example from my transition box:
+
+    .transition-box {
+        transition: background-color 0.3s ease,
+                    transform 0.3s ease;
+    }
+
+This means the background color and transform changes
+happen smoothly when I hover over the button.
+
+
+`all` vs specific properties
+
+We can write:
+
+    transition: all 0.3s ease;
+
+But using specific properties is usually better when I
+already know which properties I want to animate.
+
+Example:
+
+    transition: color 0.3s ease;
+
+or:
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+Specific properties give me more control and make the
+CSS easier to understand.
+
+It also avoids transitioning properties unnecessarily.
+
+Lesson:
+
+    Use specific properties when possible instead of
+    automatically using `all`.
+
+
+2. WHAT IS transform?
+---------------------
+
+The `transform` property is used to visually change an
+element without changing its normal position in the
+document flow.
+
+Today I practiced three main transform functions:
+
+    * scale()
+    * rotate()
+    * translate()
+
+
+scale()
+--------
+
+`scale()` changes the size of an element.
+
+Example:
+
+    transform: scale(1.3);
+
+This makes the element larger.
+
+I used it in my scale box and transition box.
+
+
+rotate()
+--------
+
+`rotate()` rotates an element.
+
+Example:
+
+    transform: rotate(45deg);
+
+A negative value can also be used:
+
+    transform: rotate(-7deg);
+
+This rotates the element in the opposite direction.
+
+
+translate()
+-----------
+
+`translate()` moves an element from its original position.
+
+Example:
+
+    transform: translate(50px, -10px);
+
+The first value controls horizontal movement.
+
+The second value controls vertical movement.
+
+So:
+
+    50px   = move right
+
+    -10px  = move up
+
+
+Multiple transforms
+-------------------
+
+Multiple transform functions can be written together
+on the same line.
+
+Example:
+
+    transform: scale(1.03) rotate(5deg)
+               translate(20px, -10px);
+
+The functions are separated by spaces.
+
+
+IMPORTANT DISCOVERY: transform DOES NOT MERGE
+----------------------------------------------
+
+This was one of the important things I discovered today.
+
+I initially thought that if I wrote:
+
+    transform: scale(1.03);
+    transform: rotate(5deg);
+    transform: translate(20px, -10px);
+
+all three transformations would work together.
+
+But this is not how `transform` works.
+
+Only the last `transform` declaration is applied.
+
+So in this example:
+
+    transform: translate(20px, -10px);
+
+will be the final result.
+
+If I want all three transformations, I have to write
+them together:
+
+    transform: scale(1.03) rotate(5deg)
+               translate(20px, -10px);
+
+I also discovered that the same thing happens when
+`transform` is changed in a `:hover` rule.
+
+Example:
+
+    .scale-box {
+        transform: scale(1.03) rotate(5deg)
+                   translate(20px, -10px);
+    }
+
+    .scale-box:hover {
+        transform: scale(1.3);
+    }
+
+On hover, the previous rotate and translate values are
+not automatically kept.
+
+The hover `transform` replaces the previous transform.
+
+Lesson:
+
+    If I need multiple transform effects, I have to
+    write all of them in the same transform declaration.
+
+
+3. WHAT ARE @keyframes?
+-----------------------
+
+`@keyframes` is used to create CSS animations with
+different stages.
+
+Basic structure:
+
+    @keyframes animation-name {
+
+        0% {
+            /* starting state */
+        }
+
+        50% {
+            /* middle state */
+        }
+
+        100% {
+            /* ending state */
+        }
+
+    }
+
+
+I used `@keyframes` for my bounce animation:
+
+    @keyframes bounce {
+
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-30px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+
+    }
+
+
+Then I connected the animation to the element:
+
+    .bounce-box {
+        animation: bounce 1s ease-in-out infinite;
+    }
+
+Here:
+
+    bounce
+        = animation name
+
+    1s
+        = animation duration
+
+    ease-in-out
+        = timing function
+
+    infinite
+        = keeps repeating
+
+
+I also created a spin animation:
+
+    @keyframes spin {
+
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+
+    }
+
+And connected it with:
+
+    .spin-box {
+        animation: spin 2s linear infinite;
+    }
+
+
+`from` and `to`
+---------------
+
+`from` and `to` can be used when an animation only
+needs a starting and ending state.
+
+Example:
+
+    @keyframes spin {
+
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+
+    }
+
+So:
+
+    from = starting state
+
+    to = ending state
+
+If I need multiple stages, I can use:
+
+    0%
+    50%
+    100%
+
+
+4. WHAT DID I PRACTICE TODAY?
+-----------------------------
+
+Today I practiced:
+
+    * transition
+    * transform
+    * scale()
+    * rotate()
+    * translate()
+    * @keyframes
+    * Hover effects
+    * Continuous animations
+
+
+Transition Box
+--------------
+
+I created a button called `.transition-box`.
+
+When I hover over it:
+
+    * Background color changes.
+    * The box scales up.
+    * Both changes happen smoothly.
+
+This helped me understand how `transition` and
+`transform` work together.
+
+
+Transform Boxes
+---------------
+
+I created three boxes:
+
+    * Scale
+    * Rotate
+    * Translate
+
+This helped me understand each transform function
+separately.
+
+I also practiced combining multiple transform functions.
+
+
+Hover Card
+----------
+
+I created a card that moves upward and slightly
+increases in size when I hover over it.
+
+I used:
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+and:
+
+    transform: translateY(-10px) scale(1.02);
+
+This was a practical example of combining transition
+and transform for a real-world hover effect.
+
+
+Bounce Box
+----------
+
+I created a bouncing box using `@keyframes`.
+
+The animation has three stages:
+
+    0%   -> normal position
+
+    50%  -> moves upward
+
+    100% -> returns to original position
+
+I used:
+
+    animation: bounce 1s ease-in-out infinite;
+
+
+Spin Box
+--------
+
+I created a spinning box using `from` and `to`.
+
+It starts at:
+
+    0deg
+
+and rotates to:
+
+    360deg
+
+Then it keeps repeating because I used:
+
+    infinite
+
+
+5. WHAT DID I UNDERSTAND?
+-------------------------
+
+I understood that `transform` is useful for visual
+changes such as:
+
+    * Moving elements
+    * Scaling elements
+    * Rotating elements
+
+Transform-based animations are generally efficient
+because browsers can often handle them efficiently
+through the compositor.
+
+I also understood the difference between `transition`
+and `@keyframes`.
+
+
+transition:
+
+    * Works between two states.
+    * Usually needs a trigger such as `:hover`.
+    * Good for buttons, links and cards.
+
+Example:
+
+    Normal state -> Hover state
+
+
+@keyframes:
+
+    * Can contain multiple stages.
+    * Can run automatically.
+    * Can repeat using `infinite`.
+    * Does not require a hover trigger.
+
+Example:
+
+    State A -> State B -> State C -> State D
+
+
+Easy way to remember:
+
+    transition = two states
+
+    @keyframes = multiple animation stages
+
+
+6. MISTAKES I IDENTIFIED
+------------------------
+
+Mistake 1: Using transform multiple times
+
+I initially used the same property multiple times:
+
+    transform: scale(...);
+    transform: rotate(...);
+    transform: translate(...);
+
+I expected all of them to work together.
+
+But only the last declaration works.
+
+I learned that multiple transform functions must be
+written together:
+
+    transform: scale(...) rotate(...) translate(...);
+
+
+Mistake 2: Invalid transform syntax
+
+I used something like:
+
+    transform: (-7deg);
+
+This is invalid because the transform function name
+is missing.
+
+Correct:
+
+    transform: rotate(-7deg);
+
+
+Mistake 3: Duplicate @keyframes
+
+While practicing, I had duplicate `@keyframes bounce`
+definitions.
+
+I also had duplicate `.bounce-box` selectors.
+
+This made the CSS harder to understand and maintain.
+
+While cleaning the code, I accidentally removed the
+complete `@keyframes` block.
+
+This taught me that I need to be careful while cleaning
+duplicate CSS.
+
+Before deleting something, I should check:
+
+    * Is this rule being used?
+    * Is another selector depending on it?
+    * Is the animation still connected?
+    * Am I accidentally deleting required code?
+
+
+Lesson:
+
+    Clean up CSS carefully instead of deleting rules
+    without checking their purpose.
+
+
+7. DAY-17 OUTCOME
+-----------------
+
+Today I learned how CSS transitions, transforms and
+animations can make a webpage more interactive.
+
+The main things I practiced were:
+
+    * transition
+    * transform
+    * scale()
+    * rotate()
+    * translate()
+    * @keyframes
+    * Hover effects
+    * CSS animations
+
+
+The clearest concept for me was:
+
+    transform
+
+because I practiced scale, rotate and translate
+individually and also combined them.
+
+
+Another important thing I learned was:
+
+    transform declarations do not automatically merge.
+
+If I want multiple transform effects, I need to write
+them together in one declaration.
+
+
+The slightly confusing concept was the difference
+between `transition` and `@keyframes`.
+
+After practicing them, I understood that:
+
+    transition
+        = smooth change between states
+
+    @keyframes
+        = animation with multiple stages
+
+
+Overall, Day-17 helped me understand how transitions,
+transforms and animations actually work through
+practical testing instead of only learning their syntax.
+
+
+                        DAY 17 COMPLETE
+                 Learn -> Practice -> Understand
