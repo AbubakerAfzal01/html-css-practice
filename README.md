@@ -47,17 +47,17 @@ The course starts with core HTML concepts and gradually moves into modern CSS, i
 |  11 | Box Model & Units                         |  Completed |
 |  12 | Display & Positioning                     |  Completed |
 |  13 | Pseudo-classes & Pseudo-elements          |  Completed |
-|  14 | Flexbox                                   |  Pending |
-|  15 | CSS Grid                                  |  Pending |
-|  16 | CSS Variables & Modern Functions          |   Pending   |
-|  17 | Transitions, Transforms & Animations      |   Pending   |
-|  18 | Responsive / Mobile-First Design          |   Pending   |
-|  19 | CSS Mini Project — Landing Page           |   Pending   |
-|  20 | Final Project — Responsive Website        |   Pending   |
+|  14 | Flexbox                                   |  Completed |
+|  15 | CSS Grid                                  |  Completed |
+|  16 | CSS Variables & Modern Functions          |  Completed |
+|  17 | Transitions, Transforms & Animations      |  Completed |
+|  18 | Responsive / Mobile-First Design          |  Completed |
+|  19 | CSS Mini Project — Landing Page           |   Pending  |
+|  20 | Final Project — Responsive Website        |   Pending  |
 
 ### Current Progress
 
-**13 / 20 days completed**
+**18 / 20 days completed**
 
 > The CSS roadmap is a flexible plan. Topics and day numbers may change as the course develops.
 
@@ -168,11 +168,35 @@ html-css-practice/
 │   │   └── README.md
 │   │
 │   ├── Day-14/
-│   │   └── ... (Flexbox practice)
+│   │   ├── index.html
+│   │   ├── style.css
+│   │   ├── notes.txt
+│   │   └── README.md
 │   │
 │   └── Day-15/
-│       └── ... (CSS Grid practice)
-│
+│   │   ├── index.html
+│   │   ├── style.css
+│   │   ├── notes.txt
+│   │   └── README.md
+│   │
+│   └── Day-16/
+│   │   ├── index.html
+│   │   ├── style.css
+│   │   ├── notes.txt
+│   │   └── README.md
+│   │
+│   └── Day-17/
+│   │   ├── index.html
+│   │   ├── style.css
+│   │   ├── notes.txt
+│   │   └── README.md
+│   │
+│   └── Day-18/
+│   │   ├── index.html
+│   │   ├── style.css
+│   │   ├── notes.txt
+│   │   └── README.md
+│   │
 └── web-dev-university-course/
     └── lecture-01/
         ├── lesson1-2/
