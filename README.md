@@ -52,12 +52,12 @@ The course starts with core HTML concepts and gradually moves into modern CSS, i
 |  16 | CSS Variables & Modern Functions          |  Completed |
 |  17 | Transitions, Transforms & Animations      |  Completed |
 |  18 | Responsive / Mobile-First Design          |  Completed |
-|  19 | CSS Mini Project — Landing Page           |   Pending  |
+|  19 | CSS Mini Project — Landing Page           |   Completed |
 |  20 | Final Project — Responsive Website        |   Pending  |
 
 ### Current Progress
 
-**18 / 20 days completed**
+**19 / 20 days completed**
 
 > The CSS roadmap is a flexible plan. Topics and day numbers may change as the course develops.
 
