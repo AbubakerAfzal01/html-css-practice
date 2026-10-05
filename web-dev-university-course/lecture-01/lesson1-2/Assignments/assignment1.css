@@ -11,6 +11,10 @@ body {
     padding-bottom: 40px;
 }
 
+mark{
+    color: red;
+    background-color: #00ff00;
+}
 h1 {
     color: #223241;
     margin-bottom: 12px;
@@ -84,6 +88,7 @@ pre {
     display: inline-block;
     white-space: nowrap; 
     margin: 20px 140px 20px 150px;
+    display: flex;
 }
 
 .port-light1:hover {
@@ -91,9 +96,6 @@ pre {
     background-color: #00ff00; 
     border-color: #00ff00;
 }
-
-
-
 
 
 .port-light2 {
@@ -109,9 +111,6 @@ pre {
     box-shadow: 15px 15px 35px rgb(1, 7, 1);
   
 }
-
-
-
 
 
 hr {
