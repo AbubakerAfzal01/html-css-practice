@@ -197,6 +197,16 @@ html-css-practice/
 │   │   ├── notes.txt
 │   │   └── README.md
 │   │
+│   └── Day-19/
+|   |   ├── index.html
+|   |   ├── style.css
+|   |   ├── images/
+|   |   │   ├── image-beans.jpg
+|   |   │   ├── image-expert-barista.jpg
+|   |   │   └── image-daily-pastries.jpg
+|   ├── notes.txt      
+|   └── README.md      
+|
 └── web-dev-university-course/
     └── lecture-01/
         ├── lesson1-2/
