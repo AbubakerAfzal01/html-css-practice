@@ -1,0 +1,1315 @@
+                    <-----------------------------------------------> 
+        ------------>   DAY-19: CSS MINI PROJECT - THE COFFEE NOOK  <-------------
+                    <----------------------------------------------->
+
+
+                    
+1. WHAT IS A LANDING PAGE / CSS MINI PROJECT
+--------------------------------------------
+
+A landing page is a webpage designed to present a product,
+service, business, or idea in a clear way.
+
+It usually contains different sections so the user can
+understand the purpose of the website and interact with it.
+
+In this project, I created a coffee shop landing page called:
+
+    The Coffee Nook
+
+The main sections I created were:
+
+    - Navbar
+    - Hero Section
+    - About / Our Story
+    - Features / Why Us
+    - Menu
+    - Contact
+    - Footer
+
+The main purpose of this project was to combine the CSS
+concepts I learned from previous days and use them together
+in one complete webpage.
+
+
+CONCEPTS USED FROM PREVIOUS DAYS
+--------------------------------
+
+I used several concepts that I had already practiced:
+
+    - Flexbox
+    - CSS Grid
+    - CSS Variables
+    - Box Model
+    - Pseudo-classes
+    - Transitions
+    - Transform
+    - Responsive Design
+    - Media Queries
+    - clamp()
+    - max-width
+    - object-fit
+
+For example, I used Flexbox in the navbar:
+
+    .navbar {
+        display: flex;
+    }
+
+I used Grid for the feature cards:
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+I used a pseudo-class for hover:
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+    }
+
+I used a media query for responsive design:
+
+    @media (min-width: 768px) {
+        ...
+    }
+
+I used clamp() for the hero heading:
+
+    font-size: clamp(1.8rem, 4.5vw, 3.5rem);
+
+This project helped me understand that CSS concepts are
+not always used separately.
+
+I can combine different concepts to create one complete
+webpage.
+
+
+------------------------------------------------------------
+
+
+2. CSS VARIABLES AND BASE STYLES
+--------------------------------
+
+CSS Variables allow me to store values once and reuse
+them in different places in my CSS.
+
+In this project, I created variables inside :root.
+
+    :root {
+        --main-color: #5c3a21;
+        --main-font: 'Arial', sans-serif;
+        --bg-light: #faf7f2;
+        --text-dark: #2b2520;
+        --hero-bg: #f3edd7;
+        --dark-brown: #3d1d06;
+    }
+
+WHAT EACH VARIABLE DOES
+-----------------------
+
+--main-color
+    This is the main brown color of the website.
+
+--main-font
+    This stores the main font.
+
+--bg-light
+    This is the light background color used in different
+    parts of the website.
+
+--text-dark
+    This is the main dark text color.
+
+--hero-bg
+    This stores the background color of the hero section.
+
+--dark-brown
+    This is a darker brown color used for hover effects.
+
+I can use these variables with:
+
+    var(--main-color)
+    var(--bg-light)
+    var(--text-dark)
+
+This makes the CSS easier to manage.
+
+I also learned that if the same value is used in several
+places, storing it as a variable makes future changes easier.
+
+
+UNIVERSAL SELECTOR
+------------------
+
+I used:
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+The * selector targets all elements.
+
+margin: 0
+    This removes the browser's default margin.
+
+padding: 0
+    This removes the browser's default padding.
+
+box-sizing: border-box
+    This makes the declared width and height include
+    the element's padding and border.
+
+Removing the default spacing means I need to add my own
+spacing where necessary.
+
+For example:
+
+    margin-bottom: 40px;
+
+was used for section headings.
+
+
+HARDCODED COLOURS
+-----------------
+
+Earlier in the project, I changed several hardcoded
+colours into CSS variables.
+
+Later, when the CSS was rewritten, some hardcoded colours
+appeared again.
+
+Examples include:
+
+    #000000
+    #f6f5f4
+    #e2ddda
+    #a88a73
+    #8b5a2b
+    #ccc
+    #ffffff
+
+This showed me that rewriting a file can remove changes
+that I had already made.
+
+So before pushing the project, I need to check the final
+CSS and make sure earlier improvements are still there.
+
+
+------------------------------------------------------------
+
+
+3. NAVBAR AND HERO - FLEXBOX
+----------------------------
+
+NAVBAR
+------
+
+I used Flexbox on the navbar:
+
+    .navbar {
+        display: flex;
+    }
+
+I used Flexbox because I wanted to arrange the logo and
+navigation links in a flexible layout.
+
+On smaller screens, I used:
+
+    flex-direction: column;
+
+This makes the navbar content appear vertically.
+
+At 768px and above, I changed it to:
+
+    flex-direction: row;
+
+This changes the navbar into a horizontal layout.
+
+I also used:
+
+    justify-content: space-between;
+
+This places the logo and navigation on opposite sides
+of the available space.
+
+
+NAVIGATION LINKS
+----------------
+
+I used another Flexbox container:
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+flex-wrap allows the links to move onto another line if
+there is not enough horizontal space.
+
+gap creates space between the navigation links.
+
+
+HERO SECTION
+------------
+
+For the hero section I used:
+
+    .hero-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+justify-content: center
+    centers the content horizontally.
+
+align-items: center
+    centers the content vertically.
+
+This allowed me to place the hero content in the center
+of the section.
+
+I also used:
+
+    min-height: 70vh;
+
+vh means viewport height.
+
+70vh means the minimum height is approximately 70% of
+the browser viewport height.
+
+I used min-height instead of a fixed height because the
+section can grow if the content needs more space.
+
+
+CTA BUTTON
+----------
+
+My CTA is an anchor element:
+
+    <a href="#menu" class="cta-button">Check Menu</a>
+
+I used:
+
+    display: inline-block;
+
+An anchor is normally an inline element.
+
+Using inline-block allows the anchor to behave more like
+a box so I can control its size, padding and transform.
+
+An important detail is that transform does not apply to
+normal inline elements.
+
+Padding on an inline element can appear visually, but it
+does not behave like the spacing of a normal block-level
+box around surrounding content.
+
+Using inline-block makes the CTA easier to size and
+transform.
+
+I also used:
+
+    padding: 12px 28px;
+
+to make the CTA larger and easier to click.
+
+
+CLAMP()
+-------
+
+For the hero heading I used:
+
+    font-size: clamp(1.8rem, 4.5vw, 3.5rem);
+
+clamp() takes three values:
+
+    Minimum
+    Preferred
+    Maximum
+
+In my example:
+
+    Minimum    -> 1.8rem
+    Preferred  -> 4.5vw
+    Maximum    -> 3.5rem
+
+This allows the heading size to change according to the
+viewport while staying between the minimum and maximum
+values.
+
+
+HERO DESIGN DECISION
+--------------------
+
+I kept the word "You" in the hero design as a deliberate
+design choice to make the main message feel more direct
+and personal.
+
+
+------------------------------------------------------------
+
+
+4. GRID CARDS - FEATURES AND MENU
+---------------------------------
+
+FEATURES GRID
+-------------
+
+I used CSS Grid for the feature cards.
+
+The default mobile layout is:
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+This creates one column on smaller screens.
+
+At 768px and above, I changed it to:
+
+    grid-template-columns: repeat(3, 1fr);
+
+repeat(3, 1fr) means:
+
+    Create 3 equal columns.
+
+It is similar to writing:
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+The fr unit divides the available grid space into
+fractions.
+
+
+FR VS PX
+--------
+
+fr is mainly used to divide available grid space.
+
+px represents a fixed pixel size.
+
+Example:
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+divides available space.
+
+While:
+
+    width: 200px;
+
+represents a fixed 200 pixel width.
+
+
+MAX-WIDTH
+---------
+
+I used:
+
+    max-width: 1100px;
+
+This prevents the content from becoming too wide on
+large screens.
+
+I also used:
+
+    margin: 0 auto;
+
+margin: 0 auto means:
+
+    top/bottom -> 0
+    left/right -> auto
+
+When there is extra horizontal space, the automatic
+left and right margins center the block.
+
+I used this combination in:
+
+    - features-grid
+    - menu-list
+    - contact-grid
+
+
+OBJECT-FIT
+----------
+
+For the feature images I used:
+
+    .feature-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+The images may have different original dimensions.
+
+object-fit: cover allows the image to fill the given
+area while keeping its aspect ratio.
+
+Some parts of the image can be cropped, but the image
+does not become stretched unnaturally.
+
+
+MENU GRID
+---------
+
+On smaller screens I used:
+
+    grid-template-columns: 1fr;
+
+At 768px and above I used:
+
+    grid-template-columns: repeat(2, 1fr);
+
+So the menu changes from one column to two columns on
+larger screens.
+
+
+------------------------------------------------------------
+
+
+5. HOVER, FOCUS, TRANSITIONS, TRANSFORM AND ANIMATION
+------------------------------------------------------
+
+HOVER
+-----
+
+:hover is used when the mouse pointer is over an element.
+
+For example:
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+    }
+
+When I move the mouse over a feature card, the card moves
+slightly upward.
+
+I also used hover effects on:
+
+    - Navigation links
+    - CTA button
+    - Feature cards
+    - Menu items
+    - Submit button
+
+
+FOCUS
+-----
+
+:focus is related to an element receiving focus, such as
+when using keyboard navigation.
+
+I used:
+
+    .nav-links a:hover,
+    .nav-links a:focus
+
+and:
+
+    .cta-button:hover,
+    .cta-button:focus
+
+This gives the navigation links and CTA button a similar
+visual state when they are hovered or focused.
+
+
+TRANSFORM
+---------
+
+I used:
+
+    transform: translateY(-5px);
+
+This moves the feature card upward by 5 pixels.
+
+For the CTA button I used:
+
+    transform: scale(1.05);
+
+This makes the button slightly larger when hovered.
+
+
+TRANSITION
+----------
+
+I used transition in the normal/base rule.
+
+Example:
+
+    .feature-card {
+        transition: transform 0.3s ease,
+                    border-color 0.3s ease;
+    }
+
+Then the hover rule changes the properties:
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        border-color: #a88a73;
+    }
+
+Putting transition in the base rule means the browser
+smoothly animates both when the element enters the hover
+state and when it returns to the normal state.
+
+
+SLIDEUP ANIMATION
+-----------------
+
+In an earlier version of my CSS, I added a CSS animation
+for the hero content.
+
+I used:
+
+    @keyframes slideUp
+
+and:
+
+    animation: slideUp 0.8s ease-out;
+
+on .hero-content.
+
+So the slideUp animation was actually implemented during
+the project.
+
+Later, when the CSS was rewritten, the slideUp code
+disappeared from the file.
+
+Therefore, the animation was part of an earlier version,
+but it is not present in the latest CSS.
+
+This taught me that after rewriting a file, I need to
+compare the final version with my previous work so that
+completed changes are not accidentally lost.
+
+
+------------------------------------------------------------
+
+
+6. RESPONSIVE / MOBILE-FIRST
+----------------------------
+
+MOBILE-FIRST
+------------
+
+Mobile-first means creating the basic layout for smaller
+screens first and then changing the layout for larger
+screens.
+
+In this project, the default CSS mainly provides the
+smaller-screen layout.
+
+For example:
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+This creates one column.
+
+Then I use:
+
+    @media (min-width: 768px)
+
+to change the layout for larger screens.
+
+
+WHY THE MEDIA QUERY IS AT THE END
+---------------------------------
+
+I placed the main media query near the end of the CSS.
+
+The default/mobile rules are written first.
+
+Then the larger-screen rules are written later:
+
+    @media (min-width: 768px) {
+        ...
+    }
+
+This makes the responsive changes easier to read and
+allows the media-query rules to override the earlier
+rules when the screen reaches 768px or wider.
+
+
+NAVBAR AT 768PX
+---------------
+
+Before the media query:
+
+    flex-direction: column;
+
+At 768px and above:
+
+    flex-direction: row;
+    justify-content: space-between;
+
+So the navbar changes from vertical to horizontal.
+
+
+FEATURES AT 768PX
+-----------------
+
+Before:
+
+    grid-template-columns: 1fr;
+
+At 768px:
+
+    grid-template-columns: repeat(3, 1fr);
+
+This changes the feature cards from one column into
+three columns.
+
+
+MENU AT 768PX
+-------------
+
+Before:
+
+    grid-template-columns: 1fr;
+
+At 768px:
+
+    grid-template-columns: repeat(2, 1fr);
+
+This changes the menu into two columns.
+
+
+CONTACT AT 768PX
+----------------
+
+Before:
+
+    grid-template-columns: 1fr;
+
+At 768px:
+
+    grid-template-columns: 1fr 1fr;
+
+This places the contact information and contact form
+beside each other.
+
+
+FORM BUTTON
+-----------
+
+On smaller screens:
+
+    width: 100%;
+
+So the button takes the full available width.
+
+At 768px and above:
+
+    width: auto;
+
+So the button becomes only as wide as its content needs.
+
+
+RESPONSIVE TESTING
+------------------
+
+I checked the page at approximately:
+
+    - 400px
+    - 768px
+    - Full browser width
+
+At around 400px, the layout remained in the smaller-screen
+structure.
+
+At 768px, the larger-screen layout rules became active.
+
+At full width, the larger-screen layout remained active
+and the max-width rules limited the width of some content.
+
+I also checked the visual hover effects on:
+
+    - Navigation links
+    - CTA button
+    - Feature cards
+
+I did not specifically test the contact form during this
+session.
+
+I also did not perform a separate click test for the
+hover elements.
+
+
+------------------------------------------------------------
+
+
+7. WHAT DID I PRACTICE TODAY?
+-----------------------------
+
+Today I practiced combining the CSS concepts from previous
+days into one complete landing page.
+
+I worked on:
+
+    - Navbar
+    - Hero section
+    - About section
+    - Feature cards
+    - Menu section
+    - Contact section
+    - Footer
+    - Hover effects
+    - Focus effects
+    - Transitions
+    - Transform
+    - Responsive layouts
+
+I practiced using Flexbox for the navbar and hero.
+
+I practiced using Grid for the feature cards, menu and
+contact layout.
+
+I practiced using CSS variables for repeated values.
+
+I practiced using:
+
+    max-width
+    margin: 0 auto
+    object-fit: cover
+    clamp()
+    transition
+    transform
+    @media
+
+I also practiced checking how the layout changes at
+different screen widths.
+
+I checked the page at approximately:
+
+    400px
+    768px
+    Full width
+
+I observed the responsive layout changes and checked
+the navigation, CTA and feature-card hover effects.
+
+I also reviewed the CSS after changes and found that
+some previously completed work, such as variables and
+slideUp animation, had disappeared after the CSS rewrite.
+
+
+------------------------------------------------------------
+
+
+8. WHAT DID I UNDERSTAND?
+-------------------------
+
+The main thing I understood today is that a complete
+webpage can be created by combining smaller CSS concepts
+that I learned separately.
+
+
+A. FLEXBOX
+----------
+
+I understood that Flexbox is useful when I want to arrange
+elements in a row or column and control their alignment.
+
+In my project I used it for:
+
+    - Navbar
+    - Navigation links
+    - Hero section
+
+The hero helped me understand the combination of:
+
+    justify-content
+    align-items
+
+for centering content.
+
+
+B. GRID
+-------
+
+I understood that Grid is useful for card-based layouts.
+
+For example:
+
+    repeat(3, 1fr)
+
+creates three equal columns.
+
+I understood this better by seeing the feature cards
+change from one column to three columns at the larger
+screen size.
+
+
+C. CSS VARIABLES
+----------------
+
+I understood why variables are useful.
+
+Instead of repeating the same colour everywhere, I can
+store it once:
+
+    --main-color: #5c3a21;
+
+and use:
+
+    var(--main-color)
+
+in different selectors.
+
+This makes repeated values easier to manage.
+
+I also learned that I need to check the final CSS after
+rewriting because previously created variables can
+accidentally be replaced by hardcoded values.
+
+
+D. MAX-WIDTH AND AUTO MARGIN
+----------------------------
+
+I understood why I used:
+
+    max-width: 1100px;
+    margin: 0 auto;
+
+max-width prevents the content from becoming too wide.
+
+margin: 0 auto centers the block horizontally when there
+is extra horizontal space.
+
+
+E. OBJECT-FIT
+-------------
+
+I understood why:
+
+    object-fit: cover;
+
+was used for the feature images.
+
+It allows the images to fill the same area while keeping
+their aspect ratio.
+
+Parts of an image may be cropped when necessary.
+
+
+F. CLAMP()
+----------
+
+I understood that:
+
+    clamp(minimum, preferred, maximum)
+
+allows a value to be flexible while still keeping it
+inside defined limits.
+
+In my project:
+
+    clamp(1.8rem, 4.5vw, 3.5rem)
+
+was used for the hero heading.
+
+
+G. HOVER AND FOCUS
+------------------
+
+I understood that :hover is related to the mouse pointer
+being over an element.
+
+:focus is related to an element receiving focus.
+
+I used both on the navigation links and CTA button.
+
+
+H. TRANSFORM AND TRANSITION
+---------------------------
+
+I understood that transform changes the visual position
+or size of an element.
+
+For example:
+
+    transform: translateY(-5px);
+
+moves the card upward.
+
+And:
+
+    transform: scale(1.05);
+
+makes the CTA button slightly larger.
+
+Transition controls how smoothly those changes happen.
+
+
+I. RESPONSIVE DESIGN
+--------------------
+
+I understood that the same webpage can use different
+layouts at different screen sizes.
+
+For example:
+
+    1 column
+
+can become:
+
+    3 columns
+
+at a larger screen size.
+
+Media queries make these layout changes possible.
+
+
+J. CSS REWRITING
+----------------
+
+One important thing I understood today is that rewriting
+code can accidentally remove work that was already done.
+
+In my project, some CSS variables and the slideUp animation
+were present earlier but disappeared after the CSS rewrite.
+
+So checking the final version is important before calling
+the project complete.
+
+
+EXTRA FEATURES
+--------------
+
+The project also contains some extra features:
+
+    - Google Maps iframe
+    - Contact form
+
+These were added as extra parts of the project.
+
+I understand their basic HTML/CSS structure, but I have
+not fully learned the deeper working of the map embed
+or how the form data would actually be processed.
+
+For now:
+
+    Added extra, not yet fully understood.
+
+
+------------------------------------------------------------
+
+
+9. MISTAKES I IDENTIFIED
+------------------------
+
+1. HARDCODED COLOURS CAME BACK
+------------------------------
+
+Earlier, I had converted several hardcoded hex colours
+into CSS variables.
+
+Later, when the CSS was rewritten, some hardcoded colours
+appeared again.
+
+Examples include:
+
+    #000000
+    #f6f5f4
+    #e2ddda
+    #a88a73
+    #8b5a2b
+    #ccc
+    #ffffff
+
+The important lesson is that rewriting a file can remove
+changes that I had already completed.
+
+I need to check the final CSS before pushing the project.
+
+
+2. IMAGE FILENAMES
+------------------
+
+Some image filenames originally had spaces and capital
+letters.
+
+For example:
+
+    image Beans.jpg
+
+There was also a spelling mistake:
+
+    image-baily-pastries.jpg
+
+I corrected the filenames to a cleaner and consistent
+format, such as:
+
+    image-beans.jpg
+    image-daily-pastries.jpg
+
+The lesson is to use simple, consistent and correctly
+spelled filenames and make sure the HTML path matches
+the actual file.
+
+
+3. HEADING LEVEL
+----------------
+
+Some menu headings were originally written using:
+
+    <h4>
+
+when they should have been:
+
+    <h3>
+
+I corrected them to:
+
+    <h3>
+
+This made the heading structure more consistent with
+the other cards in the project.
+
+The lesson is to check the actual HTML structure instead
+of only checking how the text looks in the browser.
+
+
+4. MAP CODE FROM ANOTHER PROJECT
+--------------------------------
+
+I found leftover map information that did not match
+the Coffee Nook project.
+
+For example:
+
+    aria-label="Pakistan Tyres location map"
+
+The embedded map also appeared to be related to a tyre
+shop rather than Coffee Nook.
+
+This was copied/reused code that had not been completely
+updated.
+
+I identified the problem so the map information can be
+replaced with the correct Coffee Nook information.
+
+
+5. SLIDEUP DISAPPEARED AFTER THE CSS REWRITE
+--------------------------------------------
+
+I had previously added:
+
+    @keyframes slideUp
+
+and:
+
+    animation: slideUp 0.8s ease-out;
+
+to the hero content.
+
+After the CSS was rewritten, that code disappeared.
+
+So the problem was not that I never implemented slideUp.
+
+The problem was losing previously completed work during
+the rewrite.
+
+This taught me to compare the final CSS with the earlier
+version before pushing the project.
+
+
+6. CSS VARIABLES ALSO DISAPPEARED
+---------------------------------
+
+The same thing happened with some CSS variable work.
+
+I had already converted some hardcoded colours into
+variables, but after the CSS rewrite some hardcoded
+colours returned.
+
+This showed me that after changing or rewriting a file,
+I need to check that earlier improvements are still
+present.
+
+
+7. AI-ASSISTED PARTS
+--------------------
+
+I used AI assistance during different parts of this
+project.
+
+The parts where I relied on generated or assisted code
+included:
+
+    - Earlier HTML submissions
+    - Google Maps code
+    - Contact form structure
+    - CSS rewrite
+
+I now understand the main CSS layout concepts used in
+the project better, especially:
+
+    - Flexbox
+    - Grid
+    - CSS variables
+    - Transitions
+    - Transform
+    - Responsive layout
+    - Media queries
+
+However, I do not consider the map and form to be fully
+understood yet.
+
+I have marked those parts as:
+
+    "Added extra, not yet fully understood."
+
+The main lesson is:
+
+    I should understand the code before considering the
+    project completely finished.
+
+
+------------------------------------------------------------
+
+
+10. DAY OUTCOME
+---------------
+
+Today I completed a complete CSS mini project:
+
+    The Coffee Nook
+
+Before this project, I was mainly practicing individual
+CSS concepts.
+
+Today I combined those concepts into one complete webpage.
+
+I created and worked with:
+
+    - Responsive navbar
+    - Hero section
+    - CTA button
+    - About section
+    - Feature cards
+    - Menu section
+    - Contact section
+    - Contact form
+    - Map area
+    - Footer
+    - Hover effects
+    - Focus effects
+    - Transitions
+    - Transform effects
+    - Responsive layouts
+
+I also tested the layout at:
+
+    - Approximately 400px
+    - 768px
+    - Full browser width
+
+I checked the visual hover behavior of:
+
+    - Navigation links
+    - CTA button
+    - Feature cards
+
+I also found and corrected several problems during the
+project:
+
+    - Image filename issues
+    - Image spelling mistake
+    - Heading level issue
+    - Leftover map information
+    - CSS inconsistencies
+    - Lost CSS variables after rewriting
+    - Lost slideUp animation after rewriting
+
+
+WHAT I CAN DO NOW
+-----------------
+
+I can now create a basic responsive landing page using
+the CSS concepts I have learned.
+
+I can understand the purpose of:
+
+    display: flex;
+    display: grid;
+    max-width;
+    margin: 0 auto;
+    object-fit: cover;
+    transition;
+    transform;
+    clamp();
+    @media;
+
+
+WHAT IS STILL WEAK
+------------------
+
+My weaker areas are still:
+
+    - CSS Grid
+    - Responsive design
+    - Choosing between Flexbox and Grid
+    - CSS animations
+    - Forms
+    - Iframes
+    - Accessibility
+    - Keeping CSS variables consistent
+
+
+KNOWN GAPS BEFORE PUSH
+----------------------
+
+Two things from the earlier version are currently not
+restored in the latest CSS:
+
+    1. Some colour values that were previously converted
+       into CSS variables are hardcoded again.
+
+    2. The slideUp animation that was previously added
+       is no longer present.
+
+These are known gaps.
+
+Before pushing the final project, I need to decide whether
+to restore these features or intentionally leave them out.
+
+Whatever the final decision is, my code and notes should
+match the final version of the project.
+
+
+MAIN LESSON
+-----------
+
+The biggest lesson from this project is that a webpage
+should not only work visually.
+
+I also need to understand the code, review changes and
+make sure that improvements are not lost when files are
+rewritten.
+
+I learned:
+
+    "Don't just make it work.
+     Understand why it works."
+
+
+Overall, Day 19 helped me move from practicing individual
+CSS properties to using those concepts together in a real
+responsive landing page.
+
+
+                    DAY 19 COMPLETE
+              Learn -> Practice -> Build -> Review
