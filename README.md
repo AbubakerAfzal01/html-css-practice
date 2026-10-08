@@ -53,7 +53,7 @@ The course starts with core HTML concepts and gradually moves into modern CSS, i
 |  17 | Transitions, Transforms & Animations      |  Completed |
 |  18 | Responsive / Mobile-First Design          |  Completed |
 |  19 | CSS Mini Project — Landing Page           |   Completed |
-|  20 | Final Project — Responsive Website        |   Pending  |
+|  20 | Final Project — Responsive Website        |   Completed  |
 
 ### Current Progress
 
